@@ -1,0 +1,419 @@
+@import '../_var'
+
+.banner
+    &.home-banner
+        @include after-border-grad
+        .bg 
+            height: 100vh
+            @include media(540)
+                height: 80vh
+            .banner-wrapper
+                left: 50%
+                top: unset
+                bottom: 0%
+                transform: translate(-50%, 0%)
+                @include media(768)
+                    width: 400px
+                @include media(540)
+                    width: 300px
+                .container
+                    .heading
+                        text-align: center
+                        h3:first-child
+                            font-size: 16px
+                            font-weight: 400
+                            letter-spacing: 10px
+                            padding-bottom: 30px
+                            @include media(768)
+                                font-size: 14px
+                                padding-bottom: 20px
+                        h2
+                            @include media(768)
+                                padding-bottom: 10px
+                        h3:nth-child(3)
+                            font-size: 18px
+                            font-weight: 400
+                            letter-spacing: 10px
+                            @include media(768)
+                                font-size: 14px
+                        .btn
+                            margin-top: 40px
+                            
+.home-secA
+    @include media(540)
+        padding: 40px 0 0 
+    .sec-heading
+        @include before-blur
+        &::before
+            width: 200px
+            height: 200px
+            filter: blur(70px)
+            left: 50%
+            transform: translateX(-50%)
+            top: -70%
+        .icon
+            padding-bottom: 20px
+            @include media(540)
+                padding-bottom: 10px
+            img
+                width: 35px
+                @include media(540)
+                    width: 25px
+    .collection-container
+        padding: 60px 0 40px
+        gap: 20px
+        @include media(768)
+            padding: 30px 0 0px
+        @include media(540)
+            padding: 20px 0 0 
+            gap: 5px
+        .collect-item
+            flex: 1
+            z-index: 0
+            padding: 3px
+            @include border-grad
+            &:hover
+                figure
+                    &::after
+                        opacity: 1
+                    img
+                        transform: scale(1.1)
+                figcaption
+                    opacity: 1
+            figure
+                width: 100%
+                height: 100%
+                overflow: hidden
+                @include shine
+                @include after(linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%))
+                &::after
+                    opacity: 0
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    transition: .5s ease
+            figcaption
+                text-align: center
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                gap: 30px
+                opacity: 0
+                transition: .5s ease
+                @include media(768)
+                    gap: 10px
+                h4
+                    @include media(768)
+                        font-size: 24px
+                    @include media(540)
+                        font-size: 18px
+
+.home-secB
+    @include before-blur
+    &::before
+        left: 3%
+        top: 0
+        width: 300px
+        filter: blur(40px)
+        @include media(540)
+            width: 200px
+    @include after-blur
+    &::after
+        right: 20%
+        bottom: 10%
+        width: 300px
+        height: 300px
+        filter: blur(30px)
+        @include media(540)
+            width: 200px
+            height: 200px
+    .upper-sec
+        position: relative
+    .unisex-category-slider
+        @include media(768)
+            height: 400px 
+        .swiper-slide
+            @include border-grad-after 
+            &::after
+                z-index: 1
+            .figure
+                img
+                    aspect-ratio: 0.7
+            figcaption
+                padding: 0 1rem
+                margin-bottom: 2.5rem
+                --titlepad: 150px
+                .ico
+                    margin-bottom: 20px
+                    img
+                        width: 30px
+                h6
+                    text-transform: capitalize
+                .xbjs
+                    width: 100%
+                    padding: 0 2rem
+                    p.whitetxt
+                        margin-bottom: 3rem
+                        @include media(991)
+                            margin-bottom: 1.5rem
+
+.banner.travel-banner
+    &::after
+        padding: 3px 0
+    .bg 
+        height: 90vh
+        @include media(540)
+            height: 80vh
+        .banner-wrapper
+            left: 50%
+            top: unset
+            bottom: 45%
+            transform: translate(-50%, 45%)
+            translate: unset
+            max-width: 760px
+            width: 100%
+            @include media(768)
+                width: 300px
+            .container
+                .heading
+                    .icon
+                        padding-bottom: 30px
+                        @include media(768)
+                            padding-bottom: 10px
+                        img
+                            width: 25px
+                    h3
+                        padding-bottom: 30px
+                        @include media(768)
+                            padding-bottom: 20px
+                        @include media(540)
+                            padding-bottom: 10px
+                            font-size: 14px
+                    .gradient-head
+                        padding: 10px
+                        @include media(540)
+                            width: 300px
+                        h2
+                            line-height: 1.2
+                            @include media(1024)
+                                font-size: 60px 
+                            @include media(991)
+                                font-size: 43px
+                            @include media(540)
+                                font-size: 30px
+                    .btn-grad
+                        margin-top: 20px
+                        @include media(540)
+                            margin-top: 0
+
+.home-secC
+    .upper-sec
+        @include before-blur
+        &::before
+            left: 50%
+            top: 0
+            width: 300px
+            transform: translateX(-50%)
+            filter: blur(40px)
+    .tech-category-slider
+        .swiper-slide
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            &:hover
+                .figure
+                    img
+                        transform: scale(1.1)
+                figcaption
+                    background: linear-gradient(0deg, #fff, #fff)
+                    transition: .5s ease
+            .figure
+                line-height: 0
+                width: 100%
+                overflow: hidden
+            figcaption
+                width: 100%
+                background: var(--gradient-a)
+                padding: 10px
+                transition: .5s ease
+                @include media(540)
+                    padding: 5px
+                h6
+                    color: #000
+                    text-align: center
+                    @include media(540)
+                        font-size: 16px
+
+.home-secD
+    padding-bottom: 150px
+    @include media(768) 
+        padding-bottom: 100px
+    @include media(540)
+        padding-bottom: 60px
+    .upper-sec
+        @include before-blur
+        &::before
+            left: 10%
+            transform: translateX(-10%)
+            width: 400px
+            height: 400px
+            filter: blur(40px)
+            @include media(540)
+                width: 200px
+                height: 200px
+        @include after-blur
+        &::after
+            right: 10%
+            transform: translateX(10%)
+            width: 400px
+            height: 400px
+            filter: blur(40px)
+            @include media(540)
+                width: 200px
+                height: 200px
+    .personal-container
+        position: relative
+        @include before-blur
+        &::before
+            left: 50%
+            transform: translate(-50%, 0%)
+            bottom: 0%
+            width: 400px
+            height: 400px
+            filter: blur(40px)
+            @include media(540)
+                width: 200px
+                height: 200px
+        .slider-nav
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 80%
+            left: 50%
+            position: absolute
+            z-index: 2
+            translate: -50% -50%
+            top: 50%
+            @include media(768)
+                display: none
+        .personal-slider
+            @include media(540)
+                height: 310px
+            .swiper-slide
+                &::before
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%)
+                &.swiper-slide-active
+                    figcaption
+                        translate: -50% 20%
+                        bottom: 20%
+                figcaption
+                    left: 50%
+                    translate: -50% 100%
+                    text-align: center
+                    max-width: 330px
+                    transition: 1s ease
+                    @include media(540)
+                        width: 80%
+                    .icon
+                        margin-bottom: 15px
+                        @include media(540)
+                            margin-bottom: 5px
+                        svg
+                            @include media(540)
+                                width: 25px 
+                    h6
+                        font-size: 24px
+                        line-height: 30px
+                        font-weight: 400
+                        padding-bottom: 15px
+                        @include media(540)
+                            font-size: 18px
+                            line-height: 1.2
+                            padding-bottom: 10px
+                    p
+                        color: #FFFFFFB2
+                        @include media(540)
+                            font-size: 14px
+                            line-height: 1.2
+
+.preloader
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 40px
+    background-color: var(--primary)
+    opacity: 1
+    z-index: 7
+    transition: all .3s ease
+    -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1)
+    &.page-loaded
+        visibility: hidden
+        &::before, &::after
+            height: 0
+    &::before
+        content: ""
+        position: absolute
+        left: 0 
+        top: 0
+        width: 100%
+        height: 80%
+        z-index: -1
+        background: var(--primary)
+        transition: 1.1s
+        -webkit-clip-path: ellipse(66% 100% at 50% 0%)
+        clip-path: ellipse(66% 100% at 50% 0%)
+    &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        width: 100%
+        height: 80%
+        z-index: -1
+        background: var(--primary)
+        -webkit-transition: 1.1s
+        transition: 1.1s
+        -webkit-clip-path: ellipse(85% 100% at 50% 100%)
+        clip-path: ellipse(85% 100% at 50% 100%)  
+    .loader-logo
+        width: 100px
+        margin: 0 auto 40px
+        line-height: 0
+        svg
+            width: 100%
+            height: 100%
+    .progress-bar-container
+        width: 100%
+        background-color: #ffffff17
+        height: 1.5px
+        position: relative
+        .progress-bar
+            width: 0
+            position: absolute
+            left: 0
+            top: -1px
+            bottom: 0
+            right: 0
+            height: 1.5px
+            background: #fff
+            z-index: 2
+            &::before
+                content: ""
+                width: 20px
+                height: 20px
+                position: absolute
+                right: -9px
+                top: -21px
+                background: url(/assets/icon/fav.svg) no-repeat
+                background-size: 20px
+    .loader-count
+        font-size: 40px
+        color: $white
+        font-family: $Futura
