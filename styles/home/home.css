@@ -12,21 +12,56 @@
     left: 100%;
   }
 }
-.banner.home-banner {
+.hero_sec {
   position: relative;
 }
-.banner.home-banner::after {
-  content: "";
+.hero_sec .scrollbar_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   position: absolute;
-  inset: 0;
-  padding-bottom: 3px;
-  background: linear-gradient(93deg, #030735 25%, #fff 50%, #030735 85%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 1;
-  transition: 0.5s ease;
+  left: 13%;
+  bottom: 5%;
+  transform: translate(-10%, 5%);
+  z-index: 3;
+  --swiper-pagination-color: #fff;
 }
+.hero_sec .scrollbar_wrapper .play_btn {
+  --btnsize: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  --btncolor: #fff;
+  background: transparent;
+  width: 0;
+  height: var(--btnsize);
+  border-color: transparent transparent transparent var(--btncolor);
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: solid;
+  border-width: calc(var(--btnsize) * 0.5) 0 calc(var(--btnsize) * 0.5) calc(var(--btnsize) * 0.81);
+}
+.hero_sec .scrollbar_wrapper .play_btn.pause {
+  border-style: double;
+  border-width: 0px 0 0px calc(var(--btnsize) * 0.81);
+}
+.hero_sec .scrollbar_wrapper .progress_bar {
+  position: relative;
+  flex: 1;
+}
+.hero_sec .home-nav {
+  max-width: 85%;
+}
+.hero_sec .home-nav .swiper-prev, .hero_sec .home-nav .swiper-next {
+  width: 40px;
+  height: 40px;
+  background: var(--white);
+  border-radius: 50%;
+}
+.hero_sec .home-nav .swiper-prev svg, .hero_sec .home-nav .swiper-next svg {
+  vertical-align: middle;
+}
+
 .banner.home-banner .bg {
   height: 100vh;
 }
@@ -38,8 +73,8 @@
 .banner.home-banner .bg .banner-wrapper {
   left: 50%;
   top: unset;
-  bottom: 0%;
-  transform: translate(-50%, 0%);
+  bottom: 10%;
+  transform: translate(-50%, 10%);
 }
 @media only screen and (max-width: 768px) {
   .banner.home-banner .bg .banner-wrapper {
@@ -51,37 +86,18 @@
     width: 300px;
   }
 }
-.banner.home-banner .bg .banner-wrapper .container .heading {
+.banner.home-banner .bg .banner-wrapper .heading {
   text-align: center;
 }
-.banner.home-banner .bg .banner-wrapper .container .heading h3:first-child {
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 10px;
-  padding-bottom: 30px;
+.banner.home-banner .bg .banner-wrapper .heading h1 {
+  font-size: 48px;
 }
-@media only screen and (max-width: 768px) {
-  .banner.home-banner .bg .banner-wrapper .container .heading h3:first-child {
-    font-size: 14px;
-    padding-bottom: 20px;
-  }
+.banner.home-banner .bg .banner-wrapper .heading p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
 }
-@media only screen and (max-width: 768px) {
-  .banner.home-banner .bg .banner-wrapper .container .heading h2 {
-    padding-bottom: 10px;
-  }
-}
-.banner.home-banner .bg .banner-wrapper .container .heading h3:nth-child(3) {
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 10px;
-}
-@media only screen and (max-width: 768px) {
-  .banner.home-banner .bg .banner-wrapper .container .heading h3:nth-child(3) {
-    font-size: 14px;
-  }
-}
-.banner.home-banner .bg .banner-wrapper .container .heading .btn {
+.banner.home-banner .bg .banner-wrapper .heading .btn {
   margin-top: 40px;
 }
 
