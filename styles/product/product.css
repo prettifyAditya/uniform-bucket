@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @keyframes shine {
   from {
     opacity: 0;
@@ -175,7 +177,7 @@
   --filenameinitial: var(--filename);
   --color: var(--text);
   --background: none;
-  --image: url(../../icon/clip-gray.svg) no-repeat;
+  --image: url(/assets/icon/clip-gray.svg) no-repeat;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -234,7 +236,7 @@
 }
 .custom-select.has-icon {
   --iconsize: 12px;
-  --iconurl: url(../../icon/location-gradient.svg);
+  --iconurl: url(/assets/icon/location-gradient.svg);
   --iconspace: 8px;
 }
 .custom-select.has-icon::after {
@@ -271,7 +273,7 @@
   right: var(--paddingleftright);
   bottom: 0;
   width: var(--arrow);
-  background-image: url(../../icon/arrow-down-gray.svg);
+  background-image: url(/assets/icon/arrow-down-gray.svg);
   background-position: 0 50%;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -391,7 +393,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: url(../../icon/tick-white.svg) no-repeat;
+  background: url(/assets/icon/tick-white.svg) no-repeat;
   background-position: 50% 50%;
   background-size: 10px auto;
   opacity: 0;
@@ -454,7 +456,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: url(../../icon/tick-white.svg) no-repeat;
+  background: url(/assets/icon/tick-white.svg) no-repeat;
   background-position: 50% 50%;
   background-size: 10px auto;
   opacity: 0;
@@ -971,7 +973,7 @@
   font-weight: 500;
   margin-bottom: 10px;
   color: #000;
-  font-family: "Futura Medium";
+  font-family: "Le Jeune Deck";
   text-transform: uppercase;
 }
 .product-detail-container .detail-product-wrap .colB .color-col .select-option {
@@ -1077,7 +1079,7 @@
   line-height: 1.2;
   letter-spacing: 4px;
   font-weight: 500;
-  font-family: "Futura Medium";
+  font-family: "Le Jeune Deck";
   color: #000;
   text-transform: uppercase;
 }
@@ -1262,7 +1264,7 @@
   line-height: 1.2;
   letter-spacing: 4px;
   text-transform: uppercase;
-  font-family: "Futura Medium";
+  font-family: "Le Jeune Deck";
   font-weight: 500;
   color: var(--text);
 }

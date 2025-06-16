@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @keyframes shine {
   from {
     opacity: 0;
@@ -175,7 +177,7 @@
   --filenameinitial: var(--filename);
   --color: var(--text);
   --background: none;
-  --image: url(../../icon/clip-gray.svg) no-repeat;
+  --image: url(/assets/icon/clip-gray.svg) no-repeat;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -234,7 +236,7 @@
 }
 .custom-select.has-icon {
   --iconsize: 12px;
-  --iconurl: url(../../icon/location-gradient.svg);
+  --iconurl: url(/assets/icon/location-gradient.svg);
   --iconspace: 8px;
 }
 .custom-select.has-icon::after {
@@ -271,7 +273,7 @@
   right: var(--paddingleftright);
   bottom: 0;
   width: var(--arrow);
-  background-image: url(../../icon/arrow-down-gray.svg);
+  background-image: url(/assets/icon/arrow-down-gray.svg);
   background-position: 0 50%;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -391,7 +393,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: url(../../icon/tick-white.svg) no-repeat;
+  background: url(/assets/icon/tick-white.svg) no-repeat;
   background-position: 50% 50%;
   background-size: 10px auto;
   opacity: 0;
@@ -454,7 +456,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: url(../../icon/tick-white.svg) no-repeat;
+  background: url(/assets/icon/tick-white.svg) no-repeat;
   background-position: 50% 50%;
   background-size: 10px auto;
   opacity: 0;
@@ -652,7 +654,7 @@ body, html {
   line-height: 1.5;
   font-optical-sizing: auto;
   font-style: normal;
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-weight: normal;
 }
 
@@ -731,12 +733,13 @@ svg path {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  color: #fff;
+  font-family: "Le Jeune Deck";
 }
 
 h1 {
   font-size: 48px;
   line-height: 1.17;
+  text-transform: uppercase;
 }
 @media only screen and (max-width: 767px) {
   h1 {
@@ -747,11 +750,13 @@ h1 {
 h2 {
   font-size: 40px;
   line-height: 1.05;
+  text-transform: uppercase;
 }
 
 h3 {
   font-size: 36px;
   line-height: 1.06;
+  text-transform: capitalize;
 }
 
 .heading h3 {
@@ -771,7 +776,7 @@ h3 {
 }
 
 .head {
-  font-family: "Kugile";
+  font-family: "Le Jeune Deck";
   font-weight: 400;
   font-size: 80px;
   line-height: 1;
@@ -1244,7 +1249,7 @@ img {
   z-index: 2;
 }
 .banner .banner-wrapper h1 {
-  font-family: "Futura PT Book";
+  font-family: "Le Jeune Deck";
   text-transform: uppercase;
   font-size: 48px;
   line-height: 1.28;
@@ -1259,7 +1264,7 @@ img {
 }
 
 .banner-banner .content h1 {
-  font-family: "Futura PT Book";
+  font-family: "Le Jeune Deck";
   font-size: 32px;
   line-height: 1.1875;
   letter-spacing: 0.15em;
@@ -1401,7 +1406,7 @@ img {
 .website-content h1 {
   font-size: 48px;
   margin-bottom: 45px;
-  font-family: "Futura PT Book";
+  font-family: "Le Jeune Deck";
   text-align: center;
 }
 @media only screen and (max-width: 675px) {
@@ -1559,7 +1564,7 @@ img {
   translate: 0 -50%;
   height: var(--arrow);
   width: var(--arrow);
-  background-image: url(../../icon/location-gradient.svg);
+  background-image: url(/assets/icon/location-gradient.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: 0 0;
@@ -1572,7 +1577,7 @@ img {
   --space: 12px;
 }
 .lctn.clndr::before {
-  background-image: url(../../icon/calender.svg);
+  background-image: url(/assets/icon/calender.svg);
 }
 
 .common-grid {
@@ -1878,7 +1883,7 @@ img {
   opacity: 0;
 }
 .product-col-3 figcaption h6 {
-  font-family: "Futura PT Book";
+  font-family: "Le Jeune Deck";
   color: var(--white);
   font-size: 22px;
   line-height: 1.283;
@@ -1972,7 +1977,7 @@ img {
   color: var(--white);
   height: var(--labelheight);
   line-height: var(--labelheight);
-  background-image: url(../../icon/arrow-down-white.svg);
+  background-image: url(/assets/icon/arrow-down-white.svg);
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-position-x: 100%;
@@ -2121,7 +2126,7 @@ img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  background: url(../../icon/tick-white.svg);
+  background: url(/assets/icon/tick-white.svg);
   transition: 0.5s ease;
 }
 .kmr-select-wrap .kmr-select-menu li .in-bx::before {
@@ -2304,7 +2309,7 @@ em {
   bottom: 0;
   z-index: 0;
   pointer-events: none;
-  background: url(../../icon/tick-white.svg);
+  background: url(/assets/icon/tick-white.svg);
   transition: 0.5s ease;
   background-repeat: no-repeat;
   background-size: 48%;
@@ -3152,7 +3157,7 @@ header.header-shadow {
   margin-bottom: 15px;
   text-transform: uppercase;
   color: var(--black);
-  font-family: "Futura Medium";
+  font-family: "Le Jeune Deck";
 }
 .product-size-pop .model-body .btn-wrap-wvguf {
   display: flex;
@@ -3238,7 +3243,7 @@ header.header-shadow {
 .login-pop .model-body .title h4 {
   text-align: center;
   color: var(--black);
-  font-family: "Futura PT Book";
+  font-family: "Le Jeune Deck";
   font-size: 20px;
   font-weight: 400;
   line-height: 1.282;
@@ -3467,7 +3472,7 @@ header.header-shadow {
 .model.ham-pop .model-body .icon {
   display: flex;
   align-items: center;
-  font-family: "Kugile";
+  font-family: "Le Jeune Deck";
   gap: 15px;
   margin-bottom: 30px;
   line-height: 0;
@@ -3725,7 +3730,7 @@ header.header-shadow {
 }
 .model-full.add-address-pop .model-body .pilce h4 {
   flex: 1;
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-size: 20px;
   line-height: 25.64px;
   letter-spacing: 0.2em;
@@ -3980,7 +3985,7 @@ div:has(> .product-not-found) {
 }
 .product-not-found .nt-fnd-wrp p {
   font-size: 24px;
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   margin: 10px 0 3rem;
 }
 

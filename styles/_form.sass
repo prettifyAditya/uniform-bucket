@@ -4,7 +4,7 @@
 .form
     --inputsize: 48px
     --labelbefore: var(--text)
-    --labelafter: var(--text)
+    --labelafter: var(--text) 
     --borderbefore: var(--black)
     --borderafter: var(--secondary)
     --labelfontbefore: 16px
@@ -127,7 +127,7 @@
                 --filenameinitial: var(--filename)
                 --color: var(--text)
                 --background: none
-                --image: url(../../icon/clip-gray.svg) no-repeat
+                --image: url(/assets/icon/clip-gray.svg) no-repeat
                 appearance: none
                 line-height: calc(var(--inputsize) - var(--borderwidth))
                 &::before,&::after
@@ -176,7 +176,7 @@
     --paddingleftright: 0
     &.has-icon
         --iconsize: 12px
-        --iconurl: url(../../icon/location-gradient.svg)
+        --iconurl: url(/assets/icon/location-gradient.svg)
         --iconspace: 8px
         @include after
         &::after
@@ -196,7 +196,7 @@
         right: var(--paddingleftright)
         bottom: 0
         width: var(--arrow)
-        background-image: url(../../icon/arrow-down-gray.svg)
+        background-image: url(/assets/icon/arrow-down-gray.svg)
         background-position: 0 50%
         background-repeat: no-repeat
         background-size: 100% auto

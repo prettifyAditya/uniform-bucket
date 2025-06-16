@@ -3,10 +3,10 @@
 *,
 *::before,
 *::after
-    padding: 0
+    padding: 0 
     margin: 0
-    list-style: none
-    box-sizing: border-box
+    list-style: none 
+    box-sizing: border-box 
 
 $scrollwidth: 8px
 
@@ -100,7 +100,7 @@ body,html
     line-height: 1.5
     font-optical-sizing: auto
     font-style: normal
-    font-family: $Futura
+    font-family: $Lato
     font-weight: normal
 
 
@@ -127,18 +127,21 @@ svg
     margin: 0 auto
 h1,h2,h3,h4,h5,h6
     font-weight: normal
-    color: #fff
-h1
+    font-family: $LeJ
+h1 
     font-size: 48px
     line-height: 1.17
+    text-transform: uppercase
     @include media(767)
         font-size: 48px
 h2
     font-size: 40px
     line-height: 1.05
+    text-transform: uppercase
 h3
     font-size: 36px
     line-height: 1.06
+    text-transform: capitalize
 .heading
     h3
         font-size: 20px
@@ -155,7 +158,7 @@ h3
         margin-top: 10px
 
 .head
-    font-family: $Kugile
+    font-family: $LeJ
     font-weight: 400
     font-size: 80px
     line-height: 1
@@ -460,7 +463,7 @@ img
         translate: 0 -50%
         z-index: 2
         h1
-            font-family: $Futura
+            font-family: $LeJ
             text-transform: uppercase
             font-size: 48px
             line-height: 1.28
@@ -476,7 +479,7 @@ img
 .banner-banner
     .content
         h1
-            font-family: $Futura
+            font-family: $LeJ
             font-size: 32px
             line-height: 1.1875
             letter-spacing: 0.15em
@@ -593,7 +596,7 @@ img
     h1
         font-size: 48px
         margin-bottom: 45px
-        font-family: $Futura
+        font-family: $LeJ
         text-align: center
         @include media(675)
             font-size: 34px
@@ -693,7 +696,7 @@ img
         translate: 0 -50%
         height: var(--arrow)
         width: var(--arrow)
-        background-image: url(../../icon/location-gradient.svg)
+        background-image: url(/assets/icon/location-gradient.svg)
         background-repeat: no-repeat
         background-size: 100% 100%
         background-position: 0 0
@@ -704,7 +707,7 @@ img
         --arrow: 17px
         --space: 12px
         &::before
-            background-image: url(../../icon/calender.svg)
+            background-image: url(/assets/icon/calender.svg)
 
 .common-grid
     display: grid
@@ -932,7 +935,7 @@ img
             transition: .5s ease
             opacity: 0
         h6
-            font-family: $Futura
+            font-family: $LeJ
             color: $white
             font-size: 22px
             line-height: 1.283
@@ -1011,10 +1014,10 @@ img
     --arrowsize: 16px
     --space: 11px
     .label 
-        color: $white
+        color: $white 
         height: var(--labelheight)
         line-height: var(--labelheight)
-        background-image: url(../../icon/arrow-down-white.svg)
+        background-image: url(/assets/icon/arrow-down-white.svg)
         background-repeat: no-repeat
         background-position-y: 50%
         background-position-x: 100%
@@ -1136,7 +1139,7 @@ img
                 border: 1px solid $black
                 border-radius: 3px
                 transition: 0s ease
-                @include before(url(../../icon/tick-white.svg))
+                @include before(url(/assets/icon/tick-white.svg))
                 &::before
                     background-repeat: no-repeat
                     background-size: 48%
@@ -1274,7 +1277,7 @@ em
                 bottom: 0
                 z-index: 0
                 pointer-events: none
-                background: url(../../icon/tick-white.svg)
+                background: url(/assets/icon/tick-white.svg)
                 transition: .5s ease
                 background-repeat: no-repeat
                 background-size: 48%

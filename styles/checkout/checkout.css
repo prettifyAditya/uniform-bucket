@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @keyframes shine {
   from {
     opacity: 0;
@@ -304,7 +305,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: url(../../icon/tick-white.svg) no-repeat;
+  background: url(/assets/icon/tick-white.svg) no-repeat;
   background-position: 50% 50%;
   background-size: 10px auto;
   opacity: 0;
@@ -411,18 +412,18 @@
   margin-right: 15px;
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-zpsgj {
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   line-height: 18px;
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-zpsgj span {
-  font-family: "Kugile";
+  font-family: "Le Jeune Deck";
   font-size: 14px;
   line-height: 1;
   display: inline-block;
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-pefca {
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   line-height: 1;
   color: var(--text);
@@ -431,10 +432,10 @@
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-pefca span {
   display: inline-block;
   text-decoration: line-through;
-  font-family: "Kugile";
+  font-family: "Le Jeune Deck";
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .discount-zpsgj {
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   line-height: 1;
   color: var(--primary);
@@ -515,18 +516,18 @@
   text-decoration: line-through;
 }
 .check-out-main .check-out-secA-zbyqo .prd-dtl-adr-wrap .prd-dtl-adr figcaption .price-btm-cyrq .price-cyrq {
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   line-height: 18px;
 }
 .check-out-main .check-out-secA-zbyqo .prd-dtl-adr-wrap .prd-dtl-adr figcaption .price-btm-cyrq .price-cyrq span {
-  font-family: "Kugile";
+  font-family: "Le Jeune Deck";
   font-size: 14px;
   line-height: 1;
   display: inline-block;
 }
 .check-out-main .check-out-secA-zbyqo .prd-dtl-adr-wrap .prd-dtl-adr figcaption .price-btm-cyrq .price-jpzi {
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   line-height: 1;
   color: var(--text);
@@ -535,10 +536,10 @@
 .check-out-main .check-out-secA-zbyqo .prd-dtl-adr-wrap .prd-dtl-adr figcaption .price-btm-cyrq .price-jpzi span {
   display: inline-block;
   text-decoration: line-through;
-  font-family: "Kugile";
+  font-family: "Le Jeune Deck";
 }
 .check-out-main .check-out-secA-zbyqo .prd-dtl-adr-wrap .prd-dtl-adr figcaption .price-btm-cyrq .discount-cyrq {
-  font-family: "Futura PT Book";
+  font-family: "Lato", sans-serif;
   font-size: 14px;
   line-height: 1;
   color: var(--primary);
