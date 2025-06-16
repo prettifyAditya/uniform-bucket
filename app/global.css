@@ -525,16 +525,14 @@
 
 :root {
   --headerpadding: 12px;
-  --headerheight: 150px;
-  --headerfixed: 130px;
-  --homecatstrip: 80px;
-  --homecatstripfixed: 70px;
+  --headerheight: 90px;
+  --headerfixed: 70px;
   --mobilesearchbar: 45px;
   --footerstrip: 38px;
   --filterstrip: 42px;
-  --elementhover: #ffffffb8;
-  --primary: #030735;
-  --colortext: #0B2369;
+  --elementhover: #000;
+  --primary: #fff;
+  --colortext: #000;
   --red: #FF2323;
   --green: #13BB75;
   --sucgreen: #008000;
@@ -545,8 +543,8 @@
   --gray: #F1F1F1;
   --container: 1280px;
   --containerfluid: 2rem;
-  --gradient-a: linear-gradient(90deg, #FFFFFF 40%, #3D3D3D);
-  --gradient-b: linear-gradient(90deg, #030735 30%, #444A8F);
+  --gradient-a: linear-gradient(90deg, #FFFFFF 40%, #EFEFEF);
+  --gradient-b: linear-gradient(90deg, #EFEFEF 30%, #FFFFFF);
 }
 @media only screen and (max-width: 1152px) {
   :root {
@@ -574,8 +572,8 @@
   }
 }
 
-.prime-bg {
-  background-color: #030735;
+.gray-bg {
+  background-color: #EFEFEF;
 }
 
 .sec-head {
@@ -658,10 +656,6 @@ body, html {
   font-style: normal;
   font-family: "Lato", sans-serif;
   font-weight: normal;
-}
-
-select {
-  display: none;
 }
 
 a[href] {
