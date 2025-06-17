@@ -137,8 +137,9 @@ h3
     line-height: 1.06
     text-transform: capitalize
 .heading
-    h3
-        font-size: 20px
+    text-align: center
+    h2
+        font-size: 28px
         line-height: 1.282
         letter-spacing: 0.2em
         text-transform: uppercase
@@ -243,8 +244,6 @@ button
     @include after
     &::before,&::after
         z-index: 1
-    &::after
-        content: none
     figure,.figure
         display: block
         overflow: hidden
@@ -273,6 +272,46 @@ button
             bottom: auto
             top: 50%
             translate: 0 -50%
+
+.category_col
+    &::before
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%)
+    &:hover
+        figure
+            img
+                transform: scale(1.2)
+                opacity: 0
+        figcaption
+            h6, p
+                opacity: 0
+            .btn_wrapper
+                transform: translateY(0)
+    figure
+        position: relative
+        video
+            position: absolute
+            left: 0
+            top: 0
+            z-index: -1
+        img
+            transition: 1s ease
+            transform-origin: top left
+    figcaption
+        text-align: center
+        padding: 0 10px 20px
+        bottom: 5%
+        translate: 0 5%
+        h6, p 
+            color: $white
+            transition: 0.6s ease
+        h6
+            font-size: 24px
+        p
+            font-size: 14px
+        .btn_wrapper
+            transition: 1s ease
+            transform: translateY(7vw)
+
 .overlay
     position: fixed
     left: 0
@@ -656,19 +695,24 @@ img
             padding-right: 0
     .upper-sec
         position: relative
-        margin-bottom: 5rem
+        margin-bottom: 4rem
         @include media(768)
             margin-bottom: 3rem
         @include media(540)
             margin-bottom: 2.5rem
         .slider-nav
             position: absolute
-            bottom: 0
+            top: 50%
             right: 0
+            transform: translate(0, -50%)
+            display: flex
+            align-items: center
+            gap: 20px
             @include media(768)
                 display: none
             .swiper-prev
-                margin-right: 22px
+                svg, img
+                    transform: scaleX(-1)
         .heading
             text-align: center
 

@@ -755,8 +755,11 @@ h3 {
   text-transform: capitalize;
 }
 
-.heading h3 {
-  font-size: 20px;
+.heading {
+  text-align: center;
+}
+.heading h2 {
+  font-size: 28px;
   line-height: 1.282;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -954,9 +957,6 @@ button {
 .item-md::before, .item-md::after {
   z-index: 1;
 }
-.item-md::after {
-  content: none;
-}
 .item-md figure, .item-md .figure {
   display: block;
   overflow: hidden;
@@ -989,6 +989,53 @@ button {
   bottom: auto;
   top: 50%;
   translate: 0 -50%;
+}
+
+.category_col::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%);
+}
+.category_col:hover figure img {
+  transform: scale(1.2);
+  opacity: 0;
+}
+.category_col:hover figcaption h6, .category_col:hover figcaption p {
+  opacity: 0;
+}
+.category_col:hover figcaption .btn_wrapper {
+  transform: translateY(0);
+}
+.category_col figure {
+  position: relative;
+}
+.category_col figure video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.category_col figure img {
+  transition: 1s ease;
+  transform-origin: top left;
+}
+.category_col figcaption {
+  text-align: center;
+  padding: 0 10px 20px;
+  bottom: 5%;
+  translate: 0 5%;
+}
+.category_col figcaption h6, .category_col figcaption p {
+  color: var(--white);
+  transition: 0.6s ease;
+}
+.category_col figcaption h6 {
+  font-size: 24px;
+}
+.category_col figcaption p {
+  font-size: 14px;
+}
+.category_col figcaption .btn_wrapper {
+  transition: 1s ease;
+  transform: translateY(7vw);
 }
 
 .overlay {
@@ -1510,7 +1557,7 @@ img {
 }
 .slider-section .upper-sec {
   position: relative;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 @media only screen and (max-width: 768px) {
   .slider-section .upper-sec {
@@ -1524,16 +1571,20 @@ img {
 }
 .slider-section .upper-sec .slider-nav {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   right: 0;
+  transform: translate(0, -50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 @media only screen and (max-width: 768px) {
   .slider-section .upper-sec .slider-nav {
     display: none;
   }
 }
-.slider-section .upper-sec .slider-nav .swiper-prev {
-  margin-right: 22px;
+.slider-section .upper-sec .slider-nav .swiper-prev svg, .slider-section .upper-sec .slider-nav .swiper-prev img {
+  transform: scaleX(-1);
 }
 .slider-section .upper-sec .heading {
   text-align: center;

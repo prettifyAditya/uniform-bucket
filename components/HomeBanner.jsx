@@ -1,27 +1,47 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import { Navigation, Pagination } from "swiper/modules"
+import { Navigation, Pagination, Autoplay } from "swiper/modules"
 import Link from "next/link"
  
 export default function HomeBanner() {
     const swiperRef = useRef(null)
+    const [isPaused, setIsPaused] = useState(false)
+    const [swiperInstance, setSwiperInstance] = useState(null)
+
     useEffect(() => {
     setTimeout(() => {
-            if (swiperRef.current) {
+            if (swiperRef.current?.swiper) {
                 swiperRef.current.swiper.navigation.update();
             }
         }, 100)
     }, []);
+    const toggleAutoplay = () => {
+        const swiperInstance = swiperRef.current?.swiper
+        if(!swiperInstance) {
+            return
+        }
+        if(isPaused){
+            swiperInstance.autoplay.start()
+        } else {
+            swiperInstance.autoplay.stop()
+        }
+        setIsPaused(!isPaused)
+    }
     return(
         <div className="hero_sec">
             <Swiper
             className="hero_slider"
+            onSwiper={setSwiperInstance}
             ref={swiperRef}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
+            autoplay = {{
+                delay: 2000,
+                disableOnInteraction: false,
+            }}
             slidesPerView={1}
             speed={1000}
             navigation={{
@@ -33,7 +53,6 @@ export default function HomeBanner() {
                 el: ".progress_bar",
                 type: "progressbar",
             }}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
         > 
                 <SwiperSlide>
                     <div className="home-banner banner">
@@ -147,9 +166,12 @@ export default function HomeBanner() {
                 </button>
             </div>
             <div className="scrollbar_wrapper container">
-                <button className="play_btn">
+                <button className={`play_btn ${isPaused ? 'pause' : ''}`} onClick={toggleAutoplay}>
                 </button>
                 <div className="progress_bar"></div>
+            </div>
+            <div className="soundbar">
+                <img src="/assets/icon/sound-off.svg" alt="Sound Off" />
             </div>
         </div>
     )
