@@ -127,4 +127,54 @@
      object-fit: contain;
   filter: grayscale(1);
   transition: 0.5s ease;
+}
+
+.home-secA .heading {
+  margin-bottom: 3rem;
+}
+.home-secA .profession_grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 6px 8px;
+}
+.home-secA .profession_grid .profession_col::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%);
+}
+.home-secA .profession_grid .profession_col figcaption {
+  text-align: center;
+  padding: 0 10px 20px;
+  bottom: 10%;
+  translate: 0 10%;
+}
+.home-secA .profession_grid .profession_col figcaption h6, .home-secA .profession_grid .profession_col figcaption p {
+  color: var(--white);
+  transition: 0.6s ease;
+}
+.home-secA .profession_grid .profession_col figcaption h6 {
+  font-size: 24px;
+}
+.home-secA .profession_grid .profession_col figcaption p {
+  font-size: 14px;
+}
+.home-secA .btn_wrapper {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.promo-sec .bg {
+  height: 80vh;
+}
+.promo-sec .banner-wrapper {
+  top: unset;
+  bottom: 15%;
+  translate: 0 15%;
+}
+.promo-sec .banner-wrapper h2 {
+  font-size: 50px;
+  color: var(--white);
+  line-height: 1.2;
+  padding-bottom: 10px;
+}
+.promo-sec .banner-wrapper p {
+  color: var(--white);
+  padding-bottom: 50px;
 }/*# sourceMappingURL=home.css.map */

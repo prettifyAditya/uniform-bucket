@@ -542,18 +542,12 @@
   --black: #000000;
   --gray: #F1F1F1;
   --container: 1280px;
-  --containerfluid: 2rem;
+  --containerfluid: 10px;
   --gradient-a: linear-gradient(90deg, #FFFFFF 40%, #EFEFEF);
   --gradient-b: linear-gradient(90deg, #EFEFEF 30%, #FFFFFF);
 }
-@media only screen and (max-width: 1152px) {
-  :root {
-    --containerfluid: 1rem;
-  }
-}
 @media only screen and (max-width: 991px) {
   :root {
-    --containerfluid: 15px;
     --headerheight: 100px;
     --headerfixed: 80px;
   }
@@ -566,7 +560,6 @@
 }
 @media only screen and (max-width: 540px) {
   :root {
-    --containerfluid: 10px;
     --headerheight: 70px;
     --headerfixed: 60px;
   }
