@@ -4,6 +4,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css"
 import "swiper/css/navigation"
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 export default function TestimonySlider() {
     const swiperRef = useRef(null)
     useEffect(() => {
@@ -14,7 +15,7 @@ export default function TestimonySlider() {
         }, 100)
     }, [])
     return(
-        <div className="testimony_slider_wrapper gray-bg sec-pad">
+        <div className="testimony_slider_wrapper sec-pad">
                     <div className="container-fluid slider-section">
                         <div className="upper-sec">
                         <div className="heading">
@@ -54,7 +55,49 @@ export default function TestimonySlider() {
                         <SwiperSlide>
                             <div className="item-md testimony_col">
                                 <figure>
-                                    <Image src="/assets/images/product/product1.jpg" width="344" height="439" alt="Product Image"></Image>
+                                    <Image src="/assets/images/category/category1.jpg" width="344" height="439" alt="Product Image"></Image>
+                                </figure>
+                                <figcaption>
+                                    <div className="content">
+                                        <h6>Chung Eui-sun</h6>
+                                        <p>Chairman Hundai</p>
+                                    </div>
+                                    <button className="play-btn"></button>
+                                </figcaption>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="item-md testimony_col">
+                                <figure>
+                                    <Image src="/assets/images/category/category2.jpg" width="344" height="439" alt="Product Image"></Image>
+                                </figure>
+                                <figcaption>
+                                    <div className="content">
+                                        <h6>Chung Eui-sun</h6>
+                                        <p>Chairman Hundai</p>
+                                    </div>
+                                    <button className="play-btn"></button>
+                                </figcaption>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="item-md testimony_col">
+                                <figure>
+                                    <Image src="/assets/images/category/category3.jpg" width="344" height="439" alt="Product Image"></Image>
+                                </figure>
+                                <figcaption>
+                                    <div className="content">
+                                        <h6>Chung Eui-sun</h6>
+                                        <p>Chairman Hundai</p>
+                                    </div>
+                                    <button className="play-btn"></button>
+                                </figcaption>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="item-md testimony_col">
+                                <figure>
+                                    <Image src="/assets/images/category/category1.jpg" width="344" height="439" alt="Product Image"></Image>
                                 </figure>
                                 <figcaption>
                                     <div className="content">

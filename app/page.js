@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BestSellerSlider from "@/components/BestSellerSlider";
 import CounterBanner from "@/components/CounterBanner";
+import TestimonySlider from "@/components/TestimonySlider";
 
 export default function Home() {
   return (
@@ -75,6 +76,7 @@ export default function Home() {
      </div>
      <BestSellerSlider />
      <CounterBanner />
+     <TestimonySlider />
      <div className="home-secB sec-pad">
       <div className="container">
         <div className="video">

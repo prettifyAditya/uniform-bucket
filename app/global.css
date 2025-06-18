@@ -984,34 +984,98 @@ button {
   translate: 0 -50%;
 }
 
+.testimony_col::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%);
+}
+.testimony_col figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 20px;
+  bottom: 3%;
+  translate: 0 3%;
+}
+.testimony_col figcaption .content h6, .testimony_col figcaption .content p {
+  color: var(--white);
+}
+.testimony_col figcaption .content h6 {
+  font-size: 24px;
+}
+.testimony_col figcaption .content p {
+  font-size: 14px;
+}
+.testimony_col figcaption .play-btn {
+  --btnsize: 40px;
+}
+
 .product_col {
   height: 100%;
   width: 100%;
-  padding: 30px 20px;
   background-color: var(--white);
+  position: relative;
+}
+.product_col:hover figure img {
+  transform: scale(1);
+}
+.product_col:hover .hoverItem {
+  transform: translateY(0);
 }
 .product_col figure {
-  height: 100%;
+  height: 500px;
   width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
 }
 .product_col figure img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  transform: scale(0.9);
 }
 .product_col figcaption {
-  padding: 10px 0 0 0;
+  overflow: hidden;
+  padding: 0 20px 30px;
 }
 .product_col figcaption h6 {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  padding-bottom: 5px;
+  padding: 0 20px 5px;
 }
 .product_col figcaption p {
   font-size: 14px;
   font-weight: 400;
+  padding: 0 20px 0px;
+}
+.product_col .wislist {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  transform: translate(5%, -3%);
+}
+.product_col .hoverItem {
+  display: flex;
+  align-items: center;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.product_col .hoverItem a, .product_col .hoverItem button {
+  flex: 1;
+  text-align: center;
+  padding: 15px 10px;
+  line-height: 1.2;
+}
+.product_col .hoverItem .enquireBtn {
+  background: var(--black);
+  color: var(--white);
+}
+.product_col .hoverItem .viewDetails {
+  background: var(--gray);
+  color: var(--black);
 }
 
 .category_col::before {
@@ -1125,42 +1189,37 @@ img {
   transition: 0.5s ease;
 }
 
-.btn, .btn2 {
+.btn {
+  --padding: 10px;
+  --height: 36px;
   height: var(--height);
   line-height: var(--height);
-  font-weight: 500;
-  align-items: center;
+  text-transform: uppercase;
   display: inline-flex;
   overflow: hidden;
-  text-transform: uppercase;
-  color: var(--black);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  transition: 0.5s ease;
-  caret-color: transparent;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  z-index: 1;
-}
-.btn.w-100, .btn2.w-100 {
-  width: 100%;
-}
-
-.btn {
-  --padding: 18px;
-  --height: 36px;
+  align-items: center;
   justify-content: center;
   font-weight: 500;
   gap: 10px;
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: 0.1em;
-  background: var(--white);
-  color: var(--black);
+  color: var(--white);
   padding: 0 var(--padding);
   transition: 0.5s ease;
+  border-bottom: 1px solid var(--white);
+  position: relative;
+}
+.btn::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--white);
+  height: 0;
+  transition: 0.3s ease;
+  z-index: -1;
 }
 @media only screen and (max-width: 768px) {
   .btn {
@@ -1175,8 +1234,10 @@ img {
   }
 }
 .btn:hover {
-  background: var(--primary);
-  color: var(--white);
+  color: var(--black);
+}
+.btn:hover::before {
+  height: 100%;
 }
 .btn:hover path {
   fill: var(--primary);
@@ -1184,6 +1245,9 @@ img {
 .btn.btn-large, .btn.btn-medium {
   font-size: 16px;
   letter-spacing: 0px;
+}
+.btn.w-100 {
+  width: 100%;
 }
 .btn.btn-large {
   --height: 52px;
@@ -1571,6 +1635,11 @@ img {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--primary);
+}
+
+.container-fluid.slider-section .upper-sec .slider-nav {
+  right: 3%;
+  transform: translate(3%, -50%);
 }
 
 @media only screen and (max-width: 675px) {

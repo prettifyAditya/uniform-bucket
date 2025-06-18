@@ -7,6 +7,7 @@ import "swiper/css/navigation"
 import Link from "next/link"
 import CategoryItem from "./CategoryItem";
 import Image from "next/image";
+import ProductCol from "./ProductCol";
 
 export default function BestSellerSlider(){
     const swiperRef = useRef(null)
@@ -56,59 +57,39 @@ export default function BestSellerSlider(){
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
                 <SwiperSlide>
-                    <div className="product_col">
-                        <figure>
-                            <Image src="/assets/images/product/product1.jpg" width="344" height="439" alt="Product Image"></Image>
-                        </figure>
-                        <figcaption>
-                            <h6>Black Formal Blazer For Men</h6>
-                            <p>₹ 2,513.00</p>
-                        </figcaption>
-                    </div>
+                    <ProductCol
+                        imgSrc="/assets/images/product/product1.jpg"
+                        proName="Black Formal Blazer For Men"
+                        price="₹ 2,513.00"
+                    />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="product_col">
-                        <figure>
-                            <Image src="/assets/images/product/product2.jpg" width="344" height="439" alt="Product Image"></Image>
-                        </figure>
-                        <figcaption>
-                            <h6>Black Formal Blazer For Men</h6>
-                            <p>₹ 2,513.00</p>
-                        </figcaption>
-                    </div>
+                    <ProductCol
+                        imgSrc="/assets/images/product/product2.jpg"
+                        proName="Black Formal Blazer For Men"
+                        price="₹ 2,513.00"
+                    />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="product_col">
-                        <figure>
-                            <Image src="/assets/images/product/product3.jpg" width="344" height="439" alt="Product Image"></Image>
-                        </figure>
-                        <figcaption>
-                            <h6>Black Formal Blazer For Men</h6>
-                            <p>₹ 2,513.00</p>
-                        </figcaption>
-                    </div>
+                    <ProductCol
+                        imgSrc="/assets/images/product/product3.jpg"
+                        proName="Black Formal Blazer For Men"
+                        price="₹ 2,513.00"
+                    />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="product_col">
-                        <figure>
-                            <Image src="/assets/images/product/product1.jpg" width="344" height="439" alt="Product Image"></Image>
-                        </figure>
-                        <figcaption>
-                            <h6>Black Formal Blazer For Men</h6>
-                            <p>₹ 2,513.00</p>
-                        </figcaption>
-                    </div>
+                    <ProductCol
+                        imgSrc="/assets/images/product/product1.jpg"
+                        proName="Black Formal Blazer For Men"
+                        price="₹ 2,513.00"
+                    />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="product_col">
-                        <figure>
-                            <Image src="/assets/images/product/product2.jpg" width="344" height="439" alt="Product Image"></Image>
-                        </figure>
-                        <figcaption>
-                            <h6>Black Formal Blazer For Men</h6>
-                            <p>₹ 2,513.00</p>
-                        </figcaption>
-                    </div>
+                    <ProductCol
+                        imgSrc="/assets/images/product/product2.jpg"
+                        proName="Black Formal Blazer For Men"
+                        price="₹ 2,513.00"
+                    />
                 </SwiperSlide>
             </Swiper>
             </div>

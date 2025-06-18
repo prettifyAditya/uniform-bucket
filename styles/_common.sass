@@ -269,28 +269,84 @@ button
             top: 50%
             translate: 0 -50%
 
+.testimony_col
+    &::before
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%)
+    figcaption
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 0 20px 20px
+        bottom: 3%
+        translate: 0 3%
+        .content
+            h6, p
+                color: $white
+            h6
+                font-size: 24px
+            p
+                font-size: 14px
+        .play-btn
+            --btnsize: 40px
+
+
 .product_col
     height: 100%
     width: 100%
-    padding: 30px 20px
     background-color: $white
+    position: relative
+    &:hover
+        figure
+            img
+                transform: scale(1)
+        .hoverItem
+            transform: translateY(0)
     figure
-        height: 100%
+        height: 500px
         width: 100%
+        overflow: hidden
+        padding: 20px 0
         img
             width: 100%
             height: 100%
             object-fit: contain
+            transform: scale(0.9)
     figcaption
-        padding: 10px 0 0 0 
+        overflow: hidden
+        padding: 0 20px 30px
         h6
             font-family: $Lato
             font-size: 16px
             font-weight: 700
-            padding-bottom: 5px
+            padding: 0 20px 5px
         p
             font-size: 14px
             font-weight: 400
+            padding: 0 20px 0px
+    .wislist
+        position: absolute
+        top: 3%
+        right: 5%
+        transform: translate(5%, -3%)
+    .hoverItem
+        display: flex
+        align-items: center
+        transform: translateY(100%)
+        transition: .5s ease
+        width: 100%
+        position: absolute
+        bottom: 0
+        a, button
+            flex: 1
+            text-align: center
+            padding: 15px 10px
+            line-height: 1.2
+        .enquireBtn
+            background: $black
+            color: $white
+        .viewDetails
+            background: var(--gray)
+            color: $black
 
 
 .category_col
@@ -380,35 +436,36 @@ img
     width: 100%
     object-fit: cover
     transition: .5s ease
-.btn,.btn2
+.btn
+    --padding: 10px
+    --height: 36px
     height: var(--height)
     line-height: var(--height)
-    font-weight: 500
-    align-items: center
+    text-transform: uppercase
     display: inline-flex
     overflow: hidden
-    text-transform: uppercase
-    color: $black
-    appearance: none
-    transition: .5s ease
-    caret-color: transparent
-    user-select: none
-    z-index: 1
-    &.w-100
-        width: 100%
-.btn
-    --padding: 18px
-    --height: 36px
+    align-items: center
     justify-content: center
     font-weight: 500
     gap: 10px
     font-size: 14px
     line-height: 1.2
     letter-spacing: 0.1em
-    background: $white
-    color: $black
+    color: $white
     padding: 0 var(--padding)
     transition: .5s ease
+    border-bottom: 1px solid $white
+    position: relative
+    &::before
+        content: ""
+        width: 100%
+        position: absolute
+        left: 0
+        bottom: 0
+        background-color: $white
+        height: 0
+        transition: .3s ease
+        z-index: -1
     @include media(768)
         height: 30px
     @include media(540)
@@ -416,13 +473,16 @@ img
         font-size: 12px
         --padding: 14px
     &:hover
-        background: var(--primary)
-        color: $white
+        color: $black
+        &::before
+            height: 100%
         path
             fill: $primary
     &.btn-large,&.btn-medium
         font-size: 16px
         letter-spacing: 0px
+    &.w-100
+        width: 100%
     &.btn-large
         --height: 52px
         --padding: 38px
@@ -709,6 +769,16 @@ img
                 aspect-ratio: 1
                 border-radius: 50%
                 background: $primary
+
+.container-fluid
+    &.slider-section
+        .upper-sec
+            .slider-nav
+                right: 3%
+                transform: translate(3%, -50%)
+
+
+
 .slider-section
     .container
         @include media(675)
