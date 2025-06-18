@@ -39,6 +39,7 @@ export default function ClientSlider(){
                             spaceBetween: 50,
                         },
                     }}
+                    onSwiper={(swiper) => (swiperRef.current = swiper)}
                 >
                     <SwiperSlide>
                         <figure>

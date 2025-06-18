@@ -52,6 +52,7 @@ export default function CategorySlider(){
                         spaceBetween: 7,
                     },
                 }}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
                 <SwiperSlide>
                     <CategoryItem

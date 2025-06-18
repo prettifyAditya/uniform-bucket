@@ -53,6 +53,7 @@ export default function BestSellerSlider(){
                         spaceBetween: 7,
                     },
                 }}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
                 <SwiperSlide>
                     <div className="product_col">
