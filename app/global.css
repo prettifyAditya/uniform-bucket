@@ -984,6 +984,36 @@ button {
   translate: 0 -50%;
 }
 
+.product_col {
+  height: 100%;
+  width: 100%;
+  padding: 30px 20px;
+  background-color: var(--white);
+}
+.product_col figure {
+  height: 100%;
+  width: 100%;
+}
+.product_col figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.product_col figcaption {
+  padding: 10px 0 0 0;
+}
+.product_col figcaption h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+.product_col figcaption p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .category_col::before {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%);
 }

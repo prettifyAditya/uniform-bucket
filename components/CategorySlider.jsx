@@ -7,7 +7,7 @@ import "swiper/css/navigation"
 import Link from "next/link"
 import CategoryItem from "./CategoryItem";
 
-export default function CategorySlider({ content }){
+export default function CategorySlider(){
     const swiperRef = useRef(null)
     useEffect(() => {
         setTimeout(() => {

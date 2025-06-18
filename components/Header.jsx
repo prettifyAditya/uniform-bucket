@@ -1,7 +1,24 @@
 import Image from "next/image"
 import Link from "next/link"
 import "../styles/header/header.css"
+import { useEffect } from "react"
 export default function Header(){
+    useEffect(() => {
+        if(typeof window === "undefined") return
+        const handleScroll = () => {
+            const header = document.querySelector("header")
+            if(!header) return
+            if (window.scrollY > 100){
+                header.classList.add("header-fixed")
+            } else {
+                header.classList.remove("header-fixed")
+            }
+        }
+        handleScroll()
+        window.addEventListener('scroll', handleScroll);
+
+        return() => window.removeEventListener("scroll", handleScroll)
+    }, [])
     return(
         <>
             <header>
