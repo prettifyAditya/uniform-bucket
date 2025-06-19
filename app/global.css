@@ -1136,7 +1136,6 @@ button {
   background: rgba(0, 0, 0, 0.7);
   transform: translateY(100%);
   transition: 0s ease 0.5s, opacity 0.5s ease;
-  pointer-events: none;
   cursor: pointer;
 }
 @media only screen and (max-width: 991px) {
@@ -1150,6 +1149,36 @@ button {
   }
 }
 .overlay.is-open {
+  transition: opacity 1s ease;
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.overlay2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 5;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(100%);
+  transition: 0s ease 0.5s, opacity 0.5s ease;
+  pointer-events: none;
+  cursor: pointer;
+}
+@media only screen and (max-width: 991px) {
+  .overlay2 {
+    z-index: 2;
+  }
+}
+@media only screen and (max-width: 675px) {
+  .overlay2 {
+    display: none;
+  }
+}
+.overlay2.is-open {
   transition: opacity 1s ease;
   opacity: 1;
   transform: translateY(0%);
@@ -1211,16 +1240,18 @@ img {
   border-bottom: 1px solid var(--white);
   position: relative;
 }
-.btn::before {
+.btn::before, .btn::after {
   content: "";
   width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: var(--white);
   height: 0;
   transition: 0.3s ease;
   z-index: -1;
+}
+.btn::before {
+  background-color: var(--white);
 }
 @media only screen and (max-width: 768px) {
   .btn {
@@ -1265,36 +1296,48 @@ img {
   background: linear-gradient(270deg, #FFFFFF, #ffffff);
   color: #000;
 }
-.btn.white {
-  border-color: var(--white);
-  background: var(--white);
-  color: var(--black);
+.btn.black_round {
+  color: var(--white);
+  border-radius: 50px;
+  border: 1px solid var(--black);
 }
-.btn.white path {
+.btn.black_round path {
   fill: var(--black);
 }
-.btn.white:hover {
-  border-color: var(--primary);
-  background: var(--primary);
-  color: var(--white);
+.btn.black_round::after {
+  background-color: var(--black);
+  height: 100%;
 }
-.btn.white:hover path {
+.btn.black_round:hover {
+  color: var(--black);
+  background-color: var(--white);
+}
+.btn.black_round:hover::after {
+  height: 0;
+}
+.btn.black_round:hover::before {
+  height: 100%;
+}
+.btn.black_round:hover path {
   fill: var(--white);
 }
-.btn.primary-border {
-  background: none;
-  border: 1px solid #D1D1D1;
-  color: var(--primary);
+.btn.black-border {
+  border: 1px solid #000;
+  color: var(--black);
 }
-.btn.primary-border path {
+.btn.black-border path {
   fill: var(--primary);
 }
-.btn.primary-border:hover {
-  background: var(--primary);
-  color: var(--white);
-  border: 1px solid var(--primary);
+.btn.black-border::before {
+  background-color: var(--black);
 }
-.btn.primary-border:hover path {
+.btn.black-border:hover {
+  color: var(--white);
+}
+.btn.black-border:hover::before {
+  width: 100%;
+}
+.btn.black-border:hover path {
   fill: var(--white);
 }
 

@@ -1,6 +1,9 @@
+"use client"
 import Image from "next/image"
 import "../styles/footer/footer.css"
 import Link from "next/link"
+import EnquirePop from "./EnquirePop"
+import SearchPop from "./SearchPop"
 export default function Footer(){
     return(
         <>
@@ -105,7 +108,25 @@ export default function Footer(){
                     </div>
                 </div>
             </footer>
-            <div className="overlay"></div>
+            <div className="overlay" onClick={() => { document.querySelector(".enquire-pop").classList.remove("is-open");
+                document.querySelector(".overlay").classList.remove("is-open");
+                document.querySelector("body").classList.remove("overflow-hidden");
+            }}></div>
+            <div className="sticky_action flex">
+                <Link className="whatsapp" href="javascript:;">
+                    <Image src="/assets/icon/whatsapp.svg" width="24" height="24" alt="Whatsapp"></Image>
+                </Link>
+                <button className="call_action" onClick={() => {
+                    document.querySelector('.enquire-pop').classList.add('is-open')
+                    document.querySelector('.overlay').classList.add('is-open')
+                    document.querySelector('body').classList.add('overflow-hidden')
+                }}>
+                    <Image src="/assets/icon/ub_grad.svg" width="29" height="27" alt="Uniform Buacket"></Image>
+                    <p>Request a call</p>
+                </button>
+            </div>
+            <EnquirePop />
+            <SearchPop />
         </>
     )
 }

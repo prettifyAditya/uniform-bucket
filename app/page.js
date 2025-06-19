@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
      <HomeBanner />
-     <CategorySlider />
+     <CategorySlider classname="sec-pad" />
      <ClientSlider />
      <div className="home-secA sec-pad">
         <div className="container-fluid">
@@ -58,7 +58,7 @@ export default function Home() {
               </div>
             </div>
             <div className="btn_wrapper">
-              <Link href="javascript:;" className="btn">Explore All Products</Link>
+              <Link href="javascript:;" className="btn black-border">Explore All Products</Link>
             </div>
         </div>
      </div>

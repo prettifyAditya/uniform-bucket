@@ -3,10 +3,12 @@ import Image from "next/image"
 import Link from "next/link"
 import "../styles/header/header.css"
 import { useEffect } from "react"
+import { useModalStore } from '../store/modalStore';
 export default function Header(){
+    const openSearch = useModalStore((state) => state.openSearch);
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
-        let overlay = document.querySelector('.overlay')
+        let overlay = document.querySelector('.overlay2')
         dropdownLi.forEach(dropdown => {
             dropdown.addEventListener('mouseenter', ()=> {
                 dropdown.classList.add('active')
@@ -88,49 +90,11 @@ export default function Header(){
                             <li><Link href="javascript:;">Security</Link></li>
                             <li><Link href="javascript:;">Hospital</Link></li>
                             <li><Link href="javascript:;">By Profession</Link></li>
-                            <li className="hasDropdown">
-                                <Link href="javascript:;">Corporate</Link>
-                                <div className="dropdown-menu" role="menu">
-                                    <div className="dropdown-menu-wrap flex">
-                                        <div className="colA-md">
-                                            <ul className="subcat-ul">
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
-                                                </li>
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
-                                                </li>
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
-                                                </li>
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
-                                                </li>
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
-                                                </li>
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
-                                                </li>
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
-                                                </li>
-                                                <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className="colB-md">
-                                            <video src="/assets/images/category/category1_video.mp4" autoPlay muted loop playsInline></video>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                     <div className="colC">
                         <ul className="call_action">
-                            <li><Link href="javascript:;"><img src="/assets/icon/search-white.svg" alt="Search Icon" /></Link></li>
+                            <li onClick={openSearch}><Link href="javascript:;"><img src="/assets/icon/search-white.svg" alt="Search Icon" /></Link></li>
                             <li><Link href="javascript:;"><img src="/assets/icon/user-white.svg" alt="User Icon" /></Link></li>
                             <li><Link href="javascript:;"><img src="/assets/icon/like-white.svg" alt="Wishlist Icon" /></Link></li>
                             <li><Link href="javascript:;"><img src="/assets/icon/cart-white.svg" alt="Cart Icon" /></Link></li>
@@ -138,6 +102,7 @@ export default function Header(){
                     </div>
                 </div>
             </header>
+            <div className="overlay2"></div>
         </>
     )
 }

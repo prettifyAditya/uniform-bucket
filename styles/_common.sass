@@ -399,6 +399,26 @@ button
     background: rgb(0 0 0 /.7)
     transform: translateY(100%)
     transition: 0s ease .5s,opacity .5s ease
+    cursor: pointer
+    @include media(991)
+        z-index: 2
+    @include media(675)
+        display: none
+    &.is-open
+        transition: opacity 1s ease
+        opacity: 1
+        transform: translateY(0%)
+.overlay2
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    z-index: 5
+    opacity: 0
+    background: rgb(0 0 0 /.7)
+    transform: translateY(100%)
+    transition: 0s ease .5s,opacity .5s ease
     pointer-events: none
     cursor: pointer
     @include media(991)
@@ -457,16 +477,17 @@ img
     transition: .5s ease
     border-bottom: 1px solid $white
     position: relative
-    &::before
+    &::before, &::after
         content: ""
         width: 100%
         position: absolute
         left: 0
         bottom: 0
-        background-color: $white
         height: 0
         transition: .3s ease
         z-index: -1
+    &::before
+        background-color: $white
     @include media(768)
         height: 30px
     @include media(540)
@@ -496,28 +517,35 @@ img
             // background: linear-gradient(270deg, #FFFFFF, #B9B9B9)
             background: linear-gradient(270deg, #FFFFFF, #ffffff)
             color: #000
-    &.white
-        border-color: $white
-        background: $white
-        color: $black
+    &.black_round
+        color: $white
+        border-radius: 50px
+        border: 1px solid $black
         path
             fill: $black
+        &::after
+            background-color: $black
+            height: 100%
         &:hover
-            border-color: $primary
-            background: $primary
-            color: $white
+            color: $black
+            background-color: $white
+            &::after
+                height: 0
+            &::before
+                height: 100%
             path
                 fill: $white
-    &.primary-border
-        background: none
-        border: 1px solid #D1D1D1
-        color: $primary
+    &.black-border
+        border: 1px solid #000
+        color: $black
         path
             fill: $primary
+        &::before
+            background-color: $black
         &:hover
-            background: $primary
             color: $white
-            border: 1px solid var(--primary)
+            &::before
+                width: 100%
             path
                 fill: $white
 .btn2

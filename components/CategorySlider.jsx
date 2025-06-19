@@ -7,7 +7,7 @@ import "swiper/css/navigation"
 import Link from "next/link"
 import CategoryItem from "./CategoryItem";
 
-export default function CategorySlider(){
+export default function CategorySlider({ classname }){
     const swiperRef = useRef(null)
     useEffect(() => {
         setTimeout(() => {
@@ -17,7 +17,7 @@ export default function CategorySlider(){
         }, 100);
     }, [])
     return(
-        <div className="category_slider_wrapper sec-pad">
+        <div className={`category_slider_wrapper ${classname}`}>
             <div className="container-fluid slider-section">
                 <div className="upper-sec">
                 <div className="heading">

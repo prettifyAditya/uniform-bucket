@@ -44,32 +44,31 @@ header
                     display: flex
                     align-items: center
                     &.hasDropdown
+                        position: relative
                         &.active
                             .dropdown-menu
                                 opacity: 1
                                 transform: scale3d(1, 1, 1)
-                        >a
-                            position: relative
                         .dropdown-menu
                             position: absolute
                             background: $white
                             top: 100%
-                            left: 40%
-                            translate: -40% 0
+                            left: 0%
+                            translate: 0% 0
                             transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
                             transform-origin: top
                             transition: .4s ease
                             opacity: 0
                             width: 100%
-                            max-width: 500px
+                            min-width: 500px
                             z-index: 5
                             &::before
                                 content: ""
                                 display: block
                                 position: absolute
                                 bottom: calc(100% - 15px / 2)
-                                left: 20%
-                                translate: -20% 0
+                                left: 5%
+                                translate: -5% 0
                                 width: 15px
                                 height: 15px
                                 background: #fff
@@ -77,7 +76,6 @@ header
                                 z-index: 4
                             .dropdown-menu-wrap
                                 height: 300px
-                                overflow-y: auto
                                 width: 100%
                                 --rightwidth: 45%
                                 --ulpadding: 25px 15px 20px 30px
@@ -86,8 +84,17 @@ header
                                     width: 100%
                                     height: 100%
                                     position: relative
+                                    overflow-y: auto
+                                    &::-webkit-scrollbar
+                                        width: $scrollwidth
+                                        background: $white
+                                    &::-webkit-scrollbar-track
+                                        box-shadow: none
+                                    &::-webkit-scrollbar-thumb
+                                        background-color: #000
                                     .subcat-ul
                                         padding: var(--ulpadding)
+                                        overflow-y: auto
                                         .subcat-li
                                             position: relative
                                             transition: .5s ease
@@ -932,10 +939,9 @@ header
             .upper-sec
                 .heading
                     h3
-                        color: #000
+                        color: #000 
                         font-weight: 500
         .search-result-prdct-wrap
-            display: none
             .search-result-prdct
                 display: grid
                 grid-template-columns: repeat(4,1fr)
@@ -993,3 +999,49 @@ div
             margin: 10px 0 3rem 
 
 
+.enquire-pop
+    right: 0
+    transform: translateX(100%)
+    transition: .5s ease
+    background: #fff
+    &.is-open
+        transform: translateX(0%)
+    .model-body
+        margin-top: 60px
+        overflow-y: auto
+        padding: 0px 35px 30px
+        height: 100%
+        @include scrollbar(3px,$white,#5e5e5e,8px)
+        .title
+            text-align: center
+            margin-bottom: 2rem
+            .icon
+                width: 68px
+                height: 64px
+                margin: 0 auto 30px
+            h2
+                font-size: 24px
+                color: $black
+                letter-spacing: 2px
+                @include font(500)
+            p
+                color: $text
+                margin-top: 10px
+                font-size: 16px
+                line-height: 1.2
+                max-width: 340px
+                margin-left: auto
+                margin-right: auto
+                @include media(675)
+                    font-size: 14px
+                    max-width: 300px
+        .form
+            --gaptb: 20px
+            --item: 1
+            --labelbefore: var(--text)
+            --labelafter: #000
+            --borderbefore: var(--text)
+            --borderafter: #000
+        .btn
+            margin: 20px auto 0
+            width: 100%
