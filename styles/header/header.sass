@@ -6,7 +6,7 @@ header
     right: 0
     bottom: 0
     left: 0
-    z-index: 5
+    z-index: 6
     transition: .5s ease
     height: var(--headerheight)
     @include after($black)
@@ -30,13 +30,99 @@ header
                     height: 100%
         .colB
             flex: 1
+            height: 100%    
             .navlist
                 display: flex
                 align-items: center
                 justify-content: center
                 gap: 30px
+                height: 100%
                 a
                     font-size: 14px
+                li
+                    height: 100%
+                    display: flex
+                    align-items: center
+                    &.hasDropdown
+                        &.active
+                            .dropdown-menu
+                                opacity: 1
+                                transform: scale3d(1, 1, 1)
+                        >a
+                            position: relative
+                        .dropdown-menu
+                            position: absolute
+                            background: $white
+                            top: 100%
+                            left: 40%
+                            translate: -40% 0
+                            transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
+                            transform-origin: top
+                            transition: .4s ease
+                            opacity: 0
+                            width: 100%
+                            max-width: 500px
+                            z-index: 5
+                            &::before
+                                content: ""
+                                display: block
+                                position: absolute
+                                bottom: calc(100% - 15px / 2)
+                                left: 20%
+                                translate: -20% 0
+                                width: 15px
+                                height: 15px
+                                background: #fff
+                                transform: rotate(45deg)
+                                z-index: 4
+                            .dropdown-menu-wrap
+                                height: 300px
+                                overflow-y: auto
+                                width: 100%
+                                --rightwidth: 45%
+                                --ulpadding: 25px 15px 20px 30px
+                                .colA-md
+                                    flex: 1 
+                                    width: 100%
+                                    height: 100%
+                                    position: relative
+                                    .subcat-ul
+                                        padding: var(--ulpadding)
+                                        .subcat-li
+                                            position: relative
+                                            transition: .5s ease
+                                            &:hover
+                                                padding-left: 15px
+                                                &::before
+                                                    opacity: 1
+                                            &::before
+                                                content: ""
+                                                position: absolute
+                                                top: 40%
+                                                left: 0
+                                                translate: 0 -40%
+                                                background: url(/assets/icon/next-black.svg) no-repeat
+                                                width: 13px
+                                                height: 13px
+                                                background-size: contain
+                                                opacity: 0
+                                                transition: .5s ease
+                                            a
+                                                display: block
+                                                padding-bottom: 7px
+                                                color: $text
+                                                &:hover
+                                                    color: $black
+                                .colB-md
+                                    width: 100%
+                                    height: 100%
+                                    flex: 0 1 var(--rightwidth)
+                                    video, img
+                                        width: 100%
+                                        height: 100%
+                                        object-fit: cover
+                        
+
         .colC
             flex: 0 1 auto
             .call_action
