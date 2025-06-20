@@ -4,7 +4,7 @@ import { useModalStore } from '../store/modalStore';
 
 export default function Overlay() {
   const isSearchOpen = useModalStore((state) => state.isSearchOpen);
-  const isHamOpen = useModalStore((state) => state.isLoginOpen);
+  const isHamOpen = useModalStore((state) => state.isHamOpen);
   const isEnquireOpen = useModalStore((state) => state.isEnquireOpen);
   const closeAll = useModalStore((state) => state.closeAll);
 

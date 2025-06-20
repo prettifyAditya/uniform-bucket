@@ -331,7 +331,7 @@ export default function Header(){
                     </div>
                     <div className="colC">
                         <ul className="call_action">
-                            <li onClick={openSearch}><Link href="javascript:;"><img src="/assets/icon/search-white.svg" alt="Search Icon" /></Link></li>
+                            <li onClick={openSearch}><button><img src="/assets/icon/search-white.svg" alt="Search Icon" /></button></li>
                             <li className="myAccount"><Link href="javascript:;"><img src="/assets/icon/user-white.svg" alt="User Icon" /></Link>
                                 <div className="dropdown-menu">
                                     <ul>

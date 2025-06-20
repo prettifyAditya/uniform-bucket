@@ -3372,8 +3372,8 @@ header.header-shadow {
 }
 .model.ham-pop .model-body {
   padding: 0px 40px 30px;
-  margin-top: 60px;
-  height: calc(100% - 60px);
+  margin-top: 40px;
+  height: calc(100% - 40px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -3443,7 +3443,7 @@ header.header-shadow {
   justify-content: space-between;
   align-items: center;
 }
-.model.ham-pop .model-body .nav-list > li.hamDropdown .title.active svg {
+.model.ham-pop .model-body .nav-list > li.hamDropdown .title.active img {
   transform: rotate(90deg);
 }
 .model.ham-pop .model-body .nav-list > li.hamDropdown .title h5 {
@@ -3464,17 +3464,40 @@ header.header-shadow {
   width: 16px;
 }
 .model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham {
-  display: none;
-  padding-top: 15px;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham.active {
+  max-height: 300px;
+  padding-top: 10px;
+  opacity: 1;
+  pointer-events: auto;
 }
 .model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham ul {
-  border-top: 1px solid #dadada;
-  border-bottom: 1px solid #dadada;
-  padding: 15px 10px;
+  padding: 0 10px 10px 10px;
+  max-height: 175px;
+  overflow-y: auto;
+}
+.model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham ul::-webkit-scrollbar {
+  width: 4px;
+  background: #fff;
+  height: 4px;
+}
+.model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham ul::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+.model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham ul::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 4px;
+}
+.model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham ul li:first-child a {
+  padding-top: 0;
 }
 .model.ham-pop .model-body .nav-list > li.hamDropdown .dropdown-menu-ham ul li a {
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   color: #666;
   padding: 5px 0;
   transition: 0.5s ease;
@@ -3516,6 +3539,7 @@ header.header-shadow {
 }
 .model.ham-pop .model-body .bottom-list .social-icons a:hover img {
   transform: scale(1.1);
+  opacity: 0.5;
 }
 .model.ham-pop .model-body .bottom-list .social-icons a img {
   width: 24px;

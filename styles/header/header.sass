@@ -661,8 +661,8 @@ header
                 stroke-width: 2 !important
     .model-body
         padding: 0px 40px 30px
-        margin-top: 60px
-        height: calc(100% - 60px)
+        margin-top: 40px
+        height: calc(100% - 40px)
         overflow-y: auto
         display: flex
         flex-direction: column
@@ -707,7 +707,7 @@ header
                         justify-content: space-between
                         align-items: center
                         &.active
-                            svg
+                            img
                                 transform: rotate(90deg)
                         h5
                             font-size: 22px
@@ -723,19 +723,27 @@ header
                             transition: .5s ease
                             width: 16px
                     .dropdown-menu-ham
-                        display: none
-                        padding-top: 15px
+                        max-height: 0
+                        opacity: 0
+                        pointer-events: none
+                        transition: all 0.5s ease
+                        &.active
+                            max-height: 300px
+                            padding-top: 10px
+                            opacity: 1
+                            pointer-events: auto
                         ul
-                            border-top: 1px solid #dadada   
-                            border-bottom: 1px solid #dadada   
-                            padding: 15px 10px
-                            // max-height: 110px
-                            // overflow-y: auto
-                            // @include scrollbar(4px, #fff, #1BB6F0, 4px)
+                            padding: 0 10px 10px 10px
+                            max-height: 175px
+                            overflow-y: auto
+                            @include scrollbar(4px, #fff, #000, 4px)
+                            li:first-child
+                                a
+                                    padding-top: 0
                             li
                                 a
                                     display: block
-                                    font-size: 18px
+                                    font-size: 16px
                                     color: #666
                                     padding: 5px 0
                                     transition: .5s ease
@@ -772,6 +780,7 @@ header
                     &:hover
                         img
                             transform: scale(1.1)
+                            opacity: 0.5
                     img
                         width: 24px
                         height: 24px

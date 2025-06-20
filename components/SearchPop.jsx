@@ -1,7 +1,7 @@
 import CategorySlider from "./CategorySlider";
 import { useModalStore } from '../store/modalStore';
 import ProductCol from "./ProductCol";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function SearchPop(){
     const isOpen = useModalStore((state) => state.isSearchOpen);
@@ -11,17 +11,6 @@ export default function SearchPop(){
         setQuery(e.target.value);
     };
     const hasInput = query.trim().length > 0;
-    useEffect(() => {
-        if(isOpen){
-            document.querySelector('body').classList.add('overflow-hidden')
-        } else {
-            document.querySelector('body').classList.remove('overflow-hidden')
-        }
-
-        return () => {
-        document.body.classList.remove('overflow-hidden');
-    };
-    }, [isOpen])
     return (
       <div className={`model tdur-search-pop ${isOpen ? 'is-open' : ''}`}>
         <div className="upper-strip-search">

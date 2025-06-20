@@ -1,10 +1,116 @@
+"use client"
 import { useModalStore } from "@/store/modalStore";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Hamburger() {
     const isOpen = useModalStore((state) => state.isHamOpen)
     const closeHam = useModalStore((state) => state.closeHam)
+    const [activeIndex, setActiveIndex] = useState(null);
+    const menuItems = [
+    {
+      id: 1,
+      title: 'Corporate',
+      subitems: [
+        'Corporate Blazzers',
+        'Corporate Female Dress',
+        'Corporate Female Kurti',
+        'Corporate Female Top',
+        'Corporate Shirt',
+        'Corporate T-Shirt',
+        'Corporate Trousers',
+        'Corporate Vest',
+      ],
+    },
+    {
+      id: 2,
+      title: 'Hotel',
+      subitems: [
+        'Corporate Blazzers',
+        'Corporate Female Dress',
+        'Corporate Female Kurti',
+        'Corporate Female Top',
+        'Corporate Shirt',
+        'Corporate T-Shirt',
+        'Corporate Trousers',
+        'Corporate Vest',
+      ],
+    },
+    {
+      id: 3,
+      title: 'SPA & Salon',
+      subitems: [
+        'Corporate Blazzers',
+        'Corporate Female Dress',
+        'Corporate Female Kurti',
+        'Corporate Female Top',
+        'Corporate Shirt',
+        'Corporate T-Shirt',
+        'Corporate Trousers',
+        'Corporate Vest',
+      ],
+    },
+    {
+      id: 4,
+      title: 'Industrial',
+      subitems: [
+        'Corporate Blazzers',
+        'Corporate Female Dress',
+        'Corporate Female Kurti',
+        'Corporate Female Top',
+        'Corporate Shirt',
+        'Corporate T-Shirt',
+        'Corporate Trousers',
+        'Corporate Vest',
+      ],
+    },
+    {
+      id: 5,
+      title: 'Security',
+      subitems: [
+        'Corporate Blazzers',
+        'Corporate Female Dress',
+        'Corporate Female Kurti',
+        'Corporate Female Top',
+        'Corporate Shirt',
+        'Corporate T-Shirt',
+        'Corporate Trousers',
+        'Corporate Vest',
+      ],
+    },
+    {
+      id: 6,
+      title: 'Hospital',
+      subitems: [
+        'Corporate Blazzers',
+        'Corporate Female Dress',
+        'Corporate Female Kurti',
+        'Corporate Female Top',
+        'Corporate Shirt',
+        'Corporate T-Shirt',
+        'Corporate Trousers',
+        'Corporate Vest',
+      ],
+    },
+    {
+      id: 7,
+      title: 'By Profession',
+      subitems: [
+        'Corporate Blazzers',
+        'Corporate Female Dress',
+        'Corporate Female Kurti',
+        'Corporate Female Top',
+        'Corporate Shirt',
+        'Corporate T-Shirt',
+        'Corporate Trousers',
+        'Corporate Vest',
+      ],
+    },
+  ];
+    const handleClick = (index) => {
+    setActiveIndex(prev => (prev === index ? null : index)); // toggle on click
+  };
   return (
     <div className={`model ham-pop ${isOpen ? "is-open" : ""}`}>
       <button className="close" onClick={closeHam}>
@@ -17,186 +123,37 @@ export default function Hamburger() {
           <Image src="/assets/icon/ub_grad.svg" width="50" height="50" className="svg" alt="icon" />
         </div>
         <ul className="nav-list">
-          <li className="hamDropdown">
-            <div className="title">
-              <h5>Corporate</h5>
-              <img src="/assets/icon/next-black.svg" alt="men-s-collection" className="svg arrow" />
-            </div>
-            <div className="dropdown-menu-ham">
-              <ul>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
+            {menuItems.map((item, index) => (
+                <li className="hamDropdown" key={item.id}>
+                <div
+                    className={`title ${activeIndex === index ? 'active' : ''}`}
+                    onClick={() => handleClick(index)}
+                >
+                    <h5>{item.title}</h5>
+                    <img
+                    src="/assets/icon/next-black.svg"
+                    alt={item.title}
+                    className="svg arrow"
+                    />
+                </div>
+
+                <div
+                    className={`dropdown-menu-ham ${
+                    activeIndex === index ? 'active' : ''
+                    }`}
+                >
+                    <ul>
+                    {item.subitems.map((sub, i) => (
+                        <li key={i}>
+                        <Link href="javascript:;" className="subcat-li-anchr">
+                            {sub}
+                        </Link>
+                        </li>
+                    ))}
+                    </ul>
+                </div>
                 </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="hamDropdown">
-            <div className="title">
-              <h5>Corporate</h5>
-              <img src="/assets/icon/next-black.svg" alt="men-s-collection" className="svg arrow" />
-            </div>
-            <div className="dropdown-menu-ham">
-              <ul>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="hamDropdown">
-            <div className="title">
-              <h5>Corporate</h5>
-              <img src="/assets/icon/next-black.svg" alt="men-s-collection" className="svg arrow" />
-            </div>
-            <div className="dropdown-menu-ham">
-              <ul>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="hamDropdown">
-            <div className="title">
-              <h5>Corporate</h5>
-              <img src="/assets/icon/next-black.svg" alt="men-s-collection" className="svg arrow" />
-            </div>
-            <div className="dropdown-menu-ham">
-              <ul>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="hamDropdown">
-            <div className="title">
-              <h5>Corporate</h5>
-              <img src="/assets/icon/next-black.svg" alt="men-s-collection" className="svg arrow" />
-            </div>
-            <div className="dropdown-menu-ham">
-              <ul>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="hamDropdown">
-            <div className="title">
-              <h5>Corporate</h5>
-              <img src="/assets/icon/next-black.svg" alt="men-s-collection" className="svg arrow" />
-            </div>
-            <div className="dropdown-menu-ham">
-              <ul>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="javascript:;" className="subcat-li-anchr">
-                    Corporate Blazzers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </li>
+            ))}
         </ul>
         <div className="bottom-list">
           <div className="social-icons">
