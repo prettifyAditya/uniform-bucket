@@ -536,6 +536,13 @@ img
                 height: 100%
             path
                 fill: $white
+    &.black
+        color: $black
+        border-bottom: 1px solid $black
+        &::before
+            background-color: $black
+        &:hover
+            color: $white
     &.black-border
         border: 1px solid #000
         color: $black
@@ -1445,3 +1452,23 @@ em
             font-size: 14px
             line-height: 1
             color: $text
+
+.sm-block
+    display: none
+    @include media(540)
+        display: block
+
+.md-block
+    display: none
+    @include media(768)
+        display: block
+
+.sm-none
+    display: block
+    @include media(540)
+        display: none
+
+.md-none
+    display: block
+    @include media(768)
+        display: none

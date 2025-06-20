@@ -7,6 +7,7 @@ import Link from "next/link";
 import BestSellerSlider from "@/components/BestSellerSlider";
 import CounterBanner from "@/components/CounterBanner";
 import TestimonySlider from "@/components/TestimonySlider";
+import AnimateSlider from "@/components/AnimateSlider";
 
 export default function Home() {
   return (
@@ -75,6 +76,21 @@ export default function Home() {
       </div>
      </div>
      <BestSellerSlider />
+     <div className="animate_banner banner">
+      <div className="bg">
+        <Image src="/assets/images/home/animate_banner.jpg" width="1280" height="730" alt="Animate Banner"></Image>
+        <div className="banner-wrapper">
+          <div className="container">
+            <div className="content">
+              <h2>Chefwear</h2>
+              <h6>Chosen by top chefs</h6>
+              <Link className="btn black" href="">Explore All Projects</Link>
+            </div>
+            <AnimateSlider />
+          </div>
+        </div>
+      </div>
+     </div>
      <CounterBanner />
      <TestimonySlider />
      <div className="home-secB sec-pad">

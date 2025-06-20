@@ -92,6 +92,9 @@ export default function BestSellerSlider(){
                     />
                 </SwiperSlide>
             </Swiper>
+            <div className="btn_wrapper">
+              <Link href="javascript:;" className="btn black-border">Explore All Products</Link>
+            </div>
             </div>
         </div>
     )

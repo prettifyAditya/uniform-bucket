@@ -57,6 +57,18 @@
   transform: translate(3%, 15%);
   cursor: pointer;
 }
+.hero_sec .soundbar.active .sound_on {
+  display: block;
+}
+.hero_sec .soundbar.active .sound_off {
+  display: none;
+}
+.hero_sec .soundbar .sound_on {
+  display: none;
+}
+.hero_sec .soundbar .sound_off {
+  display: block;
+}
 .hero_sec .home-nav {
   max-width: 85%;
 }
@@ -189,6 +201,64 @@
 .home-secA .btn_wrapper {
   margin-top: 50px;
   text-align: center;
+}
+
+.bestSeller_slider_wrapper {
+  position: relative;
+  z-index: 0;
+}
+.bestSeller_slider_wrapper .container-fluid .btn_wrapper {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.animate_banner::before {
+  background: linear-gradient(270deg, rgba(248, 248, 248, 0) 90%, rgba(0, 0, 0, 0) 100%);
+}
+.animate_banner .bg {
+  height: 100vh;
+}
+.animate_banner .banner-wrapper .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.animate_banner .banner-wrapper .container .content {
+  flex: 1;
+  width: 50%;
+}
+.animate_banner .banner-wrapper .container .content h2 {
+  font-size: 50px;
+  letter-spacing: 10px;
+  padding-bottom: 5px;
+  line-height: 1.5;
+}
+.animate_banner .banner-wrapper .container .content h6 {
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+}
+.animate_banner .banner-wrapper .container .content .btn {
+  margin-top: 50px;
+  z-index: 1;
+}
+.animate_banner .banner-wrapper .container .animate_slider_wrapper {
+  width: 40%;
+}
+.animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider {
+  height: 100%;
+}
+.animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .swiper-slide-prev {
+  transform: translateX(109%);
+}
+.animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .animate-slide {
+  z-index: 1;
+  transition: transform 0.5s ease, z-index 0.5s ease;
+}
+.animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .animate-slide img {
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .promo-sec .bg {

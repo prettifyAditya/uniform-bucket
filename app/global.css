@@ -1322,6 +1322,16 @@ img {
 .btn.black_round:hover path {
   fill: var(--white);
 }
+.btn.black {
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+}
+.btn.black::before {
+  background-color: var(--black);
+}
+.btn.black:hover {
+  color: var(--white);
+}
 .btn.black-border {
   border: 1px solid #000;
   color: var(--black);
@@ -2502,4 +2512,40 @@ em {
   font-size: 14px;
   line-height: 1;
   color: var(--text);
+}
+
+.sm-block {
+  display: none;
+}
+@media only screen and (max-width: 540px) {
+  .sm-block {
+    display: block;
+  }
+}
+
+.md-block {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .md-block {
+    display: block;
+  }
+}
+
+.sm-none {
+  display: block;
+}
+@media only screen and (max-width: 540px) {
+  .sm-none {
+    display: none;
+  }
+}
+
+.md-none {
+  display: block;
+}
+@media only screen and (max-width: 768px) {
+  .md-none {
+    display: none;
+  }
 }/*# sourceMappingURL=global.css.map */

@@ -9,6 +9,8 @@ import Link from "next/link"
  
 export default function HomeBanner() {
     const swiperRef = useRef(null)
+    const audioRef = useRef(null)
+    const [isPlaying, setIsPlaying] = useState(false)
     const [isPaused, setIsPaused] = useState(false)
     const [swiperInstance, setSwiperInstance] = useState(null)
 
@@ -30,6 +32,17 @@ export default function HomeBanner() {
             swiperInstance.autoplay.stop()
         }
         setIsPaused(!isPaused)
+    }
+    const toggleSound = () => {
+        if (!audioRef.current) return
+
+        if (isPlaying) {
+        audioRef.current.pause()
+        } else {
+        audioRef.current.play()
+        }
+
+        setIsPlaying(!isPlaying)
     }
     return(
         <div className="hero_sec">
@@ -170,8 +183,10 @@ export default function HomeBanner() {
                 </button>
                 <div className="progress_bar"></div>
             </div>
-            <div className="soundbar">
-                <img src="/assets/icon/sound-off.svg" alt="Sound Off" />
+            <div className={`soundbar ${isPlaying ? "active" : ""}`} onClick={toggleSound}>
+                <img className="sound_off" src="/assets/icon/sound-off.svg" alt="Sound Off" />
+                <img className="sound_on" src="/assets/icon/sound-on.svg" alt="Sound On" />
+                <audio ref={audioRef} src="/assets/video/background_music.mp3" preload="auto" />
             </div>
         </div>
     )
