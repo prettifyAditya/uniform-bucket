@@ -1013,6 +1013,7 @@ button {
   width: 100%;
   background-color: var(--white);
   position: relative;
+  overflow: hidden;
 }
 .product_col:hover figure img {
   transform: scale(1);
@@ -1021,7 +1022,7 @@ button {
   transform: translateY(0);
 }
 .product_col figure {
-  height: 500px;
+  max-height: 500px;
   width: 100%;
   overflow: hidden;
   padding: 20px 0;
@@ -1235,7 +1236,6 @@ img {
   line-height: 1.2;
   letter-spacing: 0.1em;
   color: var(--white);
-  padding: 0 var(--padding);
   transition: 0.5s ease;
   border-bottom: 1px solid var(--white);
   position: relative;
@@ -1267,6 +1267,7 @@ img {
 }
 .btn:hover {
   color: var(--black);
+  padding: 0 var(--padding);
 }
 .btn:hover::before {
   height: 100%;
@@ -1324,6 +1325,7 @@ img {
 .btn.black-border {
   border: 1px solid #000;
   color: var(--black);
+  padding: 0 var(--padding);
 }
 .btn.black-border path {
   fill: var(--primary);

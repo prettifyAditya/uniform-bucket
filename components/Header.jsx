@@ -6,17 +6,38 @@ import { useEffect } from "react"
 import { useModalStore } from '../store/modalStore';
 export default function Header(){
     const openSearch = useModalStore((state) => state.openSearch);
+    const openHam = useModalStore((state) => state.openHam);
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')
+
         dropdownLi.forEach(dropdown => {
-            dropdown.addEventListener('mouseenter', ()=> {
-                dropdown.classList.add('active')
-                overlay.classList.add('is-open');
+            dropdown.addEventListener('mouseenter', function() {
+                this.classList.add('active');
+                overlay.classList.add('is-open')
+
+                dropdownLi.forEach(item => {
+                    const hoverItem = item.querySelector('.hasHover')
+                    if (hoverItem) {
+                        hoverItem.style.color = 'rgba(255, 255, 255, 0.6980392157)'
+                    }
+                })
+
+                const currentHover = this.querySelector('.hasHover')
+                if(currentHover) {
+                    currentHover.style.color = '#fff';
+                }
             })
-            dropdown.addEventListener('mouseleave', ()=> {
-                dropdown.classList.remove('active')
-                overlay.classList.remove('is-open');
+            dropdown.addEventListener('mouseleave', function(){
+                this.classList.remove('active')
+                overlay.classList.remove('is-open')
+
+                dropdownLi.forEach(item => {
+                    const hoverItem = item.querySelector('.hasHover')
+                    if(hoverItem) {
+                        hoverItem.style.color = '#fff';
+                    }
+                })
             })
         })
     }, [])
@@ -47,7 +68,7 @@ export default function Header(){
                     <div className="colB">
                         <ul className="navlist">
                             <li className="hasDropdown">
-                                <Link href="javascript:;">Corporate</Link>
+                                <Link href="javascript:;" className="hasHover">Corporate</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
@@ -84,20 +105,252 @@ export default function Header(){
                                     </div>
                                 </div>
                             </li>
-                            <li className="hasDropdown"><Link href="javascript:;">Hotel</Link></li>
-                            <li><Link href="javascript:;">SPA & Salon</Link></li>
-                            <li><Link href="javascript:;">Industrial</Link></li>
-                            <li><Link href="javascript:;">Security</Link></li>
-                            <li><Link href="javascript:;">Hospital</Link></li>
-                            <li><Link href="javascript:;">By Profession</Link></li>
+                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Hotel</Link>
+                                <div className="dropdown-menu" role="menu">
+                                    <div className="dropdown-menu-wrap flex">
+                                        <div className="colA-md">
+                                            <ul className="subcat-ul">
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="colB-md">
+                                            <video src="/assets/images/category/category1_video.mp4" autoPlay muted loop playsInline></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">SPA & Salon</Link>
+                                <div className="dropdown-menu" role="menu">
+                                    <div className="dropdown-menu-wrap flex">
+                                        <div className="colA-md">
+                                            <ul className="subcat-ul">
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="colB-md">
+                                            <video src="/assets/images/category/category1_video.mp4" autoPlay muted loop playsInline></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Industrial</Link>
+                                <div className="dropdown-menu" role="menu">
+                                    <div className="dropdown-menu-wrap flex">
+                                        <div className="colA-md">
+                                            <ul className="subcat-ul">
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="colB-md">
+                                            <video src="/assets/images/category/category1_video.mp4" autoPlay muted loop playsInline></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Security</Link>
+                                <div className="dropdown-menu" role="menu">
+                                    <div className="dropdown-menu-wrap flex">
+                                        <div className="colA-md">
+                                            <ul className="subcat-ul">
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="colB-md">
+                                            <video src="/assets/images/category/category1_video.mp4" autoPlay muted loop playsInline></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Hospital</Link>
+                                <div className="dropdown-menu" role="menu">
+                                    <div className="dropdown-menu-wrap flex">
+                                        <div className="colA-md">
+                                            <ul className="subcat-ul">
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="colB-md">
+                                            <video src="/assets/images/category/category1_video.mp4" autoPlay muted loop playsInline></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">By Profession</Link>
+                                <div className="dropdown-menu" role="menu">
+                                    <div className="dropdown-menu-wrap flex">
+                                        <div className="colA-md">
+                                            <ul className="subcat-ul">
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                </li>
+                                                <li className="subcat-li">
+                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="colB-md">
+                                            <video src="/assets/images/category/category1_video.mp4" autoPlay muted loop playsInline></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div className="colC">
                         <ul className="call_action">
                             <li onClick={openSearch}><Link href="javascript:;"><img src="/assets/icon/search-white.svg" alt="Search Icon" /></Link></li>
-                            <li><Link href="javascript:;"><img src="/assets/icon/user-white.svg" alt="User Icon" /></Link></li>
+                            <li className="myAccount"><Link href="javascript:;"><img src="/assets/icon/user-white.svg" alt="User Icon" /></Link>
+                                <div className="dropdown-menu">
+                                    <ul>
+                                        <li><Link href="javascript:;">My Account</Link></li>
+                                        <li><Link href="javascript:;">My Order</Link></li>
+                                        <li><Link href="javascript:;">My Wislist</Link></li>
+                                        <li><Link href="javascript:;">Log Out</Link></li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li><Link href="javascript:;"><img src="/assets/icon/like-white.svg" alt="Wishlist Icon" /></Link></li>
                             <li><Link href="javascript:;"><img src="/assets/icon/cart-white.svg" alt="Cart Icon" /></Link></li>
+                            <li>
+                                <button type="button" className="ham_btn" onClick={openHam}>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>

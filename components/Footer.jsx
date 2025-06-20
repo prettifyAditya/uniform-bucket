@@ -4,7 +4,11 @@ import "../styles/footer/footer.css"
 import Link from "next/link"
 import EnquirePop from "./EnquirePop"
 import SearchPop from "./SearchPop"
+import Hamburger from "./Hamburger"
+import Overlay from "./Overlay"
+import { useModalStore } from "@/store/modalStore"
 export default function Footer(){
+    const openEnquire = useModalStore((state) => state.openEnquire)
     return(
         <>
             <div className="upper-wrapper">
@@ -108,25 +112,19 @@ export default function Footer(){
                     </div>
                 </div>
             </footer>
-            <div className="overlay" onClick={() => { document.querySelector(".enquire-pop").classList.remove("is-open");
-                document.querySelector(".overlay").classList.remove("is-open");
-                document.querySelector("body").classList.remove("overflow-hidden");
-            }}></div>
+            <Overlay />
             <div className="sticky_action flex">
                 <Link className="whatsapp" href="javascript:;">
                     <Image src="/assets/icon/whatsapp.svg" width="24" height="24" alt="Whatsapp"></Image>
                 </Link>
-                <button className="call_action" onClick={() => {
-                    document.querySelector('.enquire-pop').classList.add('is-open')
-                    document.querySelector('.overlay').classList.add('is-open')
-                    document.querySelector('body').classList.add('overflow-hidden')
-                }}>
+                <button className="call_action" onClick={openEnquire}>
                     <Image src="/assets/icon/ub_grad.svg" width="29" height="27" alt="Uniform Buacket"></Image>
                     <p>Request a call</p>
                 </button>
             </div>
             <EnquirePop />
             <SearchPop />
+            <Hamburger />
         </>
     )
 }

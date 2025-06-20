@@ -113,9 +113,17 @@
     .profession_grid
         grid-template-columns: repeat(2, 1fr)
         grid-gap: 6px 8px
+        overflow: hidden
         .profession_col
-            &::before
+            @include shine()
+            &:hover
+                figure
+                    img
+                        transform: scale(1.1)
+            &::after
                 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%)
+            figure
+                overflow: hidden
             figcaption
                 text-align: center
                 padding: 0 10px 20px

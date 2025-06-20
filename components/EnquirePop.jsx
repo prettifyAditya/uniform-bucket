@@ -1,8 +1,11 @@
 "use client"
+import { useModalStore } from "@/store/modalStore";
 import Image from "next/image";
 import { useEffect } from "react";
 
 export default function EnquirePop() {
+    const isOpen = useModalStore((state) => state.isEnquireOpen)
+    const closeEnquire = useModalStore((state) => state.closeEnquire)
     useEffect(() =>  {
         const inputBoxes = document.querySelectorAll('.form-control')
         inputBoxes.forEach(inputBox => {
@@ -22,14 +25,9 @@ export default function EnquirePop() {
         }
     }, [])
 
-    const closePop = () => {
-        document.querySelector('.enquire-pop').classList.remove('is-open')
-        document.querySelector('.overlay').classList.remove('is-open')
-        document.querySelector('body').classList.remove('overflow-hidden')
-    }
     return (
-        <div className="model enquire-pop">
-            <button className="close" onClick={closePop}><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+        <div className={`model enquire-pop ${isOpen ? "is-open" : ""}`}>
+            <button className="close" onClick={closeEnquire}><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
             <div className="model-body">
                 <div className="title">
                     <div className="icon">

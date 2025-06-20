@@ -138,9 +138,37 @@
 .home-secA .profession_grid {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 6px 8px;
+  overflow: hidden;
+}
+.home-secA .profession_grid .profession_col {
+  position: relative;
 }
 .home-secA .profession_grid .profession_col::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: white;
+  box-shadow: 0 0 55px 12px white;
+  transform: skewX(-20deg);
+  z-index: 1;
+}
+.home-secA .profession_grid .profession_col:hover::before {
+  animation: shine 0.4s linear;
+  animation-fill-mode: none;
+}
+.home-secA .profession_grid .profession_col:hover figure img {
+  transform: scale(1.1);
+}
+.home-secA .profession_grid .profession_col::after {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.6) 88%);
+}
+.home-secA .profession_grid .profession_col figure {
+  overflow: hidden;
 }
 .home-secA .profession_grid .profession_col figcaption {
   text-align: center;

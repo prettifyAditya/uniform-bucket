@@ -45,6 +45,12 @@ header
                     align-items: center
                     &.hasDropdown
                         position: relative
+                        &:last-child
+                            .dropdown-menu
+                                left: -100%
+                                &::before
+                                    left: 20%
+                                    translate: -20% 0
                         &.active
                             .dropdown-menu
                                 opacity: 1
@@ -136,6 +142,61 @@ header
                 display: flex
                 align-items: center
                 gap: 25px
+                .myAccount
+                    position: relative
+                    &:hover
+                        .dropdown-menu
+                            transform: scale3d(1, 1, 1)
+                            opacity: 1
+                    .dropdown-menu
+                        position: absolute
+                        top: calc( 100% + 10px )
+                        left: 50%
+                        translate: -50% 0
+                        transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
+                        transform-origin: top
+                        transition: .5s ease
+                        opacity: 0
+                        ul
+                            background: $white
+                            padding: 10px 15px 
+                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+                            border-radius: 5px
+                            position: relative
+                            &::before
+                                content: ""
+                                position: absolute
+                                top: -9px
+                                left: 50%
+                                translate: -50% 0
+                                width: 0
+                                height: 0
+                                border-left: 15px solid transparent
+                                border-right: 15px solid transparent
+                                border-bottom: 20px solid #fff
+                            li
+                                display: block
+                                vertical-align: middle
+                                white-space: nowrap
+                                a
+                                    display: block
+                                    font-size: 14px
+                                    line-height: 1.2
+                                    color: $black
+                                    padding: 5px 0 
+                                    &:hover
+                                        color: $text
+                .ham_btn
+                    width: 100%
+                    span
+                        display: block
+                        width: 25px
+                        height: 1px
+                        background-color: $white
+                        transition: .5s ease
+                        &:not(:last-child)
+                            margin-bottom: 6px
+                            
 header
     &.header-fixed
         @include media(991)
@@ -583,9 +644,9 @@ header
                         outline: none
 
 .model.ham-pop
-    left: 0
+    right: 0
     max-width: 480px
-    transform: translateX(-100%)
+    transform: translateX(100%)
     transition: .5s ease
     z-index: 10
     &.is-open
@@ -621,7 +682,7 @@ header
             font-size: 30px
             color: #000
             img,svg
-                width: 50px
+                width: 70px
                 height: auto
                 @include media(540)
                     width: 30px
@@ -635,7 +696,7 @@ header
                     margin-bottom: 15px
                 &.desktop-non
                     display: none
-                &.hasDropdown
+                &.hamDropdown
                     position: relative
                     &:hover
                         .title 
@@ -650,10 +711,13 @@ header
                                 transform: rotate(90deg)
                         h5
                             font-size: 22px
+                            font-family: $Lato
                             color: #000
                             transition: .5s ease 
                         .arrow
-                            width: 30px
+                            width: 15px
+                            height: 15px
+                            object-fit: contain
                             transition: .5s ease
                         svg
                             transition: .5s ease
@@ -705,21 +769,14 @@ header
                     overflow: hidden
                     &:not(:last-child)
                         margin-right: 4px
-                    svg
+                    &:hover
+                        img
+                            transform: scale(1.1)
+                    img
                         width: 24px
                         height: 24px
-                        path
-                            transition: none
-                            &[stroke],&[fill="none"]
-                                stroke: currentColor
-                            &[fill]
-                                fill: currentColor
-                    &:hover
-                        color: #666
-                        &::before
-                            transition: .5s ease
-                            opacity: 1
-                            transform: scale(1)
+                        filter: invert(1)
+                        transition: .5s ease
 
 
 .message-pop
