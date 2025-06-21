@@ -3196,9 +3196,11 @@ header.header-shadow {
   stroke: var(--black);
 }
 .login-pop .model-body {
-  padding: 75px 70px 50px;
+  padding: 0 70px 50px;
   height: 100%;
   overflow-y: auto;
+  margin-top: 40px;
+  height: calc(100% - 40px);
 }
 .login-pop .model-body::-webkit-scrollbar {
   width: 6px;
@@ -3218,24 +3220,24 @@ header.header-shadow {
   }
 }
 .login-pop .model-body .title {
-  margin-bottom: 4.5rem;
+  margin-bottom: 2.5rem;
 }
-.login-pop .model-body .title .ico {
+.login-pop .model-body .title .icon {
   width: 70px;
   line-height: 0;
-  margin: 0 auto 30px;
+  margin: 0 auto 10px;
 }
-.login-pop .model-body .title .ico svg path {
+.login-pop .model-body .title .icon svg path {
   fill: #000;
 }
-.login-pop .model-body .title .ico img {
+.login-pop .model-body .title .icon img {
   width: 100%;
 }
-.login-pop .model-body .title h4 {
+.login-pop .model-body .title h2 {
   text-align: center;
   color: var(--black);
   font-family: "Le Jeune Deck";
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.282;
   letter-spacing: 0.2em;
@@ -3281,9 +3283,20 @@ header.header-shadow {
 .login-pop .model-body .form-group-login .mobile-input {
   flex: 1;
 }
+.login-pop .model-body .form {
+  --gaptb: 20px;
+}
+.login-pop .model-body .form .forget_pass {
+  text-align: end;
+  color: var(--text);
+}
 .login-pop .model-body .sbmt-btn-div {
-  margin: 55px 0;
+  margin: 10px 0 20px;
   text-align: center;
+}
+.login-pop .model-body .sbmt-btn-div .btn {
+  width: 100%;
+  --height: 40px;
 }
 .login-pop .model-body .disc {
   margin-top: 30px;
@@ -3319,13 +3332,31 @@ header.header-shadow {
   display: flex;
   align-items: center;
   gap: 0 30px;
-  margin-top: 40px;
+  margin: 40px 0;
 }
 .login-pop .model-body .btm-social-wrp > * {
   flex: 1;
 }
 .login-pop .model-body .btm-social-wrp svg {
   width: auto;
+}
+.login-pop .model-body .btm-social-wrp .google-btn, .login-pop .model-body .btm-social-wrp .facebook-btn {
+  border: 1px solid #D1D1D1;
+  color: var(--text);
+}
+.login-pop .model-body .btm-social-wrp .google-btn::before, .login-pop .model-body .btm-social-wrp .facebook-btn::before {
+  background-color: #000;
+}
+.login-pop .model-body .btm-social-wrp .google-btn:hover, .login-pop .model-body .btm-social-wrp .facebook-btn:hover {
+  color: var(--white);
+  padding: 0;
+}
+.login-pop .model-body .non_member {
+  text-align: center;
+  color: var(--text);
+}
+.login-pop .model-body .non_member .signup {
+  color: var(--black);
 }
 .login-pop .model-body .register {
   text-align: center;
@@ -4022,12 +4053,16 @@ div:has(> .product-not-found) {
 }
 .enquire-pop .model-body .title {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .enquire-pop .model-body .title .icon {
-  width: 68px;
-  height: 64px;
-  margin: 0 auto 30px;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+}
+.enquire-pop .model-body .title .icon img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .enquire-pop .model-body .title h2 {
   font-size: 24px;
@@ -4051,7 +4086,7 @@ div:has(> .product-not-found) {
   }
 }
 .enquire-pop .model-body .form {
-  --gaptb: 20px;
+  --gaptb: 15px;
   --item: 1;
   --labelbefore: var(--text);
   --labelafter: #000;
@@ -4059,6 +4094,6 @@ div:has(> .product-not-found) {
   --borderafter: #000;
 }
 .enquire-pop .model-body .btn {
-  margin: 20px auto 0;
+  margin: 15px auto 0;
   width: 100%;
 }/*# sourceMappingURL=header.css.map */

@@ -1,11 +1,20 @@
 "use client"
 import { useModalStore } from "@/store/modalStore";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import MySelect from "./MySelect";
+
+const options_Category = [
+  { value: "Option 1", label: "Option 1"},
+  { value: "Option 2", label: "Option 2"},
+  { value: "Option 3", label: "Option 3"},
+  { value: "Option 4", label: "Option 4"},
+]
 
 export default function EnquirePop() {
     const isOpen = useModalStore((state) => state.isEnquireOpen)
     const closeEnquire = useModalStore((state) => state.closeEnquire)
+    const [category, setCategory] = useState(null)
     useEffect(() =>  {
         const inputBoxes = document.querySelectorAll('.form-control')
         inputBoxes.forEach(inputBox => {
@@ -45,6 +54,13 @@ export default function EnquirePop() {
                         <input type="text" className="form-control" />
                         <label htmlFor="">Company Name</label>
                     </div>
+                    <MySelect 
+                        id="category-select"
+                        placeholder="Category*"
+                        options={options_Category}
+                        selectedValue={category}
+                        onValueChange={setCategory}
+                    />
                     <div className="form-group">
                         <input type="tel" className="form-control" />
                         <label htmlFor="">Phone</label>

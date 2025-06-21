@@ -495,28 +495,30 @@ header
         path
             stroke: $black
     .model-body
-        padding: 75px 70px 50px
+        padding: 0 70px 50px
         height: 100%
         overflow-y: auto
+        margin-top: 40px
+        height: calc(100% - 40px)
         @include scrollbar(6px,none,$primary,25px)
         @include media(675)
             padding: 40px 25px 50px
         .title
-            margin-bottom: 4.5rem
-            .ico
+            margin-bottom: 2.5rem
+            .icon
                 width: 70px
                 line-height: 0
-                margin: 0 auto 30px
+                margin: 0 auto 10px
                 svg
                     path 
                         fill: #000
                 img
                     width: 100%
-            h4
+            h2
                 text-align: center
                 color: $black
                 font-family: $LeJ
-                font-size: 20px
+                font-size: 24px
                 font-weight: 400
                 line-height: 1.282
                 letter-spacing: 0.2em
@@ -554,9 +556,17 @@ header
                     height: auto
             .mobile-input
                 flex: 1
+        .form
+            --gaptb: 20px
+            .forget_pass
+                text-align: end
+                color: $text
         .sbmt-btn-div
-            margin: 55px 0
+            margin: 10px 0 20px
             text-align: center
+            .btn
+                width: 100%
+                --height: 40px
         .disc
             margin-top: 30px
         .split-sec
@@ -584,11 +594,24 @@ header
             display: flex
             align-items: center
             gap: 0 30px
-            margin-top: 40px
+            margin: 40px 0
             > *
                 flex: 1
             svg
                 width: auto
+            .google-btn, .facebook-btn
+                border: 1px solid #D1D1D1
+                color: $text
+                &::before
+                    background-color: #000
+                &:hover
+                    color: $white
+                    padding: 0
+        .non_member
+            text-align: center
+            color: $text
+            .signup
+                color: $black
         .register
             text-align: center
             color: $text
@@ -1096,11 +1119,13 @@ div
         @include scrollbar(3px,$white,#5e5e5e,8px)
         .title
             text-align: center
-            margin-bottom: 2rem
+            margin-bottom: 1rem
             .icon
-                width: 68px
-                height: 64px
-                margin: 0 auto 30px
+                width: 50px
+                height: 50px
+                margin: 0 auto 10px
+                img
+                    object-fit: contain
             h2
                 font-size: 24px
                 color: $black
@@ -1118,12 +1143,12 @@ div
                     font-size: 14px
                     max-width: 300px
         .form
-            --gaptb: 20px
+            --gaptb: 15px 
             --item: 1
             --labelbefore: var(--text)
             --labelafter: #000
             --borderbefore: var(--text)
             --borderafter: #000
         .btn
-            margin: 20px auto 0
+            margin: 15px auto 0
             width: 100%

@@ -7,6 +7,7 @@ import { useModalStore } from '../store/modalStore';
 export default function Header(){
     const openSearch = useModalStore((state) => state.openSearch);
     const openHam = useModalStore((state) => state.openHam);
+    const openLogin = useModalStore((state) => state.openLogin)
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')
@@ -332,7 +333,7 @@ export default function Header(){
                     <div className="colC">
                         <ul className="call_action">
                             <li onClick={openSearch}><button><img src="/assets/icon/search-white.svg" alt="Search Icon" /></button></li>
-                            <li className="myAccount"><Link href="javascript:;"><img src="/assets/icon/user-white.svg" alt="User Icon" /></Link>
+                            <li className="myAccount" onClick={openLogin}><Link href=""><img src="/assets/icon/user-white.svg" alt="User Icon" /></Link>
                                 <div className="dropdown-menu">
                                     <ul>
                                         <li><Link href="javascript:;">My Account</Link></li>

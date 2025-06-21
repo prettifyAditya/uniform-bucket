@@ -7,6 +7,7 @@ import SearchPop from "./SearchPop"
 import Hamburger from "./Hamburger"
 import Overlay from "./Overlay"
 import { useModalStore } from "@/store/modalStore"
+import LoginPop from "./LoginPop"
 export default function Footer(){
     const openEnquire = useModalStore((state) => state.openEnquire)
     return(
@@ -122,6 +123,7 @@ export default function Footer(){
                     <p>Request a call</p>
                 </button>
             </div>
+            <LoginPop />
             <EnquirePop />
             <SearchPop />
             <Hamburger />
