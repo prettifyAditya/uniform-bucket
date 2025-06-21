@@ -5,7 +5,9 @@ import "swiper/css"
 import "swiper/css/navigation"
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { useModalStore } from "@/store/modalStore";
 export default function TestimonySlider() {
+    const openVideo = useModalStore((state) => state.openVideo)
     const swiperRef = useRef(null)
     useEffect(() => {
         setTimeout(() => {
@@ -62,7 +64,7 @@ export default function TestimonySlider() {
                                         <h6>Chung Eui-sun</h6>
                                         <p>Chairman Hundai</p>
                                     </div>
-                                    <button className="play-btn"></button>
+                                    <button className="play-btn" onClick={openVideo} data-video="https://youtube.com/embed/e3LWqqmP2Rw?si=tPBfRz7aCqX-pRUq"></button>
                                 </figcaption>
                             </div>
                         </SwiperSlide>
@@ -76,7 +78,7 @@ export default function TestimonySlider() {
                                         <h6>Chung Eui-sun</h6>
                                         <p>Chairman Hundai</p>
                                     </div>
-                                    <button className="play-btn"></button>
+                                    <button className="play-btn" onClick={openVideo} data-video="https://youtube.com/embed/e3LWqqmP2Rw?si=tPBfRz7aCqX-pRUq"></button>
                                 </figcaption>
                             </div>
                         </SwiperSlide>
@@ -90,7 +92,7 @@ export default function TestimonySlider() {
                                         <h6>Chung Eui-sun</h6>
                                         <p>Chairman Hundai</p>
                                     </div>
-                                    <button className="play-btn"></button>
+                                    <button className="play-btn" onClick={openVideo} data-video="https://youtube.com/embed/e3LWqqmP2Rw?si=tPBfRz7aCqX-pRUq"></button>
                                 </figcaption>
                             </div>
                         </SwiperSlide>
@@ -104,7 +106,7 @@ export default function TestimonySlider() {
                                         <h6>Chung Eui-sun</h6>
                                         <p>Chairman Hundai</p>
                                     </div>
-                                    <button className="play-btn"></button>
+                                    <button className="play-btn" onClick={openVideo} data-video="https://youtube.com/embed/e3LWqqmP2Rw?si=tPBfRz7aCqX-pRUq"></button>
                                 </figcaption>
                             </div>
                         </SwiperSlide>

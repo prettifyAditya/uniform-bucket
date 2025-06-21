@@ -8,6 +8,7 @@ import BestSellerSlider from "@/components/BestSellerSlider";
 import CounterBanner from "@/components/CounterBanner";
 import TestimonySlider from "@/components/TestimonySlider";
 import AnimateSlider from "@/components/AnimateSlider";
+import VideoPop from "@/components/VideoPop";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
                 <h2>Shop By Profession</h2>
             </div>
             <div className="profession_grid grid">
-              <div className="item-md profession_col">
+              <Link href="" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession1.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -29,8 +30,8 @@ export default function Home() {
                   <h6>Air Hostess Uniform</h6>
                   <p>Where Uniform Meets Professionalism</p>
                 </figcaption>
-              </div>
-              <div className="item-md profession_col">
+              </Link>
+              <Link href="" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession2.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -38,8 +39,8 @@ export default function Home() {
                   <h6>Pilot Uniform</h6>
                   <p>Where Uniform Meets Professionalism</p>
                 </figcaption>
-              </div>
-              <div className="item-md profession_col">
+              </Link>
+              <Link href="" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession3.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -47,8 +48,8 @@ export default function Home() {
                   <h6>Nurse Uniform</h6>
                   <p>Where Uniform Meets Professionalism</p>
                 </figcaption>
-              </div>
-              <div className="item-md profession_col">
+              </Link>
+              <Link href="" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession4.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -56,7 +57,7 @@ export default function Home() {
                   <h6>Sports Uniforms</h6>
                   <p>Where Uniform Meets Professionalism</p>
                 </figcaption>
-              </div>
+              </Link>
             </div>
             <div className="btn_wrapper">
               <Link href="javascript:;" className="btn black-border">Explore All Products</Link>
@@ -129,6 +130,7 @@ export default function Home() {
         </div>
       </div>
      </div>
+     <VideoPop />
     </main>
   );
 }

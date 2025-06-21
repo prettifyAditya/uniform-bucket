@@ -196,6 +196,22 @@ header
                         transition: .5s ease
                         &:not(:last-child)
                             margin-bottom: 6px
+                li:has(.dot-noti)
+                    position: relative
+                    span
+                        height: 18px
+                        width: 18px
+                        border-radius: 50%
+                        background: var(--white)
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        position: absolute
+                        right: -8px
+                        top: -8px
+                        color: var(--black)
+                        font-size: 11px
+                        pointer-events: none
                             
 header
     &.header-fixed

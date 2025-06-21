@@ -2797,6 +2797,24 @@ header .header-wrapper .colC .call_action .ham_btn span {
 header .header-wrapper .colC .call_action .ham_btn span:not(:last-child) {
   margin-bottom: 6px;
 }
+header .header-wrapper .colC .call_action li:has(.dot-noti) {
+  position: relative;
+}
+header .header-wrapper .colC .call_action li:has(.dot-noti) span {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  color: var(--black);
+  font-size: 11px;
+  pointer-events: none;
+}
 
 @media only screen and (max-width: 991px) {
   header.header-fixed {

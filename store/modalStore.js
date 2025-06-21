@@ -13,10 +13,15 @@ export const useModalStore = create((set) => ({
   openEnquire: () => set({ isEnquireOpen: true }),
   closeEnquire: () => set({ isEnquireOpen: false }),
 
+  isVideoOpen: false,
+  openVideo: () => set({ isVideoOpen: true }),
+  closeVideo: () => set({ isVideoOpen: false }),
+
   closeAll: () =>
     set({
       isSearchOpen: false,
       isHamOpen: false,
-      isEnquireOpen: false
+      isEnquireOpen: false,
+      isVideoOpen: false
     }),
 }));
