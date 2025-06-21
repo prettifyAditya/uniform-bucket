@@ -29,13 +29,19 @@ export default function AnimateSlider(){
                     <img src="/assets/images/home/animate1.jpg" alt="Slider Image" />
                 </SwiperSlide>
                 <SwiperSlide className="animate-slide">
-                    <img src="/assets/images/home/animate1.jpg" alt="Slider Image" />
+                    <img src="/assets/images/home/animate2.jpg" alt="Slider Image" />
+                </SwiperSlide>
+                <SwiperSlide className="animate-slide">
+                    <img src="/assets/images/home/animate3.jpg" alt="Slider Image" />
                 </SwiperSlide>
                 <SwiperSlide className="animate-slide">
                     <img src="/assets/images/home/animate1.jpg" alt="Slider Image" />
                 </SwiperSlide>
                 <SwiperSlide className="animate-slide">
-                    <img src="/assets/images/home/animate1.jpg" alt="Slider Image" />
+                    <img src="/assets/images/home/animate2.jpg" alt="Slider Image" />
+                </SwiperSlide>
+                <SwiperSlide className="animate-slide">
+                    <img src="/assets/images/home/animate3.jpg" alt="Slider Image" />
                 </SwiperSlide>
             </Swiper>
         </div>

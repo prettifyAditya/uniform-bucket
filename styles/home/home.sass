@@ -169,7 +169,7 @@
             align-items: center
             .content
                 flex: 1
-                width: 40%
+                width: 30%
                 h2
                     font-size: 50px
                     letter-spacing: 10px
@@ -184,22 +184,25 @@
                     margin-top: 50px
                     z-index: 1
             .animate_slider_wrapper
-                width: 60%
+                width: 70%
+                height: 100%
                 .animate_slider
                     height: 100%
                     position: relative
                     width: 100%
+                    .swiper-wrapper
+                        justify-content: start
                     .swiper-slide-active
                         z-index: 3
                         transform: translate(0, 0) scale(1)
                         opacity: 1
                     .swiper-slide-prev
-                        z-index: 1
-                        transform: translate(90%, 4%) scale(0.9)
+                        z-index: 2
+                        transform: translate(82%, 0%) scale(0.9)
                         opacity: 1
                     .swiper-slide-next
-                        z-index: 2
-                        transform: translate(-56%, 0%) scale(0.9)
+                        z-index: 1
+                        transform: translate(-52%, 0%) scale(0.8)
                         opacity: 1
                     .animate-slide
                         transition: transform 1s ease, z-index 1s ease, opacity .3s ease

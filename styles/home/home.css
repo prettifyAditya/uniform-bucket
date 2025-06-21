@@ -225,7 +225,7 @@
 }
 .animate_banner .banner-wrapper .container .content {
   flex: 1;
-  width: 40%;
+  width: 30%;
 }
 .animate_banner .banner-wrapper .container .content h2 {
   font-size: 50px;
@@ -244,12 +244,16 @@
   z-index: 1;
 }
 .animate_banner .banner-wrapper .container .animate_slider_wrapper {
-  width: 60%;
+  width: 70%;
+  height: 100%;
 }
 .animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider {
   height: 100%;
   position: relative;
   width: 100%;
+}
+.animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .swiper-wrapper {
+  justify-content: start;
 }
 .animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .swiper-slide-active {
   z-index: 3;
@@ -257,13 +261,13 @@
   opacity: 1;
 }
 .animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .swiper-slide-prev {
-  z-index: 1;
-  transform: translate(90%, 4%) scale(0.9);
+  z-index: 2;
+  transform: translate(82%, 0%) scale(0.9);
   opacity: 1;
 }
 .animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .swiper-slide-next {
-  z-index: 2;
-  transform: translate(-56%, 0%) scale(0.9);
+  z-index: 1;
+  transform: translate(-52%, 0%) scale(0.8);
   opacity: 1;
 }
 .animate_banner .banner-wrapper .container .animate_slider_wrapper .animate_slider .animate-slide {
