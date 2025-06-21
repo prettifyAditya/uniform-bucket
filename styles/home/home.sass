@@ -169,7 +169,7 @@
             align-items: center
             .content
                 flex: 1
-                width: 50%
+                width: 40%
                 h2
                     font-size: 50px
                     letter-spacing: 10px
@@ -184,14 +184,27 @@
                     margin-top: 50px
                     z-index: 1
             .animate_slider_wrapper
-                width: 40%
+                width: 60%
                 .animate_slider
                     height: 100%
+                    position: relative
+                    width: 100%
+                    .swiper-slide-active
+                        z-index: 3
+                        transform: translate(0, 0) scale(1)
+                        opacity: 1
                     .swiper-slide-prev
-                        transform: translateX(109%)
-                    .animate-slide
                         z-index: 1
-                        transition: transform .5s ease, z-index .5s ease
+                        transform: translate(90%, 4%) scale(0.9)
+                        opacity: 1
+                    .swiper-slide-next
+                        z-index: 2
+                        transform: translate(-56%, 0%) scale(0.9)
+                        opacity: 1
+                    .animate-slide
+                        transition: transform 1s ease, z-index 1s ease, opacity .3s ease
+                        &:not(.swiper-slide-active, .swiper-slide-prev, .swiper-slide-next)
+                            opacity: 0
                         img
                             width: 100%
                             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3)

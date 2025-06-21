@@ -15,14 +15,14 @@ export default function AnimateSlider(){
                 loop = {true}
                 ref={swiperRef}
                 modules={[Autoplay]}
-                slidesPerView={1}
-                spaceBetween={10}
+                slidesPerView={3}
+                spaceBetween={-100}
                 centeredSlides={true}
                 speed={2000}
-                autoplay = {{
-                    delay: 0,
-                    disableOnInteraction: false,
-                }}
+                // autoplay = {{
+                //     delay: 0,
+                //     disableOnInteraction: false,
+                // }}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
                 <SwiperSlide className="animate-slide">
