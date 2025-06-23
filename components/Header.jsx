@@ -2,12 +2,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import "../styles/header/header.css"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useModalStore } from '../store/modalStore';
 export default function Header(){
     const openSearch = useModalStore((state) => state.openSearch);
     const openHam = useModalStore((state) => state.openHam);
     const openLogin = useModalStore((state) => state.openLogin)
+    const [headerFixed, setHeaderFixed] = useState(false)
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')
@@ -43,23 +44,16 @@ export default function Header(){
         })
     }, [])
     useEffect(() => {
-        if(typeof window === "undefined") return
         const handleScroll = () => {
-            const header = document.querySelector("header")
-            if(!header) return
-            if (window.scrollY > 100){
-                header.classList.add("header-fixed")
-            } else {
-                header.classList.remove("header-fixed")
-            }
+            setHeaderFixed(window.scrollY > 100)
         }
         handleScroll()
-        window.addEventListener('scroll', handleScroll);
-        return() => window.removeEventListener("scroll", handleScroll)
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
     }, [])
     return(
         <>
-            <header>
+            <header className={headerFixed ? "header-fixed" : ""}>
                 <div className="header-wrapper container">
                     <div className="colA">
                         <Link href="javascript:;">
