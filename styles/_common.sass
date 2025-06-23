@@ -1178,10 +1178,10 @@ img
     --arrowsize: 16px
     --space: 11px
     .label 
-        color: $white 
+        color: $black
         height: var(--labelheight)
         line-height: var(--labelheight)
-        background-image: url(/assets/icon/arrow-down-white.svg)
+        background-image: url(/assets/icon/arrow-down-black.svg)
         background-repeat: no-repeat
         background-position-y: 50%
         background-position-x: 100%
@@ -1190,6 +1190,10 @@ img
         cursor: pointer
         caret-color: transparent
         user-select: none
+        font-size: 12px
+        text-transform: uppercase
+        letter-spacing: 1px
+        font-family: $Lato
     &.active
         --btn: 10px
         &.price_select
@@ -1197,15 +1201,6 @@ img
                 .upper-sec
                     .reset-btn
                         display: block
-        // &::before
-        //     content: ''
-        //     position: absolute
-        //     right: calc(var(--btn) * -1/2)
-        //     top: calc(var(--btn) * -1/2)
-        //     background: #2fb12f
-        //     height: var(--btn)
-        //     width: var(--btn)
-        //     border-radius: 50%
     &.slt-rgt
         .kmr-select-menu
             right: 0
@@ -1293,7 +1288,7 @@ img
             padding: 0 14px
             &:has(input:checked)
                 .in-bx
-                    background: var(--primary)
+                    background: $black
                     transition: .4s ease
                     &::before
                         opacity: 1

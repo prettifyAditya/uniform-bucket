@@ -4,11 +4,15 @@ import Link from "next/link"
 import "../styles/header/header.css"
 import { useEffect, useState } from "react"
 import { useModalStore } from '../store/modalStore';
+import { usePathname } from "next/navigation";
+
 export default function Header(){
     const openSearch = useModalStore((state) => state.openSearch);
     const openHam = useModalStore((state) => state.openHam);
     const openLogin = useModalStore((state) => state.openLogin)
     const [headerFixed, setHeaderFixed] = useState(false)
+    const pathname = usePathname()
+    const isProductListingPage = pathname.startsWith('/product-listing')
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')
@@ -53,7 +57,7 @@ export default function Header(){
     }, [])
     return(
         <>
-            <header className={headerFixed ? "header-fixed" : ""}>
+            <header className={`${isProductListingPage ? "header-fill" : ""} ${headerFixed ? "header-fixed" : ""}`}>
                 <div className="header-wrapper container">
                     <div className="colA">
                         <Link href="javascript:;">

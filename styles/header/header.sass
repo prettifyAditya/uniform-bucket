@@ -477,7 +477,7 @@ header
             > *
                 flex: 1
 
-.login-pop
+.login-pop, .signUp-pop
     max-width: 550px
     background: $white
     right: 0
@@ -523,52 +523,64 @@ header
                 line-height: 1.282
                 letter-spacing: 0.2em
                 text-transform: uppercase
-        .form-group-login
-            border-bottom: 1px solid $text
-            display: flex
-            gap: 10px
-            position: relative
-            align-items: center
-            .wefeewf
+        .form
+            --gaptb: 30px
+            .verify
                 position: absolute
                 left: 0
-                right: 0
                 color: red
-                font-weight: bold
+                font-weight: 500
                 font-size: 14px
                 top: calc(100% + 10px)
-            .mobile-input,.dial-code
-                border: none
-                width: 100%
-                height: 42px
-                color: $black
-                &:focus
-                    outline: none
-            .dial-code
-                flex: 0
-                min-width: 20px
-                caret-color: transparent
-                display: flex
-                align-items: center
-                justify-content: center
-                svg
-                    width: 100%
-                    height: auto
-            .mobile-input
-                flex: 1
-        .form
-            --gaptb: 20px
             .forget_pass
                 text-align: end
                 color: $text
+            .resend_code
+                .upper_resend
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    p
+                        color: $text
+                    .resend
+                        font-size: 14px
+                        text-decoration: underline
+                .otp_verify
+                    position: relative
+                    margin: 30px auto 0
+                    @include flex
+                    gap: 0 21px
+                    .verify
+                        left: 50%
+                        transform: translateX(-50%)
+                    input
+                        flex: 1
+                        height: 40px
+                        width: 100%
+                        border: none
+                        @include font(500)
+                        border: 1px solid #D9D9D9
+                        border-radius: 5px  
+                        text-align: center
+                        &:focus
+                            outline: none
+                    .verify_btn
+                        flex: 1
+                        height: 40px
+                        width: 100%
+                        background: #D5D4D4
+                        border: 1px solid #C5C4C4
+                        border-radius: 5px  
+                        transition: .5s ease
+                        &:hover
+                            background: $white
+                            border-color: $black
         .sbmt-btn-div
             margin: 10px 0 20px
             text-align: center
             .btn
                 width: 100%
                 --height: 40px
-        .disc
-            margin-top: 30px
         .split-sec
             overflow: hidden
             p
@@ -612,76 +624,7 @@ header
             color: $text
             .signup
                 color: $black
-        .register
-            text-align: center
-            color: $text
-            @include font(500)
-            margin-top: 46px
-            .reg-btn
-                color: $primary
-                font-weight: bold
-        &.otp-verify
-            .otp-verify-wrap
-                padding-top: 3rem
-            .back-to-login
-                display: inline-flex
-                align-items: center
-                gap: 0 8px
-                color: $primary
-                @include font(500)
-                &:hover
-                    color: $primary
-                img
-                    width: 13px
-                    transform: rotate(90deg)
-            .enter-nm-erww
-                margin-top: 1rem
-                margin-bottom: 3rem
-            .txtVr
-                font-size: 20px
-                color: $text
-                text-align: center
-                span
-                    display: block
-                    font-size: 16px
-                    margin-top: 5px
-            .cojm-wrap
-                position: relative
-                .otp-error-ozrj
-                    color: red
-                    position: absolute
-                    font-size: 14px
-                    bottom: 20px
-                    left: 0
-                    right: 0
-                    text-align: center
-                    font-weight: bold
-            .verify-button
-                width: 100%
-                text-align: center
-            .enter_new 
-                margin-bottom: 40px
-                .form-group-login
-                    &::before
-                        display: none
-            .otpInput
-                padding: 50px 0 60px
-                max-width: 230px
-                margin: 0 auto
-                @include flex
-                gap: 0 21px
-                input
-                    flex: 1
-                    height: 40px
-                    width: 100%
-                    border: none
-                    @include font(500)
-                    border: 1px solid #D9D9D9
-                    border-radius: 5px  
-                    text-align: center
-                    &:focus
-                        outline: none
-
+        
 .model.ham-pop
     right: 0
     max-width: 480px

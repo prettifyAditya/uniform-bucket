@@ -2165,10 +2165,10 @@ img {
   --space: 11px;
 }
 .kmr-select-wrap .label {
-  color: var(--white);
+  color: var(--black);
   height: var(--labelheight);
   line-height: var(--labelheight);
-  background-image: url(/assets/icon/arrow-down-white.svg);
+  background-image: url(/assets/icon/arrow-down-black.svg);
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-position-x: 100%;
@@ -2179,6 +2179,10 @@ img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Lato", sans-serif;
 }
 .kmr-select-wrap.active {
   --btn: 10px;
@@ -2291,7 +2295,7 @@ img {
   padding: 0 14px;
 }
 .kmr-select-wrap .kmr-select-menu li:has(input:checked) .in-bx {
-  background: var(--primary);
+  background: var(--black);
   transition: 0.4s ease;
 }
 .kmr-select-wrap .kmr-select-menu li:has(input:checked) .in-bx::before {
