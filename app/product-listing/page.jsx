@@ -3,6 +3,11 @@ import ProductCol from "@/components/ProductCol";
 import "../../styles/product/product.css"
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import { Range } from 'react-range';
+
+
+const MIN = 0;
+const MAX = 10000;
 
 const categoryOptions = [
   { id: 1, name: 'Corporate' },
@@ -36,8 +41,10 @@ const sortOptions = [
 ];
 
 export default function ProductListing() {
+    const [price, setPrice] = useState([0, 10000]);
     const [categoryOpen, setCategoryOpen] = useState(false);
     const [subcategoryOpen, setSubcategoryOpen] = useState(false);
+    const [priceOpen, setPriceOpen] = useState(false)
     const [genderOpen, setGenderOpen] = useState(false);
     const [sortOpen, setSortOpen] = useState(false);
 
@@ -48,6 +55,7 @@ export default function ProductListing() {
 
     const categoryRef = useRef(null);
     const subcategoryRef = useRef(null);
+    const priceRef = useRef(null);
     const genderRef = useRef(null);
     const sortRef = useRef(null);
 
@@ -58,6 +66,9 @@ export default function ProductListing() {
       }
       if (subcategoryRef.current && !subcategoryRef.current.contains(e.target)) {
         setSubcategoryOpen(false);
+      }
+      if (priceRef.current && !priceRef.current.contains(e.target)){
+        setPriceOpen(false)
       }
       if (genderRef.current && !genderRef.current.contains(e.target)) {
         setGenderOpen(false);
@@ -81,6 +92,9 @@ export default function ProductListing() {
         prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
         );
     };
+    const handlePriceRange = (range) => {
+      setPrice(range)
+    }
     const handleGenderChange = (id) => {
         setSelectedGender(prev =>
         prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
@@ -148,12 +162,12 @@ export default function ProductListing() {
                     ))}
                     </ul>
                   </div>
-                  <div className="kmr-select-wrap price_select">
-                    <div className="label">Price</div>
-                    <ul className="kmr-select-menu">
+                  <div className={`kmr-select-wrap price_select ${price.length ? 'active': ''}`} ref={priceRef}>
+                    <div className="label" onClick={(e) => { e.stopPropagation(); setPriceOpen(prev => !prev); }}>Price</div>
+                    <ul className={`kmr-select-menu ${priceOpen ? 'active' : ''}`}>
                       <div className="upper-sec">
                         <h6>Price Range</h6>
-                        <button type="button" className="reset-btn">
+                        <button type="button" className="reset-btn"  onClick={() => setPrice([MIN, MAX])}>
                           Reset
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -175,22 +189,38 @@ export default function ProductListing() {
                         </button>
                       </div>
                       <div className="product-price-range">
-                        <div className="product-range-slider-wrap">
-                          <div id="product-range-slider" />
+                        <div className="product-range-slider-range">
+                            <Range
+                              step={100}
+                              min={MIN}
+                              max={MAX}
+                              values={price}
+                              onChange={handlePriceRange}
+                              renderTrack={({ props, children }) => (
+                                <div {...props} style={{ ...props.style, height: '3px', background: '#000', margin: '30px 10px', borderRadius: '5px' }}>
+                                  {children}
+                                </div>
+                              )}
+                              renderThumb={({ props }) => {
+                                const { key, ...rest } = props;
+                                return(
+                                  <div key={key} {...rest} style={{ ...props.style, height: '20px', width: '20px', backgroundColor: '#000', borderRadius: '50%', outline: 'none' }} />
+                                )
+                              }}
+                            />
                         </div>
                         <div className="price-range-input-wrap">
-                          <div className="price-range-input">
-                            <span>$</span>
-                            <input type="text" id="min-price" />
+                           <div className="price-range-input">
+                            <span>&#8377;</span>
+                            {price[0]}
                           </div>
                           <p>to</p>
                           <div className="price-range-input">
-                            <span>$</span>
-                            <input type="text" id="max-price" />
+                            <span>&#8377;</span>
+                            {price[1]}
                           </div>
                         </div>
                       </div>
-                      <input type="hidden" id="productRange" name="" />
                     </ul>
                   </div>
                   <div className={`kmr-select-wrap gender-select ${selectedGender.length > 0 ? "active" : ""}`} ref={genderRef}>
@@ -202,6 +232,7 @@ export default function ProductListing() {
                                 <span>{option.name}</span>
                                 <input
                                     type="radio"
+                                    name="gender"
                                     checked={selectedGender.includes(option.id)}
                                     onChange={() => handleGenderChange(option.id)}
                                 />
@@ -247,18 +278,32 @@ export default function ProductListing() {
             <div className="container">
                 <p>104 Products</p>
                 <div className="selected_pro_wraper">
-                    <div className="selected">
+                    {selectedCategories.map((id) => {
+                      const name = categoryOptions.find(opt => opt.id === id)?.name
+                      return(
+                        <div key={`cat-${id}`} className="selected">
+                          {name}
+                          <Image src="/assets/icon/cross.svg" width="15" height="15" alt="Remove" onClick={() =>
+                            setSelectedCategories(prev => prev.filter(i => i !== id))
+                          }></Image>
+                        </div>
+                      )
+                    })}
+                    {selectedSubcategories.map((id) => {
+                      const name = subcategoryOptions.find(opt => opt.id === id)?.name
+                      return(
+                        <div key={`subcat-${id}`} className="selected">
+                          {name}
+                          <Image src="/assets/icon/cross.svg" width="15" height="15" alt="Remove" onClick={() =>
+                            setSelectedSubcategories(prev => prev.filter(i => i !== id))
+                          }></Image>
+                        </div>
+                      )
+                    })}
+                    {/* <div className="selected">
                         Corporate
                         <Image src="/assets/icon/cross.svg" width="15" height="15" alt="Cross"></Image>
-                    </div>
-                    <div className="selected">
-                        Corporate
-                        <Image src="/assets/icon/cross.svg" width="15" height="15" alt="Cross"></Image>
-                    </div>
-                    <div className="selected">
-                        Corporate
-                        <Image src="/assets/icon/cross.svg" width="15" height="15" alt="Cross"></Image>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

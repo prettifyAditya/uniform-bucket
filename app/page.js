@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </div>
      </div>
-     <BestSellerSlider />
+     <BestSellerSlider heading="Best Sellers" />
      <div className="animate_banner banner">
       <div className="bg">
         <Image src="/assets/images/home/animate_banner.jpg" width="1280" height="730" alt="Animate Banner"></Image>

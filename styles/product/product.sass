@@ -115,6 +115,9 @@
                         padding-top: 8px
                         padding-bottom: 8px
             &.sort_by
+                .kmr-select-menu
+                    &.active
+                        display: block
                 @include media(991)
                     padding-right: 0
 
@@ -171,9 +174,10 @@
 // Product detail
 
 .product-detail-container
-    margin-top: var(--headerheight)
-    border-bottom: 1px solid #CDCDCD
+    margin-top: var(--headerfixed)
+    background-color: #FAFAFA
     .breadcrumps
+        padding-top: 20px
         li
             display: inline-block
             vertical-align: middle
@@ -210,6 +214,8 @@
             padding-bottom: 20px
         .colA
             .product-image-wrap
+                position: sticky
+                top: var(--headerheight)
                 display: grid
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
                 grid-gap: 10px
@@ -217,322 +223,248 @@
                     grid-template-columns: repeat(2, 1fr)
                 .pro-img
                     line-height: 0
+                    position: relative
+                    overflow: hidden
+                    transition: .5s ease
+                    &:hover
+                        img
+                            transform: scale(1.1)
+                    img
+                        transform-origin: top left
         .colB
             .pro_title
                 font-size: 28px
+                font-family: $Lato
                 line-height: 1.2
                 color: #000
+                text-transform: capitalize
+                font-weight: 700
                 margin-bottom: 20px
                 @include media(540)
                     font-size: 22px
                     margin-bottom: 10px
-            .pro_price_col
-                margin-bottom: 40px
-                @include media(540) 
-                    margin-bottom: 20px
-                li
-                    display: inline-block
-                    vertical-align: middle
-                    &:not(:last-child)
-                        margin-right: 15px
-                .sp
-                    font-size: 20px
-                    line-height: 1.2
-                    font-weight: 400
-                    color: #000
-                    @include media(540) 
-                        font-size: 18px
-                .mrp
-                    font-size: 20px
-                    line-height: 1.2
-                    font-weight: 400
-                    color: #666666
-                    text-decoration: line-through
-                    @include media(540) 
-                        font-size: 18px
-                .discount
-                    font-size: 16px
-                    line-height: 1.2
-                    font-weight: 600
-                    color: var(--colortext)
-            .discl
-                font-size: 15px
-                line-height: 1.2
-                color: #666
-                @include media(540) 
-                    font-size: 14px
-            .color-col
-                margin-bottom: 20px
-                h6
-                    font-size: 14px
-                    line-height: 1.2
-                    letter-spacing: 4px
-                    font-weight: 500
-                    margin-bottom: 10px
-                    color: #000
-                    font-family: $LeJ
-                    text-transform: uppercase
-                .select-option
-                    display: flex
-                    align-items: center
-                    justify-content: space-between
-                    max-width: 550px
-                    gap: 50px
-                    .color-select-wrap
-                        li
-                            display: inline-block
-                            vertical-align: middle
-                            position: relative
-                            &:not(:last-child)
-                                margin-right: 15px
-                            &:has(input:checked)
-                                span
-                                    &::before
-                                        opacity: 1
-                            span
-                                display: inline-block
-                                width: 15px
-                                height: 15px
-                                background-color: #000
-                                border-radius: 50%
-                                position: relative
-                                &::before
-                                    content: ""
-                                    position: absolute
-                                    left: -3px
-                                    bottom: -3px
-                                    width: 21px
-                                    height: 21px
-                                    border: 1px solid #000
-                                    border-radius: 50%
-                                    opacity: 0
-                            input
-                                position: absolute
-                                left: 0
-                                right: 0
-                                top: 0
-                                bottom: 0
-                                width: 100%
-                                height: 100%
-                                z-index: 2
-                                appearance: none
-                                opacity: 0
-                                &:checked
-                                    ~ span
-                                        &::before
-                                            opacity: 1
-                    .value-wrap
-                        display: flex
-                        align-items: center
-                        border: 1px solid #B4B1B1
-                        padding: 5px 20px
-                        border-radius: 50px
-                        @include media(540) 
-                            padding: 5px 10px
-                        .minus-val, .plus-val
-                            width: 20px
-                            height: 20px
-                            text-align: center
-                            border: none
-                            background: none
-                            font-size: 28px
-                            font-weight: 500
-                            line-height: 20px 
-                            &.disabled
-                                opacity: 0.2
-                                cursor: no-drop
-                        .count-val
-                            font-size: 22px
-                            width: 90px
-                            border: 0
-                            background: none
-                            text-align: center
-                            @include media(540) 
-                                width: 50px
-                                font-size: 18px
-                            
-            .size-chart-wrap
-                .size-title
-                    display: flex
-                    align-items: center
-                    gap: 30px
-                    h6
-                        font-size: 14px
-                        line-height: 1.2
-                        letter-spacing: 4px
-                        font-weight: 500
-                        font-family: $LeJ
-                        color: #000
-                        text-transform: uppercase
-                    .chart-btn
-                        display: inline-flex
-                        align-items: center
-                        gap: 6px
-                        font-size: 14px
-                        line-height: 1.2
-                        color: $text
-                .select-size
-                    display: flex
-                    width: 100%
-                    flex-wrap: wrap
-                    gap: 16px
-                    margin: 25px 0 50px
-                    --size: 42px
-                    @include media(540)
-                        margin: 15px 0 20px
-                    li
-                        width: var(--size)
-                        height: var(--size)
-                        border: 1px solid #C7C7C7
-                        display: flex
-                        align-items: center
-                        justify-content: center
-                        border-radius: 50%
-                        position: relative
-                        // &:has(input:checked)
-                        //         span
-                        //             &::before
-                        //                 opacity: 1
-                        input
-                            position: absolute
-                            top: 0
-                            right: 0
-                            bottom: 0
-                            left: 0
-                            width: 100%
-                            height: 100%
-                            appearance: none 
-                            opacity: 0 
-                            z-index: 1
-                            &.checkmark_a1
-                                ~ span
-                                    &::before
-                                        opacity: 1
-                        span
-                            display: inline-block
-                            font-size: 14px
-                            height: var(--size)
-                            line-height: var(--size)
-                            color: $text
-                            &::before
-                                content: ""
-                                width: 100%
-                                position: absolute
-                                left: 0
-                                top: 50%
-                                height: 1px
-                                background-color: #B0B0B0
-                                transform: rotate(146deg)
-                                opacity: 0
-            .pro-btn-wrap
+            .review_wrap
                 display: flex
                 align-items: center
                 gap: 15px
-                margin-bottom: 65px
-                --height: 36px
-                max-width: 550px
-                @include media(768)
-                    margin-bottom: 40px
-                @include media(540)
-                    display: grid
-                    grid-template-columns: repeat(2, 1fr)
-                    grid-gap: 8px
-                    margin-bottom: 20px
-                .btn2
-                    flex: 1
-                    @include media(768)
-                        height: 36px
-                    @include media(540)
-                        --padding: 10px
-                .addto-btn
+                margin-bottom: 20px
+                .review_stars
                     display: flex
                     align-items: center
-                    justify-content: center
-                    border: 1px solid var(--colortext)
-                    height: var(--height)
-                    padding: 10px
-                    &.wish
+                    gap: 3px
+                .review_content
+                    display: flex
+                    align-items: center
+                    p
+                        font-size: 14px 
+                        color: $text
+                        &:first-child
+                            padding-right: 10px
+                            border-right: 1px solid $text
+                        &:last-child
+                            padding-left: 10px
+            .price_wrapper
+                display: flex
+                align-items: center
+                justify-content: space-between
+                margin-bottom: 10px
+                .price
+                    font-size: 24px
+                    line-height: 1.2
+                    font-weight: 500
+                .sku_code
+                    display: flex
+                    gap: 6px
+                    font-size: 14px 
+                    font-weight: 500
+                    span
+                        color: $text
+            .bulk_orders
+                margin-bottom: 20px
+                border-bottom: 1px solid #D7D7D7
+                padding-bottom: 35px
+                >p
+                    font-size: 14px
+                    color: $text
+                .bulk_order_content
+                    padding-top: 15px
+                    display: flex
+                    align-items: center
+                    gap: 5px
+                    .bulk_wrap
+                        background: $white
+                        padding: 8px 15px
+                        border: 1px solid #E6E6E6
+                        p
+                            font-size: 12px
+                            line-height: 1
+                            color: $text
+                        .price
+                            font-size: 14px
+            .select_size_wrap
+                position: relative
+                padding-right: 30px
+                .upper_sec
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+
+                    h3
+                        font-size: 14px
+                        letter-spacing: 3px
+                        text-transform: uppercase
+                        font-family: $Lato
+                    a
+                        font-size: 14px
+                        text-decoration: underline
+                        color: $text
+                .sizes_wrapper
+                    padding: 25px 0
+                    display: flex
+                    align-items: center
+                    flex-wrap: wrap
+                    gap: 20px 5px
+                    .size
+                        text-align: center
+                        p
+                            padding-bottom: 5px
+                            font-size: 14px
+                            line-height: 1.2
+                            text-transform: uppercase
+                            font-weight: 600
+                        .size_count
+                            width: 100%
+                            padding: 7px 6px
+                            border: 1px solid #B4B1B1
+                            border-radius: 5px
+                            display: flex
+                            align-items: center
+                            gap: 3px
+                            button
+                                line-height: 1
+                                svg
+                                    width: 15px
+                                    height: 15px
+                            input
+                                outline: none
+                                border: none
+                                background: transparent
+                                max-width: 40px
+                                padding: 0 5px
+                                line-height: 1
+                                height: 30px
+                                text-align: center
+                .add_to_wish
+                    display: flex
+                    align-items: center
+                    position: absolute
+                    right: 10%
+                    bottom: 10%
+                    transform: translate(10%, 10%)
+                    .wish_btn
+                        display: flex
+                        align-items: center
+                        gap: 10px
+                        padding-right: 10px
+                        border-right: 1px solid #00000045
+                    .share
+                        padding-left: 10px
                         svg
-                            path 
-                                stroke: var(--primary)
-                    svg, img
-                        width: 25px
-                        height: 25px
-            .summery-detail-content
-                margin-bottom: 40px
-                @include media(540)
-                    margin-bottom: 20px
+                            width: 30px
+                            height: 30px
+            .btn_wrapper
+                display: flex
+                align-items: center
+                gap: 10px
+                button
+                    flex: 1
+                    width: 100%
+                    text-transform: capitalize
+                    letter-spacing: normal
+                    font-size: 16px
+                    font-weight: 700
+                    &.black
+                        background: $black
+                        color: $white
+                        border: 1px solid $black 
+                        &:hover
+                            padding: 0
+                            background: transparent
+                            color: $black
+                    &.gray
+                        background: #D7D2D2
+                        color: $black
+                        border: 1px solid #D7D2D2
+                        &:hover
+                            padding: 0
+                            background: transparent
+                            border-color: $black
+                            color: $black
+            .pro_description
+                padding: 40px 0 20px
                 .col
-                    --plus: 14px
-                    --border: 2px
-                    border-bottom: 1px solid #D1D1D1
+                    --padlr: 0
+                    transition: .5s ease
                     &.active
                         .title
-                            border-bottom: 1px solid #D1D1D1
-                            p
-                                color: var(--colortext)
-                            .ico
+                            h6
+                                color: $black
+                            .icon
                                 &::after
-                                    background: var(--colortext)
-                                    transform: rotate(90deg)
+                                    transform: scaleY(0)
+                        article
+                            max-height: fit-content
+                            opacity: 1
                     .title
-                        cursor: pointer
-                        @include flex
+                        display: flex
+                        flex-wrap: wrap
                         align-items: center
-                        padding: 14px 0
-                        .ico
-                            flex: 0 1 auto
-                            height: var(--plus)
-                            width: var(--plus)
-                            position: relative
-                            &::before,&::after
-                                content: ''
-                                position: absolute
-                                background: $black
-                                transition: .5s ease
-                            &::before
-                                top: 50%
-                                left: 0
-                                right: 0
-                                translate: 0 -50%
-                                height: var(--border)
-                            &::after
-                                left: 50%
-                                translate: -50% 0
-                                top: 0
-                                bottom: 0
-                                width: var(--border)
-                            svg
-                                width: 36px
-                                height: 36px
-                        p
-                            flex: 1
-                            font-size: 16px
+                        overflow: hidden
+                        padding: 15px 0
+                        cursor: pointer
+                        transition: .5s ease
+                        border-bottom: 1px solid #D1D1D1
+                        h6
+                            font-family: $Lato
+                            font-size: 14px
                             line-height: 1.2
-                            letter-spacing: 4px
-                            text-transform: uppercase
-                            font-family: $LeJ
-                            font-weight: 500
                             color: $text
-                    article 
-                        .content-article
-                            padding: 15px 0 20px
-                            .product-description
-                                *
-                                    color: $text
-                                p,ul
-                                    margin-bottom: 22px
-                                    font-size: 18px
-                                h3,h2,h4,h5,h6
-                                    margin-bottom: 13px
-                                    font-size: 20px
-                                    line-height: 1.2
-                                ul
-                                    padding-left: 20px
-                                    li
-                                        list-style: disc
-                                        &::marker
-                                            color: #D9D9D9
+                            flex: 1
+                            text-transform: uppercase
+                            letter-spacing: 2px
+                            font-weight: 500
+                            padding-right: 1rem
+                            transition: .5s ease
+                        .icon
+                            flex: 0 1 auto
+                            --size: 18px
+                            --border: 2px
+                            --bgcolor: var(--black)
+                            height: var(--size)
+                            width: var(--size)
+                            position: relative
+                            @include before(var(--black))
+                            @include after(var(--black))
+                            &::before
+                                top: calc(var(--size) / 2 - var(--border) / 2)
+                                bottom: auto
+                                height: var(--border)
+                                width: 100%
+                            &::after
+                                left: calc(var(--size) / 2)
+                                translate: -50% 0
+                                right: auto
+                                width: var(--border)
+                                height: 100%
+                    article
+                        position: relative
+                        border-bottom: 1px solid #D1D1D1
+                        max-height: 0
+                        opacity: 0
+                        overflow: hidden
+                        transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out
+                        .content-desc
+                            padding: 20px 0
             .col-itqeq
                 display: flex
                 .rgcwv
@@ -546,26 +478,86 @@
                     .ico
                         line-height: 0
                         margin-bottom: 15px
+                        img
+                            width: 40px
                     p
                         font-size: 13px
                         line-height: 15px
                         text-transform: uppercase
-                        color: $text
+                        color: $text       
 
-.product-detail-secA
-    .sec-heading
-        h3
-            color: $black
-    .slider-nav
-        button
-            svg
-                path 
-                    fill: #000
-    // .more-products-slider
-    //     .product-col
-    //         img
-    //             aspect-ratio: 1
-
+.customer_reviews
+    .heading
+        margin-bottom: 50px
+    .review_wrapper
+        .colA, .colB
+            flex: 1    
+        .colA
+            .review-border
+                border-right: 1px solid #00000026
+                .review_content
+                    margin-right: -4px
+                    height: 500px
+                    overflow-y: auto
+                    &::-webkit-scrollbar
+                        width: 8px
+                        height: 4px
+                    &::-webkit-scrollbar-thumb
+                        background-color: #D9D9D9
+                    .review_box
+                        display: flex
+                        gap: 15px
+                        margin-bottom: 40px
+                        figure
+                            width: 60px
+                            height: 60px
+                            flex: 0 1 auto
+                            img
+                                height: 100%
+                                border-radius: 50%
+                        figcaption
+                            flex: 1
+                            h6
+                                font-size: 18px
+                            .review_stars
+                                padding: 5px 0 
+                                display: flex
+                                align-items: center
+                                gap: 5px
+                            p
+                                max-width: 400px
+                                color: $text
+                                font-size: 14px
+                            time
+                                display: block
+                                font-size: 14px
+                                color: #A4A4A4
+                                margin-top: 10px
+        .colB
+            .review_form
+                padding: 30px 70px
+                h6
+                    font-size: 24px
+                    font-family: $Lato
+                .rating
+                    display: flex
+                    align-items: center
+                    gap: 20px
+                    .give_reviews
+                        display: flex
+                        align-items: center
+                        gap: 7px
+                        li
+                            height: 16px
+                            cursor: pointer
+                            &:hover
+                                svg
+                                    path 
+                                        fill: #000
+                            svg
+                                width: 16px
+                                height: 16px
+                                transition: .5s ease
 .custom-pop
     right: 0
     transform: translateX(100%)

@@ -13,6 +13,7 @@ export default function Header(){
     const [headerFixed, setHeaderFixed] = useState(false)
     const pathname = usePathname()
     const isProductListingPage = pathname.startsWith('/product-listing')
+    const isProductDetailPage = pathname.startsWith('/product-detail')
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')
@@ -57,10 +58,10 @@ export default function Header(){
     }, [])
     return(
         <>
-            <header className={`${isProductListingPage ? "header-fill" : ""} ${headerFixed ? "header-fixed" : ""}`}>
+            <header className={`${isProductListingPage || isProductDetailPage ? "header-fill" : ""} ${headerFixed ? "header-fixed" : ""}`}>
                 <div className="header-wrapper container">
                     <div className="colA">
-                        <Link href="javascript:;">
+                        <Link href="/">
                             <Image src="/logo.svg" width="219" height="30" alt="Logo"></Image>
                         </Link>
                     </div>

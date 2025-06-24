@@ -9,7 +9,7 @@ import CategoryItem from "./CategoryItem";
 import Image from "next/image";
 import ProductCol from "./ProductCol";
 
-export default function BestSellerSlider(){
+export default function BestSellerSlider({ classname="", heading="" }){
     const swiperRef = useRef(null)
     useEffect(() => {
         setTimeout(() => {
@@ -19,11 +19,11 @@ export default function BestSellerSlider(){
         }, 100);
     }, [])
     return(
-        <div className="bestSeller_slider_wrapper gray-bg sec-pad">
+        <div className={`bestSeller_slider_wrapper gray-bg sec-pad ${classname}`}>
             <div className="container-fluid slider-section">
                 <div className="upper-sec">
                 <div className="heading">
-                    <h2>Best Sellers</h2>
+                    <h2>{heading}</h2>
                 </div>
                 <div className="slider-nav">
                     <button type="button" className="swiper-prev bestSeller-prev"><img src="/assets/icon/swiper-icon.svg" alt="Swiper Prev" /></button>

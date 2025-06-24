@@ -2218,7 +2218,8 @@ img {
 .kmr-select-wrap.price_select .kmr-select-menu h6 {
   flex: 1;
   font-size: 14px;
-  color: var(--primary);
+  color: var(--black);
+  font-family: "Lato", sans-serif;
   font-weight: 500;
 }
 .kmr-select-wrap.price_select .product-range-slider-wrap {
@@ -2550,6 +2551,15 @@ em {
   .md-none {
     display: none;
   }
+}
+
+.bestSeller_slider_wrapper {
+  position: relative;
+  z-index: 0;
+}
+.bestSeller_slider_wrapper .container-fluid .btn_wrapper {
+  margin-top: 50px;
+  text-align: center;
 }
 
 .upper-wrapper {
