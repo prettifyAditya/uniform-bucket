@@ -1305,6 +1305,29 @@ img {
   background: transparent;
   color: var(--black);
 }
+.btn.gray_fill {
+  background: #D7D2D2;
+  color: var(--black);
+  border: 1px solid #D7D2D2;
+}
+.btn.gray_fill:hover {
+  padding: 0;
+  background: transparent;
+  color: var(--black);
+  border-color: var(--black);
+}
+.btn.gray_border {
+  background: #FFFFFF;
+  color: var(--text);
+  border: 1px solid #666666;
+  padding: 0 18px;
+  border-radius: 5px;
+}
+.btn.gray_border:hover {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
 .btn.black_round {
   color: var(--white);
   border-radius: 50px;

@@ -14,7 +14,7 @@
 }
 .checkout-header {
   padding: 20px 0;
-  border-bottom: 1px solid #F1F1F1;
+  background: #F3F3F3;
 }
 .checkout-header .checkout-header-wrapper {
   display: flex;
@@ -78,7 +78,7 @@
   text-align: center;
   color: var(--text);
   text-transform: uppercase;
-  background: var(--white);
+  background: #F3F3F3;
 }
 @media only screen and (max-width: 768px) {
   .checkout-header .checkout-header-wrapper .colB ul li a {
@@ -93,7 +93,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ECECEC;
+  background: #CDCDCD;
 }
 @media only screen and (max-width: 768px) {
   .checkout-header .checkout-header-wrapper .colB ul li a .ico {
@@ -103,10 +103,10 @@
   }
 }
 .checkout-header .checkout-header-wrapper .colB ul li a.active {
-  color: var(--primary);
+  color: var(--black);
 }
 .checkout-header .checkout-header-wrapper .colB ul li a.active .ico {
-  background: var(--primary);
+  background: var(--black);
 }
 .checkout-header .checkout-header-wrapper .colC .secure-kaedj {
   color: var(--text);
@@ -117,6 +117,9 @@
 
 .check-out-main {
   --container: 964px;
+}
+.check-out-main .check-out-secA-zbyqo {
+  background: #FAFAFA;
 }
 .check-out-main .check-out-secA-zbyqo .flex-checkout-cwgln {
   padding: 58px 0 42px;
@@ -161,7 +164,6 @@
   flex: 1;
   margin-left: 26px;
   padding-left: 26px;
-  border-left: 1px solid #F3F3F3;
 }
 @media only screen and (max-width: 768px) {
   .check-out-main .check-out-secA-zbyqo .flex-checkout-cwgln .colB-flex-hfmcf {
@@ -188,31 +190,21 @@
     padding: 20px 0 40px;
   }
 }
-.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .flex-btn-fwer {
+.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .bank-list {
   display: flex;
   align-items: flex-end;
+  gap: 6px;
+  flex: 1;
 }
 @media only screen and (max-width: 540px) {
-  .check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .flex-btn-fwer {
+  .check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .bank-list {
     flex-direction: column;
   }
 }
-.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .flex-btn-fwer .bank-list {
-  flex: 1;
-}
-.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .flex-btn-fwer .bank-list li {
+.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .bank-list li {
   display: inline-block;
   vertical-align: middle;
   line-height: 0;
-}
-.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .flex-btn-fwer .nd-hlp {
-  color: var(--text);
-}
-.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .flex-btn-fwer .nd-hlp a {
-  color: var(--text);
-}
-.check-out-main .check-out-secA-zbyqo .btm-check-out-cwgln .flex-btn-fwer .nd-hlp a:hover {
-  text-decoration: underline;
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .upper-sshjm {
   display: flex;
@@ -223,6 +215,12 @@
   .check-out-main .check-out-secA-zbyqo .bag-dobyk .upper-sshjm {
     margin-bottom: 20px;
   }
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .upper-sshjm h6 {
+  font-size: 18px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .upper-sshjm .btn-xyxgw {
   flex: 1;
@@ -328,118 +326,12 @@
     padding-left: 0;
   }
 }
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .title-tznlw, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .fnznl {
-  font-size: 14px;
-  line-height: 18px;
-  color: var(--text);
-  max-width: 407px;
-  margin-bottom: 18px;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh {
-  margin-bottom: 25px;
-  display: flex;
-  gap: 2rem;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .size-eoimy {
-  width: -moz-fit-content;
-  width: fit-content;
-  background: #F1F1F1;
-  border-radius: 5px;
-  display: flex;
-  gap: 5px;
-  padding: 8px 10px;
-  --labelfontbefore: 14px;
-  font-size: var(--labelfontbefore);
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .size-eoimy .prdct-size-glcjj {
-  flex: 1;
-  --arrow: 10px;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .size-eoimy .prdct-size-glcjj .list {
-  left: auto;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .size-eoimy .prdct-size-glcjj .list li {
-  padding: 6px 15px;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap {
-  display: flex;
-  align-items: center;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .count-val {
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .title-tznlw {
   font-size: 16px;
-  width: 50px;
-  border: 0;
-  background: none;
-  text-align: center;
-  color: var(--text);
-}
-@media only screen and (max-width: 1200px) {
-  .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .count-val {
-    font-size: 20px;
-  }
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .count-val:focus {
-  outline: none;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .minus-val, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .plus-val {
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--text);
-  background: none;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 22px;
-  line-height: 22px;
-  cursor: pointer;
-  color: var(--text);
-}
-@media only screen and (max-width: 1200px) {
-  .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .minus-val, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .plus-val {
-    height: 35px;
-    width: 35px;
-    font-size: 20px;
-  }
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .minus-val.disabled, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .prdct-vzmmh .val-wrap .plus-val.disabled {
-  opacity: 0.4;
-  cursor: no-drop;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj li {
-  display: inline-block;
-  vertical-align: middle;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj li:not(:last-child) {
-  margin-right: 15px;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-zpsgj {
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 18px;
   font-family: "Lato", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-zpsgj span {
-  font-family: "Le Jeune Deck";
-  font-size: 14px;
-  line-height: 1;
-  display: inline-block;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-pefca {
-  font-family: "Lato", sans-serif;
-  font-size: 14px;
-  line-height: 1;
-  color: var(--text);
-  text-decoration: line-through;
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .price-pefca span {
-  display: inline-block;
-  text-decoration: line-through;
-  font-family: "Le Jeune Deck";
-}
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .price-btm-zpsgj .discount-zpsgj {
-  font-family: "Lato", sans-serif;
-  font-size: 14px;
-  line-height: 1;
-  color: var(--primary);
-  font-weight: bold;
 }
 .check-out-main .check-out-secA-zbyqo .coupon-nvixw {
   padding-bottom: 60px;
@@ -450,6 +342,7 @@
   line-height: 24px;
   color: var(--black);
   margin-bottom: 14px;
+  font-weight: 700;
 }
 .check-out-main .check-out-secA-zbyqo .coupon-nvixw .cupn-hjgn {
   display: flex;
@@ -459,6 +352,7 @@
   flex: 1;
   border: none;
   border-bottom: 1px solid var(--text);
+  background: transparent;
 }
 .check-out-main .check-out-secA-zbyqo .coupon-nvixw .cupn-hjgn input:focus {
   outline: none;
@@ -685,6 +579,8 @@
 .checkout-tbl-xiuh .ttl-tbl-bkfg {
   color: var(--black);
   margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 700;
 }
 .checkout-tbl-xiuh .pric-ing-gegc li {
   display: flex;
@@ -709,6 +605,10 @@
 }
 .checkout-tbl-xiuh .ttl-amnt-tbl .ttl-txt, .checkout-tbl-xiuh .ttl-amnt-tbl .ttl-prc-txt {
   color: var(--black);
+  font-weight: 700;
+}
+.checkout-tbl-xiuh .btn-tbl-prc:not(:last-child) {
+  margin-bottom: 10px;
 }
 .checkout-tbl-xiuh .checkbox-full {
   margin-top: 20px;

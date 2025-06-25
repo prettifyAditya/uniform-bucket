@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import "../../styles/product/product.css"
+import "../../../styles/product/product.css"
 import ProductDimage from "@/components/ProductDimage";
 import { useState, useRef } from "react";
 import ReviewBox from "@/components/ReviewBox";

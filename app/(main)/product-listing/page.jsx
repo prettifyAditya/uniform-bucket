@@ -1,6 +1,6 @@
 "use client"
 import ProductCol from "@/components/ProductCol";
-import "../../styles/product/product.css"
+import "../../../styles/product/product.css"
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { Range } from 'react-range';

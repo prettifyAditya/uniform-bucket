@@ -2,7 +2,7 @@
 
 .checkout-header
     padding: 20px 0
-    border-bottom: 1px solid #F1F1F1
+    background: #F3F3F3
     .checkout-header-wrapper
         display: flex
         align-items: center
@@ -47,7 +47,7 @@
                         text-align: center
                         color: $text
                         text-transform: uppercase
-                        background: $white
+                        background: #F3F3F3
                         @include media(768)
                             font-size: 12px 
                         .ico
@@ -58,15 +58,15 @@
                             display: flex
                             align-items: center
                             justify-content: center
-                            background: #ECECEC
+                            background: #CDCDCD
                             @include media(768) 
                                 width: 20px
                                 height: 20px
                                 margin: 0 auto 10px
                         &.active
-                            color: $primary
+                            color: $black
                             .ico
-                                background: $primary
+                                background: $black
         .colC
             .secure-kaedj
                 color: $text
@@ -78,6 +78,7 @@
 .check-out-main
     --container: 964px
     .check-out-secA-zbyqo
+        background: #FAFAFA
         .flex-checkout-cwgln
             padding: 58px 0 42px 
             display: flex
@@ -105,7 +106,6 @@
                 flex: 1
                 margin-left: 26px
                 padding-left: 26px
-                border-left: 1px solid #F3F3F3
                 @include media(768)
                     margin-left: 0
                     padding: 25px
@@ -118,23 +118,17 @@
                 padding: 50px 0 60px
             @include media(540) 
                 padding: 20px 0 40px
-            .flex-btn-fwer
+            .bank-list
                 display: flex
                 align-items: flex-end
+                gap: 6px
                 @include media(540) 
                     flex-direction: column
-                .bank-list
-                    flex: 1
-                    li
-                        display: inline-block
-                        vertical-align: middle
-                        line-height: 0
-                .nd-hlp
-                    color: $text
-                    a
-                        color: $text
-                        &:hover
-                            text-decoration: underline
+                flex: 1
+                li
+                    display: inline-block
+                    vertical-align: middle
+                    line-height: 0
         .bag-dobyk
             .upper-sshjm
                 display: flex
@@ -142,6 +136,11 @@
                 margin-bottom: 36px
                 @include media(768) 
                     margin-bottom: 20px
+                h6
+                    font-size: 18px
+                    line-height: 1.2
+                    text-transform: uppercase
+                    letter-spacing: 1px
                 .btn-xyxgw
                     flex: 1
                     text-align: right
@@ -193,95 +192,12 @@
                         padding-left: 34px
                         @include media(540) 
                             padding-left: 0
-                        .title-tznlw,.fnznl
-                            font-size: 14px
-                            line-height: 18px
-                            color: $text
-                            max-width: 407px
+                        .title-tznlw
+                            font-size: 16px
+                            line-height: 1.2
+                            color: $black
                             margin-bottom: 18px
-                        .prdct-vzmmh
-                            margin-bottom: 25px
-                            display: flex
-                            gap: 2rem
-                            .size-eoimy
-                                width: fit-content
-                                background: #F1F1F1
-                                border-radius: 5px
-                                display: flex
-                                gap: 5px
-                                padding: 8px 10px
-                                --labelfontbefore: 14px
-                                font-size: var(--labelfontbefore)
-                                .prdct-size-glcjj
-                                    flex: 1
-                                    --arrow: 10px
-                                    .list
-                                        left: auto
-                                        li
-                                            padding: 6px 15px
-                            .val-wrap
-                                display: flex
-                                align-items: center
-                                .count-val
-                                    font-size: 16px
-                                    width: 50px
-                                    border: 0
-                                    background: none
-                                    text-align: center
-                                    color: $text
-                                    @include media(1200)
-                                        font-size: 20px
-                                    &:focus
-                                        outline: none
-                                .minus-val,.plus-val
-                                    width: 30px
-                                    height: 30px
-                                    border: 1px solid $text
-                                    background: none
-                                    border-radius: 5px
-                                    text-align: center
-                                    font-size: 22px
-                                    line-height: 22px
-                                    cursor: pointer
-                                    color: $text
-                                    @include media(1200)
-                                        height: 35px
-                                        width: 35px
-                                        font-size: 20px
-                                    &.disabled
-                                        opacity: .4
-                                        cursor: no-drop
-                        .price-btm-zpsgj
-                            li
-                                display: inline-block
-                                vertical-align: middle
-                                &:not(:last-child)
-                                    margin-right: 15px
-                            .price-zpsgj
-                                font-family: $Lato
-                                font-size: 14px
-                                line-height: 18px
-                                span
-                                    font-family: $LeJ
-                                    font-size: 14px
-                                    line-height: 1
-                                    display: inline-block
-                            .price-pefca
-                                font-family: $Lato
-                                font-size: 14px
-                                line-height: 1
-                                color: $text
-                                text-decoration: line-through
-                                span
-                                    display: inline-block
-                                    text-decoration: line-through
-                                    font-family: $LeJ
-                            .discount-zpsgj
-                                font-family: $Lato
-                                font-size: 14px
-                                line-height: 1
-                                color: $primary
-                                font-weight: bold
+                            font-family: $Lato
         .coupon-nvixw
             padding-bottom: 60px
             position: relative
@@ -290,6 +206,7 @@
                 line-height: 24px
                 color: $black
                 margin-bottom: 14px
+                font-weight: 700
             .cupn-hjgn
                 display: flex
                 gap: 12px
@@ -297,6 +214,7 @@
                     flex: 1
                     border: none
                     border-bottom: 1px solid $text
+                    background: transparent
                     &:focus
                         outline: none
             .invalid-coupn
@@ -464,6 +382,8 @@
     .ttl-tbl-bkfg
         color: $black
         margin-bottom: 16px
+        font-size: 16px
+        font-weight: 700
     .pric-ing-gegc
         li
             display: flex
@@ -484,5 +404,9 @@
         margin: 22px 0
         .ttl-txt,.ttl-prc-txt
             color: $black
+            font-weight: 700
+    .btn-tbl-prc
+        &:not(:last-child)
+            margin-bottom: 10px
     .checkbox-full 
         margin-top: 20px

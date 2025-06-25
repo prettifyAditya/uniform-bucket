@@ -1,5 +1,5 @@
 import HomeBanner from "@/components/HomeBanner";
-import "../styles/home/home.css"
+import "../../styles/home/home.css"
 import CategorySlider from "@/components/CategorySlider";
 import ClientSlider from "@/components/ClientSlider";
 import Image from "next/image";
