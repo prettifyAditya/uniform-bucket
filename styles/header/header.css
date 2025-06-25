@@ -1130,9 +1130,9 @@ button {
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: 5;
+  z-index: 6;
   opacity: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   transform: translateY(100%);
   transition: 0s ease 0.5s, opacity 0.5s ease;
   cursor: pointer;
@@ -1294,6 +1294,16 @@ img {
 .btn.btn-grad:hover {
   background: linear-gradient(270deg, #FFFFFF, #ffffff);
   color: #000;
+}
+.btn.black_fill {
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+}
+.btn.black_fill:hover {
+  padding: 0;
+  background: transparent;
+  color: var(--black);
 }
 .btn.black_round {
   color: var(--white);

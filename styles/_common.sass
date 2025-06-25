@@ -395,9 +395,9 @@ button
     right: 0
     bottom: 0
     top: 0
-    z-index: 5
+    z-index: 6
     opacity: 0
-    background: rgb(0 0 0 /.7)
+    background: rgb(0 0 0 / 50%)
     transform: translateY(100%)
     transition: 0s ease .5s,opacity .5s ease
     cursor: pointer
@@ -518,6 +518,14 @@ img
             // background: linear-gradient(270deg, #FFFFFF, #B9B9B9)
             background: linear-gradient(270deg, #FFFFFF, #ffffff)
             color: #000
+    &.black_fill
+        background: $black
+        color: $white
+        border: 1px solid $black 
+        &:hover
+            padding: 0
+            background: transparent
+            color: $black
     &.black_round
         color: $white
         border-radius: 50px

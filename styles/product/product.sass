@@ -232,6 +232,7 @@
                     img
                         transform-origin: top left
         .colB
+            padding-left: 40px
             .pro_title
                 font-size: 28px
                 font-family: $Lato
@@ -262,6 +263,7 @@
                             padding-right: 10px
                             border-right: 1px solid $text
                         &:last-child
+                            cursor: pointer
                             padding-left: 10px
             .price_wrapper
                 display: flex
@@ -303,7 +305,6 @@
                             font-size: 14px
             .select_size_wrap
                 position: relative
-                padding-right: 30px
                 .upper_sec
                     display: flex
                     align-items: center
@@ -323,7 +324,7 @@
                     display: flex
                     align-items: center
                     flex-wrap: wrap
-                    gap: 20px 5px
+                    gap: 20px 7px
                     .size
                         text-align: center
                         p
@@ -358,25 +359,52 @@
                     display: flex
                     align-items: center
                     position: absolute
-                    right: 10%
+                    right: 0%
                     bottom: 10%
-                    transform: translate(10%, 10%)
+                    transform: translate(0%, 10%)
                     .wish_btn
                         display: flex
                         align-items: center
                         gap: 10px
                         padding-right: 10px
                         border-right: 1px solid #00000045
+                        &.added
+                            svg
+                                path 
+                                    fill: $black
                     .share
                         padding-left: 10px
+                        position: relative
                         svg
                             width: 30px
                             height: 30px
+                        .social_icons
+                            background: $white
+                            border-radius: 5px
+                            padding: 10px 7px
+                            position: absolute
+                            bottom: 100%
+                            display: flex
+                            flex-direction: column
+                            gap: 5px
+                            transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out
+                            transform-origin: bottom
+                            margin-bottom: 10px
+                            transform: scale(0.75) translateY(10px)
+                            opacity: 0
+                            &.is-open
+                                opacity: 1
+                                transform: scale(1) translateY(0)
+                                pointer-events: all
+                            svg
+                                width: 20px
+                                height: 20px
             .btn_wrapper
                 display: flex
                 align-items: center
                 gap: 10px
                 button
+                    --height: 46px
                     flex: 1
                     width: 100%
                     text-transform: capitalize
@@ -395,9 +423,15 @@
                         background: #D7D2D2
                         color: $black
                         border: 1px solid #D7D2D2
+                        svg
+                            display: none
+                            transition: .5s ease
+                        &.active
+                            svg
+                                display: block
                         &:hover
                             padding: 0
-                            background: transparent
+                            background: $white
                             border-color: $black
                             color: $black
             .pro_description
@@ -550,7 +584,7 @@
                         li
                             height: 16px
                             cursor: pointer
-                            &:hover
+                            &:hover, &.active
                                 svg
                                     path 
                                         fill: #000
@@ -558,6 +592,9 @@
                                 width: 16px
                                 height: 16px
                                 transition: .5s ease
+                .black_fill
+                    width: fit-content
+                    padding: 0 20px
 .custom-pop
     right: 0
     transform: translateX(100%)
@@ -657,3 +694,76 @@
                     display: none
                 .file-name
                     --filename: "Left Side Image"
+
+.model.embroidery-pop
+    height: fit-content
+    max-width: 450px 
+    top: unset
+    bottom: 0%
+    left: 50%
+    transform: translate(-50%, 100%)
+    transition: .5s ease
+    &.guide 
+        max-width: fit-content
+        .model-body
+            h6
+                padding-bottom: 10px
+            img
+                height: 100%
+    &.is-open
+        bottom: 50%
+        transform: translate(-50%, 50%)
+    .close
+        top: 20px
+        right: 20px
+        svg
+            width: 20px
+            height: 20px
+    .model-body
+        padding: 20px 25px
+        h6
+            font-size: 16px
+            font-family: $Lato
+            font-weight: 700
+        .form-group
+            padding: 15px 25px
+            margin: 15px 0 20px
+            border-radius: 5px
+            position: relative
+            width: fit-content
+            border: 1px dashed $black
+            &::before
+                content: ""
+                position: absolute
+                left: 0
+                top: 0
+                background: url(/assets/icon/add.svg) no-repeat
+                width: 100%
+                height: 100%
+                background-position: 5% 50%
+            p
+                color: $text
+                padding-left: 30px
+            input
+                width: 100%
+                height: 100%
+                position: absolute
+                left: 0
+                top: 0
+                opacity: 0
+        p
+            color: $text
+            strong
+                color: $black
+        .btn_wrapper
+            display: flex
+            align-items: center
+            gap: 20px
+            margin-top: 20px
+        .btn
+            padding: 0 20px
+            --height: 32px
+        .embroidery
+            font-size: 14px
+            color: $text
+            text-decoration: underline

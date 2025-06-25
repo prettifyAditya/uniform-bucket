@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import "../../styles/product/product.css"
 import ProductDimage from "@/components/ProductDimage";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ReviewBox from "@/components/ReviewBox";
 import BestSellerSlider from "@/components/BestSellerSlider";
+import EmbroideryPop from "@/components/EmbroideryPop";
+import { useModalStore } from "@/store/modalStore";
+import EmbroidGuide from "@/components/EmbroidGuide";
 
 const descriptionData = [ {
         title: "Description",
@@ -23,7 +26,11 @@ const descriptionData = [ {
 const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
 
 export default function ProductDetail(){
+    const reviewRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [shareOpen, setShareOpen] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [isEmbroideryAdded, setIsEmbroideryAdded] = useState(false);
     const [counts, setCounts] = useState({
         XS: 0,
         S: 0,
@@ -34,10 +41,7 @@ export default function ProductDetail(){
         "3XL": 0,
     });
     const increase = (size) => {
-        setCounts((prev) => ({
-        ...prev,
-        [size]: prev[size] + 1,
-        }));
+        setCounts(prev => ({ ...prev, [size]: prev[size] + 1 }));
     };
     const decrease = (size) => {
         setCounts((prev) => ({
@@ -46,9 +50,30 @@ export default function ProductDetail(){
         }));
     };
 
+    const handleInputChange = (e, size) => {
+        const value = e.target.value;
+        const numericValue = parseInt(value, 10);
+
+        setCounts(prev => ({
+            ...prev,
+            [size]: isNaN(numericValue) ? 0 : numericValue,
+        }));
+    };
+
     const toggleAccordion = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
+    
+
+    const scrollToReview = () => {
+        if(reviewRef.current) {
+            const topPosition = reviewRef.current.getBoundingClientRect().top + window.pageYOffset
+            const offset = 50
+            window.scrollTo({ top: topPosition - offset, behavior : 'smooth' })
+        }
+    }
+
+    const openEmbroidery = useModalStore((state) => state.openEmbroidery)
     return(
         <main>
             <div className="product-detail-container">
@@ -128,7 +153,7 @@ export default function ProductDetail(){
                                 </ul>
                                 <div className="review_content">
                                     <p>2 Reviews</p>
-                                    <p>Write a Review</p>
+                                    <p onClick={scrollToReview}>Write a Review</p>
                                 </div>
                             </div>
                             <div className="price_wrapper">
@@ -175,7 +200,7 @@ export default function ProductDetail(){
                                             </svg>
                                             </button>
 
-                                            <input type="text" value={counts[size]} readOnly />
+                                            <input type="text" value={counts[size]} onChange={(e) => handleInputChange(e, size)} />
 
                                             <button type="button" onClick={() => increase(size)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
@@ -188,16 +213,36 @@ export default function ProductDetail(){
                                 </div>
                                 <div className="add_to_wish">
                                     <div className="wish_btn">
-                                        Add to Wishlist <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="#000" d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3"></path></svg>
+                                        Add to Wishlist <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width={22}
+                                        height={20}
+                                        viewBox="0 0 22 20"
+                                        fill="none"
+                                        className="svg"
+                                        >
+                                        <path
+                                            d="M19.2495 11.3324L12.6497 17.9334C12.2121 18.3708 11.6187 18.6166 11 18.6166C10.3813 18.6166 9.78791 18.3708 9.35035 17.9334L2.75051 11.3336C2.20494 10.7928 1.77157 10.1495 1.47526 9.44076C1.17896 8.73201 1.02556 7.97172 1.02388 7.20353C1.0222 6.43534 1.17226 5.67438 1.46546 4.96434C1.75866 4.2543 2.18921 3.60916 2.73241 3.06597C3.2756 2.52277 3.92074 2.09221 4.63078 1.79902C5.34082 1.50582 6.10178 1.35575 6.86997 1.35744C7.63816 1.35912 8.39846 1.51251 9.10721 1.80882C9.81596 2.10512 10.4592 2.5385 11 3.08407C12.0985 2.01292 13.5748 1.41768 15.109 1.42729C16.6433 1.43691 18.112 2.0506 19.197 3.13543C20.282 4.22026 20.8959 5.68888 20.9057 7.22314C20.9155 8.7574 20.3205 10.2338 19.2495 11.3324Z"
+                                            stroke="#000"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        />
+                                        </svg>
+
                                     </div>
-                                    <button type="button" className="share">
+                                    <button type="button" className="share" onClick={() => setShareOpen(prev => !prev)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="none" stroke="#000" strokeWidth={1}><path d="M9 12a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0Z"></path><path strokeLinecap="round" d="M14 6.5L9 10m5 7.5L9 14"></path><path d="M19 18.5a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0Zm0-13a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0Z"></path></g></svg>
+                                        <ul className={`social_icons ${shareOpen ? "is-open" : ""}`}>
+                                            <li><Link href=""><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="#000" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"></path></svg></Link></li>
+                                            <li><Link href=""><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="#000" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"></path></svg></Link></li>
+                                            <li><Link href=""><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="#000" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"></path></svg></Link></li>
+                                        </ul>
                                     </button>
                                 </div>
                             </div>
                             <div className="btn_wrapper">
                                 <button type="button" className="btn black">Add to Bag</button>
-                                <button type="button" className="btn gray">Add Embroidery</button>
+                                <button type="button" className={`btn gray ${isEmbroideryAdded ? "active" : ""}`} onClick={openEmbroidery}>{isEmbroideryAdded ? "Embroidery Added" : "Add Embroidery"} <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="none" stroke="#000" d="M4.5 17.207V19a.5.5 0 0 0 .5.5h1.793a.5.5 0 0 0 .353-.146l8.5-8.5l-2.5-2.5l-8.5 8.5a.5.5 0 0 0-.146.353ZM15.09 6.41l2.5 2.5l1.203-1.203a1 1 0 0 0 0-1.414l-1.086-1.086a1 1 0 0 0-1.414 0z" strokeWidth={1}></path></svg></button>
                             </div>
                             <div className="pro_description">
                                 <div className={`col ${activeIndex === 0 ? "active" : ""}`}>
@@ -433,7 +478,7 @@ export default function ProductDetail(){
                     </div>
                 </div>
             </div>
-            <section>
+            <section ref={reviewRef}>
                 <div className="customer_reviews sec-pad">
                     <div className="container">
                         <div className="heading">
@@ -476,46 +521,16 @@ export default function ProductDetail(){
                                     <div className="rating">
                                         <p>Rating</p>
                                         <ul className="give_reviews">
-                                            <li data-value="1" className="first">
-                                                <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            {[1, 2, 3, 4, 5].map((value) => (
+                                                <li key={value} data-value={value} className={value <= rating ? "active" : ""} onClick={() => setRating(value)}>
+                                                    <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
                                                         d="M8 11.9525L12.635 14.75L11.405 9.4775L15.5 5.93L10.1075 5.4725L8 0.5L5.8925 5.4725L0.5 5.93L4.595 9.4775L3.365 14.75L8 11.9525Z"
                                                         fill="" stroke="#000"
                                                     />
                                                 </svg>
-                                            </li>
-                                            <li data-value="2" className="second">
-                                                <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8 11.9525L12.635 14.75L11.405 9.4775L15.5 5.93L10.1075 5.4725L8 0.5L5.8925 5.4725L0.5 5.93L4.595 9.4775L3.365 14.75L8 11.9525Z"
-                                                        fill="" stroke="#000"
-                                                    />
-                                                </svg>
-                                            </li>
-                                            <li data-value="3" className="third">
-                                                <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8 11.9525L12.635 14.75L11.405 9.4775L15.5 5.93L10.1075 5.4725L8 0.5L5.8925 5.4725L0.5 5.93L4.595 9.4775L3.365 14.75L8 11.9525Z"
-                                                        fill="" stroke="#000"
-                                                    />
-                                                </svg>
-                                            </li>
-                                            <li data-value="4" className="fourth">
-                                                <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8 11.9525L12.635 14.75L11.405 9.4775L15.5 5.93L10.1075 5.4725L8 0.5L5.8925 5.4725L0.5 5.93L4.595 9.4775L3.365 14.75L8 11.9525Z"
-                                                        fill="" stroke="#000"
-                                                    />
-                                                </svg>
-                                            </li>
-                                            <li data-value="5" className="fifth">
-                                                <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8 11.9525L12.635 14.75L11.405 9.4775L15.5 5.93L10.1075 5.4725L8 0.5L5.8925 5.4725L0.5 5.93L4.595 9.4775L3.365 14.75L8 11.9525Z"
-                                                        fill="" stroke="#000"
-                                                    />
-                                                </svg>
-                                            </li>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                     <div className="form-group">
@@ -526,6 +541,7 @@ export default function ProductDetail(){
                                         <input type="textarea" className="form-control" />
                                         <label htmlFor="message">Your Message</label>
                                     </div>
+                                    <button type="button" className="btn black_fill">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -533,6 +549,8 @@ export default function ProductDetail(){
                 </div>
             </section>
             <BestSellerSlider heading="related products" />
+            <EmbroideryPop markAsAdded={() => setIsEmbroideryAdded(true)} />
+            <EmbroidGuide />
         </main>
     )
 }
