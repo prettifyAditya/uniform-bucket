@@ -333,6 +333,26 @@
   margin-bottom: 18px;
   font-family: "Lato", sans-serif;
 }
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .sizes_wrapper {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 7px;
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0 5px;
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .item_price p, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .item_price span {
+  font-size: 14px;
+  line-height: 1.2;
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .item_price span {
+  font-weight: 700;
+}
 .check-out-main .check-out-secA-zbyqo .coupon-nvixw {
   padding-bottom: 60px;
   position: relative;

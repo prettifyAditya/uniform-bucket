@@ -1,3 +1,4 @@
+import QuantityInput from "@/components/QuantityInput";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,24 +23,44 @@ export default function Cart() {
                     <figcaption>
                         <h6 className="title-tznlw">Black Formal Blazer For Men</h6>
                         <div className="sizes_wrapper">
-                            <div className="size">
-                                <p>XS</p>
-                                <div className="size_count">
-                                    <button type="button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
-                                            <path fill="none" stroke="#666" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19.5 12h-15" />
-                                        </svg>
-                                    </button>
-
-                                    <input type="text" />
-
-                                    <button type="button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
-                                            <path fill="#666" fillRule="evenodd" d="M12 3.25a.75.75 0 0 1 .75.75v7.25H20a.75.75 0 0 1 0 1.5h-7.25V20a.75.75 0 0 1-1.5 0v-7.25H4a.75.75 0 0 1 0-1.5h7.25V4a.75.75 0 0 1 .75-.75" clipRule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
+                            <QuantityInput
+                              classname="cart_size"
+                              size="XS"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="S"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="M"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="L"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="XL"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="2XL"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="3XL"
+                            />
+                        </div>
+                        <div className="total_price">
+                          <div className="item_price">
+                            <p>Item Price</p>
+                            <span className="price">₹ 2,513.00</span>
+                          </div>
+                          <div className="item_price">
+                            <p>Total</p>
+                            <span className="price">₹ 12,565</span>
+                          </div>
                         </div>
                     </figcaption>
                     <a href="" className="remove-wrsvn">
@@ -61,64 +82,52 @@ export default function Cart() {
                   </div>
                   <div className="bag-product-wrsvn">
                     <figure>
-                      <a href="">
-                        <img src="assets/images/other/img1.jpg" alt="" />
-                      </a>
-                      <input type="checkbox" name="chckout-prdct-kbicy" />
+                      <Link href="">
+                        <img src="/assets/images/other/img1.jpg" alt="Product Image" width="107" height="142" />
+                      </Link>
                     </figure>
                     <figcaption>
-                      <h6 className="title-tznlw">
-                        Ethnic Motifs Printed Mirror Work Anarkali Kurta with
-                        Trousers &amp; Dupatta
-                      </h6>
-                      <p className="fnznl">Color: Blue</p>
-                      <div className="prdct-vzmmh">
-                        <div className="size-eoimy">
-                          <p>Size:</p>
-                          <select name="" id="" className="prdct-size-glcjj">
-                            <option value="S">S</option>
-                            <option value="M" selected="">
-                              M
-                            </option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="3XL">3XL</option>
-                            <option value="XXL">XXL</option>
-                          </select>
+                        <h6 className="title-tznlw">Black Formal Blazer For Men</h6>
+                        <div className="sizes_wrapper">
+                            <QuantityInput
+                              classname="cart_size"
+                              size="XS"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="S"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="M"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="L"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="XL"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="2XL"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="3XL"
+                            />
                         </div>
-                        <div className="val-wrap">
-                          <input
-                            type="button"
-                            defaultValue="-"
-                            className="minus-val"
-                          />
-                          <input
-                            type="text"
-                            defaultValue={1}
-                            className="count-val"
-                            maxLength={100}
-                            readOnly=""
-                          />
-                          <input
-                            type="button"
-                            defaultValue="+"
-                            className="plus-val"
-                          />
+                        <div className="total_price">
+                          <div className="item_price">
+                            <p>Item Price</p>
+                            <span className="price">₹ 2,513.00</span>
+                          </div>
+                          <div className="item_price">
+                            <p>Total</p>
+                            <span className="price">₹ 12,565</span>
+                          </div>
                         </div>
-                      </div>
-                      <ul className="price-btm-zpsgj" data-discount="">
-                        <li className="price-zpsgj">
-                          <span>₹</span>
-                          <em data-mrp="">259</em>{" "}
-                        </li>
-                        <li className="price-pefca">
-                          <span>₹</span>
-                          <em data-sp="">1299</em>
-                        </li>
-                        <li className="discount-zpsgj" data-discountli="">
-                          (<span data-discount="" />% OFF)
-                        </li>
-                      </ul>
                     </figcaption>
                     <a href="" className="remove-wrsvn">
                       <svg
@@ -139,142 +148,52 @@ export default function Cart() {
                   </div>
                   <div className="bag-product-wrsvn">
                     <figure>
-                      <a href="">
-                        <img src="assets/images/other/img1.jpg" alt="" />
-                      </a>
-                      <input type="checkbox" name="chckout-prdct-kbicy" />
+                      <Link href="">
+                        <img src="/assets/images/other/img1.jpg" alt="Product Image" width="107" height="142" />
+                      </Link>
                     </figure>
                     <figcaption>
-                      <h6 className="title-tznlw">
-                        Ethnic Motifs Printed Mirror Work Anarkali Kurta with
-                        Trousers &amp; Dupatta
-                      </h6>
-                      <p className="fnznl">Color: Blue</p>
-                      <div className="prdct-vzmmh">
-                        <div className="size-eoimy">
-                          <p>Size:</p>
-                          <select name="" id="" className="prdct-size-glcjj">
-                            <option value="S">S</option>
-                            <option value="M" selected="">
-                              M
-                            </option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="3XL">3XL</option>
-                            <option value="XXL">XXL</option>
-                          </select>
+                        <h6 className="title-tznlw">Black Formal Blazer For Men</h6>
+                        <div className="sizes_wrapper">
+                            <QuantityInput
+                              classname="cart_size"
+                              size="XS"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="S"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="M"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="L"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="XL"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="2XL"
+                            />
+                            <QuantityInput
+                              classname="cart_size"
+                              size="3XL"
+                            />
                         </div>
-                        <div className="val-wrap">
-                          <input
-                            type="button"
-                            defaultValue="-"
-                            className="minus-val"
-                          />
-                          <input
-                            type="text"
-                            defaultValue={1}
-                            className="count-val"
-                            maxLength={100}
-                            readOnly=""
-                          />
-                          <input
-                            type="button"
-                            defaultValue="+"
-                            className="plus-val"
-                          />
+                        <div className="total_price">
+                          <div className="item_price">
+                            <p>Item Price</p>
+                            <span className="price">₹ 2,513.00</span>
+                          </div>
+                          <div className="item_price">
+                            <p>Total</p>
+                            <span className="price">₹ 12,565</span>
+                          </div>
                         </div>
-                      </div>
-                      <ul className="price-btm-zpsgj" data-discount="">
-                        <li className="price-zpsgj">
-                          <span>₹</span>
-                          <em data-mrp="">259</em>{" "}
-                        </li>
-                        <li className="price-pefca">
-                          <span>₹</span>
-                          <em data-sp="">1299</em>
-                        </li>
-                        <li className="discount-zpsgj" data-discountli="">
-                          (<span data-discount="" />% OFF)
-                        </li>
-                      </ul>
-                    </figcaption>
-                    <a href="" className="remove-wrsvn">
-                      <svg
-                        width={15}
-                        height={15}
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0.803711 0.803467L14.1966 14.1963M0.803711 14.1963L14.1966 0.803467"
-                          stroke="black"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                  <div className="bag-product-wrsvn">
-                    <figure>
-                      <a href="">
-                        <img src="assets/images/other/img1.jpg" alt="" />
-                      </a>
-                      <input type="checkbox" name="chckout-prdct-kbicy" />
-                    </figure>
-                    <figcaption>
-                      <h6 className="title-tznlw">
-                        Ethnic Motifs Printed Mirror Work Anarkali Kurta with
-                        Trousers &amp; Dupatta
-                      </h6>
-                      <p className="fnznl">Color: Blue</p>
-                      <div className="prdct-vzmmh">
-                        <div className="size-eoimy">
-                          <p>Size:</p>
-                          <select name="" id="" className="prdct-size-glcjj">
-                            <option value="S">S</option>
-                            <option value="M" selected="">
-                              M
-                            </option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="3XL">3XL</option>
-                            <option value="XXL">XXL</option>
-                          </select>
-                        </div>
-                        <div className="val-wrap">
-                          <input
-                            type="button"
-                            defaultValue="-"
-                            className="minus-val"
-                          />
-                          <input
-                            type="text"
-                            defaultValue={1}
-                            className="count-val"
-                            maxLength={100}
-                            readOnly=""
-                          />
-                          <input
-                            type="button"
-                            defaultValue="+"
-                            className="plus-val"
-                          />
-                        </div>
-                      </div>
-                      <ul className="price-btm-zpsgj" data-discount="">
-                        <li className="price-zpsgj">
-                          <span>₹</span>
-                          <em data-mrp="">259</em>{" "}
-                        </li>
-                        <li className="price-pefca">
-                          <span>₹</span>
-                          <em data-sp="">1299</em>
-                        </li>
-                        <li className="discount-zpsgj" data-discountli="">
-                          (<span data-discount="" />% OFF)
-                        </li>
-                      </ul>
                     </figcaption>
                     <a href="" className="remove-wrsvn">
                       <svg
