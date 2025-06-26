@@ -53,17 +53,31 @@ export default function Cart() {
                             />
                         </div>
                         <div className="total_price">
-                          <div className="item_price">
-                            <p>Item Price</p>
-                            <span className="price">₹ 2,513.00</span>
+                          <div className="emb_sec">
+                            <p>Embroidery </p>
+                            <Image src="/assets/images/checkout/emb_logo.png" width="128" height="47" alt="Embroidery Logo"></Image>
                           </div>
-                          <div className="item_price">
-                            <p>Total</p>
-                            <span className="price">₹ 12,565</span>
+                          <div className="price_sec">
+                              <div className="item_price">
+                                <p>Item Price</p>
+                                <span className="price">₹ 2,513.00</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Quantity</p>
+                                <span className="price">350</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Embroidery </p>
+                                <span className="price">₹ 50</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Total</p>
+                                <span className="price">₹ 12,565</span>
+                              </div>
                           </div>
                         </div>
                     </figcaption>
-                    <a href="" className="remove-wrsvn">
+                    <button type="button" className="remove-wrsvn">
                       <svg
                         width={15}
                         height={15}
@@ -78,7 +92,7 @@ export default function Cart() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                   <div className="bag-product-wrsvn">
                     <figure>
@@ -119,17 +133,31 @@ export default function Cart() {
                             />
                         </div>
                         <div className="total_price">
-                          <div className="item_price">
-                            <p>Item Price</p>
-                            <span className="price">₹ 2,513.00</span>
+                          <div className="emb_sec">
+                            <p>Embroidery </p>
+                            <Image src="/assets/images/checkout/emb_logo.png" width="128" height="47" alt="Embroidery Logo"></Image>
                           </div>
-                          <div className="item_price">
-                            <p>Total</p>
-                            <span className="price">₹ 12,565</span>
+                          <div className="price_sec">
+                              <div className="item_price">
+                                <p>Item Price</p>
+                                <span className="price">₹ 2,513.00</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Quantity</p>
+                                <span className="price">350</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Embroidery </p>
+                                <span className="price">₹ 50</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Total</p>
+                                <span className="price">₹ 12,565</span>
+                              </div>
                           </div>
                         </div>
                     </figcaption>
-                    <a href="" className="remove-wrsvn">
+                    <button type="button" className="remove-wrsvn">
                       <svg
                         width={15}
                         height={15}
@@ -144,7 +172,7 @@ export default function Cart() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                   <div className="bag-product-wrsvn">
                     <figure>
@@ -185,17 +213,31 @@ export default function Cart() {
                             />
                         </div>
                         <div className="total_price">
-                          <div className="item_price">
-                            <p>Item Price</p>
-                            <span className="price">₹ 2,513.00</span>
+                          <div className="emb_sec">
+                            <p>Embroidery </p>
+                            <Image src="/assets/images/checkout/emb_logo.png" width="128" height="47" alt="Embroidery Logo"></Image>
                           </div>
-                          <div className="item_price">
-                            <p>Total</p>
-                            <span className="price">₹ 12,565</span>
+                          <div className="price_sec">
+                              <div className="item_price">
+                                <p>Item Price</p>
+                                <span className="price">₹ 2,513.00</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Quantity</p>
+                                <span className="price">350</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Embroidery </p>
+                                <span className="price">₹ 50</span>
+                              </div>
+                              <div className="item_price">
+                                <p>Total</p>
+                                <span className="price">₹ 12,565</span>
+                              </div>
                           </div>
                         </div>
                     </figcaption>
-                    <a href="" className="remove-wrsvn">
+                    <button type="button" className="remove-wrsvn">
                       <svg
                         width={15}
                         height={15}
@@ -210,7 +252,7 @@ export default function Cart() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

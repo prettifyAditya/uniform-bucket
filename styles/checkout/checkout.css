@@ -115,9 +115,6 @@
   letter-spacing: 0.15em;
 }
 
-.check-out-main {
-  --container: 964px;
-}
 .check-out-main .check-out-secA-zbyqo {
   background: #FAFAFA;
 }
@@ -147,8 +144,8 @@
   }
 }
 .check-out-main .check-out-secA-zbyqo .flex-checkout-cwgln .colA-flex-hfmcf {
-  flex: 0 1 65%;
-  max-width: 65%;
+  flex: 0 1 70%;
+  max-width: 70%;
   width: 100%;
 }
 @media only screen and (max-width: 768px) {
@@ -239,7 +236,7 @@
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn {
   padding: 16px;
-  border: 1px solid #F1F1F1;
+  border: 1px solid #E8E7E7;
   border-radius: 5px;
   display: flex;
   position: relative;
@@ -255,15 +252,11 @@
   }
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn .remove-wrsvn {
+  position: absolute;
   top: 15px;
   right: 16px;
   z-index: 3;
   line-height: 0;
-}
-@media only screen and (max-width: 540px) {
-  .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn .remove-wrsvn {
-    position: absolute;
-  }
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figure {
   line-height: 0;
@@ -343,15 +336,40 @@
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 10px 0 5px;
+  padding: 10px 0;
 }
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .item_price p, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .item_price span {
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .emb_sec {
+  flex: 0 1 auto;
+  padding-right: 30px;
+  border-right: 1px solid rgba(0, 0, 0, 0.168627451);
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .emb_sec p {
   font-size: 14px;
   line-height: 1.2;
 }
-.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .item_price span {
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .emb_sec img {
+  opacity: 0.3;
+  height: 100%;
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .price_sec {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  justify-content: end;
+  padding-right: 40px;
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .price_sec .item_price p, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .price_sec .item_price span {
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .price_sec .item_price span {
   font-weight: 700;
+}
+.check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .price_sec .item_price:last-child p, .check-out-main .check-out-secA-zbyqo .bag-dobyk .bag-product-wrsvn-wrap .bag-product-wrsvn figcaption .total_price .price_sec .item_price:last-child span {
+  font-weight: 700;
+  color: var(--black);
 }
 .check-out-main .check-out-secA-zbyqo .coupon-nvixw {
   padding-bottom: 60px;

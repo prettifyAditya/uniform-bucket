@@ -76,7 +76,6 @@
 
 
 .check-out-main
-    --container: 964px
     .check-out-secA-zbyqo
         background: #FAFAFA
         .flex-checkout-cwgln
@@ -94,8 +93,8 @@
                 @include media(768)
                     position: static
             .colA-flex-hfmcf
-                flex: 0 1 65%
-                max-width: 65%
+                flex: 0 1 70%
+                max-width: 70%
                 width: 100%
                 @include media(768)
                     flex: 0 1 100%
@@ -156,7 +155,7 @@
             .bag-product-wrsvn-wrap
                 .bag-product-wrsvn
                     padding: 16px
-                    border: 1px solid #F1F1F1
+                    border: 1px solid #E8E7E7
                     border-radius: 5px
                     display: flex
                     position: relative
@@ -167,12 +166,11 @@
                         align-items: center
                         gap: 20px
                     .remove-wrsvn
+                        position: absolute
                         top: 15px
                         right: 16px
                         z-index: 3
                         line-height: 0
-                        @include media(540) 
-                            position: absolute
                     figure
                         line-height: 0
                         position: relative
@@ -207,14 +205,35 @@
                         .total_price
                             display: flex
                             align-items: center
-                            gap: 20px
-                            padding: 10px 0 5px
-                            .item_price
-                                p, span
+                            padding: 10px 0
+                            .emb_sec
+                                flex: 0 1 auto
+                                padding-right: 30px
+                                border-right: 1px solid #0000002B
+                                p
                                     font-size: 14px
                                     line-height: 1.2
-                                span
-                                    font-weight: 700
+                                img
+                                    opacity: 0.3
+                                    height: 100%
+                            .price_sec
+                                display: flex
+                                align-items: center
+                                gap: 30px
+                                flex: 1
+                                justify-content: end
+                                padding-right: 40px
+                                .item_price
+                                    p, span
+                                        font-size: 14px
+                                        line-height: 1.2
+                                        color: $text
+                                    span
+                                        font-weight: 700
+                                    &:last-child
+                                        p, span
+                                            font-weight: 700
+                                            color: $black
 
         .coupon-nvixw
             padding-bottom: 60px

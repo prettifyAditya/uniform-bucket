@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function CheckoutHeader() {
   return (
     <div className="checkout-header">
-      <div className="container-fluid">
+      <div className="container">
         <div className="checkout-header-wrapper">
           <div className="colA">
             <Link href="/" className="ico">
