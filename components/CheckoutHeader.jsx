@@ -7,6 +7,7 @@ export default function CheckoutHeader() {
   const pathname = usePathname()
   let addressPage = pathname.startsWith('/address')
   let paymentPage = pathname.startsWith('/payment')
+  let thankyouPage = pathname.startsWith('/thank-you')
   return (
     <div className="checkout-header">
       <div className="container">
@@ -19,7 +20,7 @@ export default function CheckoutHeader() {
           <div className="colB">
             <ul>
               <li>
-                <Link href="/cart" className="active">
+                <Link href="/cart" className={thankyouPage? "active" : "active"}>
                   <div className="ico">
                     <svg
                       width={10}
@@ -38,7 +39,7 @@ export default function CheckoutHeader() {
                 </Link>
               </li>
               <li>
-                <Link href="/address" className={addressPage || paymentPage ? "active" : ""}>
+                <Link href="/address" className={addressPage || paymentPage || thankyouPage ? "active" : ""}>
                   <div className="ico">
                     <svg
                       width={10}
@@ -57,7 +58,7 @@ export default function CheckoutHeader() {
                 </Link>
               </li>
               <li>
-                <Link href="/payment" className={paymentPage ? "active" : ""}>
+                <Link href="/payment" className={paymentPage || thankyouPage ? "active" : ""}>
                   <div className="ico">
                     <svg
                       width={10}

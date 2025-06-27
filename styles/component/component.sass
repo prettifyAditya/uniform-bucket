@@ -119,3 +119,39 @@
             p
                 font-size: 14px
                 color: $text 
+
+.thankyou_box
+    --container: 800px
+    .container
+        display: flex
+        align-items: center
+        border: 1px solid #D2D2D2
+        padding: 40px 25px 70px
+        background: url(/assets/images/checkout/checkout_bg.svg) no-repeat
+        background-size: 140px
+        background-position: left bottom
+        .colA
+            text-align: center
+            flex:  0 1 40%
+            .icon
+                img
+                    width: 50px
+            p
+                max-width: 150px
+                font-size: 20px
+                font-weight: 700
+                margin: 0 auto
+                line-height: 1.2
+        .colB
+            flex: 1
+            padding-left: 40px
+            border-left: 1px solid #00000047
+            p, span, a:not(.btn)
+                color: $text
+            span, a:not(.btn)
+                display: block
+                font-weight: 700
+                margin-bottom: 20px
+            .btn
+                padding: 0 30px
+                border-radius: 50px
