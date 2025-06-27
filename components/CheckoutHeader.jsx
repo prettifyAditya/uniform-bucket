@@ -38,7 +38,7 @@ export default function CheckoutHeader() {
                 </Link>
               </li>
               <li>
-                <Link href="/address" className={addressPage ? "active" : ""}>
+                <Link href="/address" className={addressPage || paymentPage ? "active" : ""}>
                   <div className="ico">
                     <svg
                       width={10}
@@ -57,7 +57,7 @@ export default function CheckoutHeader() {
                 </Link>
               </li>
               <li>
-                <Link href="" className={paymentPage ? "active" : ""}>
+                <Link href="/payment" className={paymentPage ? "active" : ""}>
                   <div className="ico">
                     <svg
                       width={10}

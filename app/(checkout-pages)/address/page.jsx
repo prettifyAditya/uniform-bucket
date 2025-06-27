@@ -1,7 +1,6 @@
 "use client"
 import AddressPop from "@/components/AddressPop";
 import CheckoutSummary from "@/components/CheckoutSummary";
-import QuantityInput from "@/components/QuantityInput";
 import { useModalStore } from "@/store/modalStore";
 import Image from "next/image";
 import Link from "next/link";
