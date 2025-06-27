@@ -1,6 +1,15 @@
+import CheckoutSummary from "@/components/CheckoutSummary";
 import QuantityInput from "@/components/QuantityInput";
 import Image from "next/image";
 import Link from "next/link";
+
+const summaryItems = [
+  { label: "Total MRP", value: "₹37,695" },
+  { label: "Discount on MRP", value: "-₹7,695", highlight: "green-color" },
+  { label: "Coupon Discount", value: "₹0.00" },
+  { label: "Shipping Fee", value: "Free", highlight: "green-color" },
+  { label: "GST", value: "₹100.00" },
+]
 
 export default function Cart() {
   return (
@@ -11,7 +20,7 @@ export default function Cart() {
             <div className="colA-flex-hfmcf">
               <div className="bag-dobyk">
                 <div className="upper-sshjm">
-                  <h6>Shopping Box</h6>
+                  <h6>Shopping bag</h6>
                 </div>
                 <div className="bag-product-wrsvn-wrap">
                   <div className="bag-product-wrsvn">
@@ -272,45 +281,12 @@ export default function Cart() {
                 </div>
                 <p className="invalid-coupn">Invalid Coupon!</p>
               </div>
-              <div className="checkout-tbl-xiuh">
-                <div className="ttl-tbl-bkfg">Summary</div>
-                <ul className="pric-ing-gegc">
-                  <li>
-                    <p>Total MRP</p> <span>₹37,695</span>
-                  </li>
-                  <li>
-                    <p>Discount on MRP</p>
-                    <span className="green-color">-₹7,695</span>
-                  </li>
-                  <li>
-                    <p>Coupon Discount</p> <span>₹0.00</span>
-                  </li>
-                  <li>
-                    <p>Shipping Fee</p>
-                    <span className="green-color">Free</span>
-                  </li>
-                  <li>
-                    <p>GST</p>
-                    <span>₹100.00</span>
-                  </li>
-                </ul>
-                <div className="ttl-amnt-tbl">
-                  <p className="ttl-txt">Total Amount </p>
-                  <p className="ttl-prc-txt"> ₹37,100 </p>
-                </div>
-                <Link
-                  href="/"
-                  className="btn black_fill w-100 btn-tbl-prc"
-                >
-                  Place Order
-                </Link>
-                <Link
-                  href="/"
-                  className="btn gray_fill w-100 btn-tbl-prc"
-                >
-                  Continue Shopping
-                </Link>
-              </div>
+              <CheckoutSummary
+                classname="cart_summ"
+                summaryItems={summaryItems}
+                totalAmount="₹37,100"
+                button="Place Order"
+              />
             </div>
           </div>
           <div className="btm-check-out-cwgln">

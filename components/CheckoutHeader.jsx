@@ -1,7 +1,12 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function CheckoutHeader() {
+  const pathname = usePathname()
+  let addressPage = pathname.startsWith('/address')
+  let paymentPage = pathname.startsWith('/payment')
   return (
     <div className="checkout-header">
       <div className="container">
@@ -14,7 +19,7 @@ export default function CheckoutHeader() {
           <div className="colB">
             <ul>
               <li>
-                <Link href="" className="active">
+                <Link href="/cart" className="active">
                   <div className="ico">
                     <svg
                       width={10}
@@ -33,7 +38,7 @@ export default function CheckoutHeader() {
                 </Link>
               </li>
               <li>
-                <Link href="">
+                <Link href="/address" className={addressPage ? "active" : ""}>
                   <div className="ico">
                     <svg
                       width={10}
@@ -52,7 +57,7 @@ export default function CheckoutHeader() {
                 </Link>
               </li>
               <li>
-                <Link href="">
+                <Link href="" className={paymentPage ? "active" : ""}>
                   <div className="ico">
                     <svg
                       width={10}

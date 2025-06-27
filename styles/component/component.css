@@ -2637,4 +2637,102 @@ em {
   line-height: 1;
   height: 30px;
   text-align: center;
+}
+
+.model.address-pop {
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 500px;
+  top: unset;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  transition: 0.5s ease;
+}
+.model.address-pop.is-open {
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+.model.address-pop .close {
+  top: 20px;
+  right: 20px;
+}
+.model.address-pop .close svg {
+  width: 20px;
+  height: 20px;
+}
+.model.address-pop .model-body {
+  padding: 20px 25px;
+}
+.model.address-pop .model-body h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.model.address-pop .model-body .form {
+  --gaptb: 10px;
+  --inputsize: 38px;
+  padding-top: 20px;
+  --labelfontbefore: 14px;
+  --labelafter: #000;
+  --labelfontafter: 12px;
+  --borderbefore: #666;
+  --borderafter: #000;
+  height: 400px;
+  overflow-y: auto;
+}
+.model.address-pop .model-body .form .double-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.model.address-pop .model-body .form h6 {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+.model.address-pop .model-body .disclaimer {
+  padding: 15px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+}
+.model.address-pop .model-body .disclaimer .check-box {
+  --box: 20px;
+  height: 100%;
+}
+.model.address-pop .model-body .disclaimer .check-box .in-bx {
+  width: var(--box);
+  height: var(--box);
+  background: #D9D7D7;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+}
+.model.address-pop .model-body .disclaimer .check-box .in-bx::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(/assets/icon/tick-white.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: calc(var(--box) - 10px);
+  filter: invert(1);
+  z-index: 1;
+  opacity: 0;
+}
+.model.address-pop .model-body .disclaimer .check-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.model.address-pop .model-body .disclaimer .check-box input:checked ~ .in-bx::before {
+  opacity: 1;
+}
+.model.address-pop .model-body .disclaimer p {
+  font-size: 14px;
+  color: var(--text);
 }/*# sourceMappingURL=component.css.map */
