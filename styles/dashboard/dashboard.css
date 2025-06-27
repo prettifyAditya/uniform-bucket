@@ -14,6 +14,7 @@
 }
 .dashboard-secA {
   padding: 45px 0 55px;
+  background: #FAFAFA;
 }
 @media only screen and (max-width: 540px) {
   .dashboard-secA .flex {
@@ -53,11 +54,10 @@
   transition: 0.5s ease;
 }
 .dashboard-secA .flex .aside-left::after {
-  background: url(../../images/vector/vector-1-small.svg) no-repeat;
-  background-size: 100% auto;
-  background-position: 0 100%;
+  background: url(/assets/images/dashboard/dashboard_bg.svg) no-repeat;
+  background-size: 50% auto;
+  background-position: 100% 100%;
   z-index: 0;
-  opacity: 0.18;
 }
 @media only screen and (max-width: 540px) {
   .dashboard-secA .flex .aside-left {
@@ -96,6 +96,7 @@
 }
 .dashboard-secA .flex .aside-left .profile-col .wlcm {
   font-size: 20px;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--black);
   margin: 14px 0 4px;
@@ -103,10 +104,35 @@
 .dashboard-secA .flex .aside-left .profile-col .name-usr {
   font-size: 16px;
   line-height: 18px;
+  color: var(--black);
+  padding-bottom: 5px;
+}
+.dashboard-secA .flex .aside-left .profile-col .usr-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.dashboard-secA .flex .aside-left .profile-col .usr-email a {
   color: var(--text);
+  font-size: 14px;
+}
+.dashboard-secA .flex .aside-left .profile-col .usr-email .fig {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green);
+  border-radius: 50%;
+}
+.dashboard-secA .flex .aside-left .profile-col .usr-email .fig img {
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
 }
 .dashboard-secA .flex .aside-left .nav-col {
-  padding: 40px 30px 12rem;
+  padding: 40px 30px 8rem;
   display: flex;
   justify-content: center;
   background-position: 0 100%;
@@ -118,16 +144,16 @@
   }
 }
 .dashboard-secA .flex .aside-left .nav-col ul li:not(:last-child) {
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 }
 .dashboard-secA .flex .aside-left .nav-col ul li a {
   color: var(--text);
 }
 .dashboard-secA .flex .aside-left .nav-col ul li a:hover {
-  color: var(--primary);
+  color: var(--black);
 }
 .dashboard-secA .flex .aside-left .nav-col ul li a.active {
-  color: var(--primary);
+  color: var(--black);
 }
 .dashboard-secA .flex .aside-right {
   flex: 1;
@@ -144,14 +170,16 @@
     margin-top: 40px;
   }
 }
+.dashboard-secA .flex .aside-right .aside-right-wrap {
+  background: #FFFFFF;
+  padding: 20px 40px;
+}
 .dashboard-secA .flex .aside-right .aside-right-wrap .form-title {
-  margin-bottom: 47px;
+  margin-bottom: 40px;
   font-family: "Le Jeune Deck";
   color: var(--black);
   font-size: 20px;
   line-height: 22px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 @media only screen and (max-width: 768px) {
   .dashboard-secA .flex .aside-right .aside-right-wrap .form-title {
@@ -167,7 +195,7 @@
 .dashboard-secA .flex .aside-right .aside-right-wrap .form-grid {
   --item: 2;
   --gaplr: 53px;
-  --gaptb: 34px;
+  --gaptb: 30px;
 }
 @media only screen and (max-width: 768px) {
   .dashboard-secA .flex .aside-right .aside-right-wrap .form-grid {
@@ -226,7 +254,7 @@
 .dashboard-secA .flex .aside-right .dznjn-wrap .dznjn .bkd-htl-crd .title .arr-htt {
   width: 15px;
   height: 15px;
-  background-image: url(../../icon/arrow-down-gray.svg);
+  background-image: url(/icon/arrow-down-gray.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: 0 50%;

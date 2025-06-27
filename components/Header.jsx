@@ -14,6 +14,8 @@ export default function Header(){
     const pathname = usePathname()
     const isProductListingPage = pathname.startsWith('/product-listing')
     const isProductDetailPage = pathname.startsWith('/product-detail')
+    const isProfilePage = pathname.startsWith('/profile')
+    const headerFill = isProductListingPage || isProductDetailPage || isProfilePage
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')
@@ -58,7 +60,7 @@ export default function Header(){
     }, [])
     return(
         <>
-            <header className={`${isProductListingPage || isProductDetailPage ? "header-fill" : ""} ${headerFixed ? "header-fixed" : ""}`}>
+            <header className={`${headerFill ? "header-fill" : ""} ${headerFixed ? "header-fixed" : ""}`}>
                 <div className="header-wrapper container">
                     <div className="colA">
                         <Link href="/">

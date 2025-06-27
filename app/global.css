@@ -31,9 +31,9 @@
 .form {
   --inputsize: 48px;
   --labelbefore: var(--text);
-  --labelafter: var(--text);
-  --borderbefore: var(--black);
-  --borderafter: var(--secondary);
+  --labelafter: var(--black);
+  --borderbefore: var(--text);
+  --borderafter: var(--black);
   --labelfontbefore: 16px;
   --labelfontafter: 14px;
   --font: 500;
@@ -534,7 +534,7 @@
   --primary: #fff;
   --colortext: #000;
   --red: #FF2323;
-  --green: #13BB75;
+  --green: #4EA95F;
   --sucgreen: #008000;
   --blue: #2773E5;
   --text: #666666;
