@@ -105,9 +105,169 @@
             @include media(540)
                 margin-left: 0
                 margin-top: 40px
+            &.order-right
+                .aside-right-wrap
+                    background: none
+                    .title
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        .form-title
+                            margin-bottom: 0
+                        .filter_options
+                            display: flex
+                            align-items: center
+                            gap: 10px
+                            p
+                                padding-right: 5px
+                    .order_list
+                        padding-top: 30px
+                        .order_item
+                            background: #fff
+                            border-radius: 10px
+                            &:not(:last-child)
+                                margin-bottom: 20px
+                            .order_id
+                                padding: 10px 20px
+                                background-color: #F1F1F1
+                                border-top-left-radius: 10px
+                                border-top-right-radius: 10px
+                                p:not(.id)
+                                    color: $text
+                                    font-size: 14px
+                                .id
+                                    font-weight: 700
+                                    line-height: 1.2
+                                    font-size: 16px
+                            .order_content
+                                .upper_content
+                                    padding: 20px 20px 30px
+                                    border-bottom: 1px solid #DFDFDF
+                                    display: flex
+                                    align-items: center
+                                    gap: 30px
+                                    .order_name
+                                        flex: 1
+                                        display: flex
+                                        align-items: center
+                                        justify-content: space-between
+                                        .name, .price
+                                            font-weight: 700
+                                    .btn_wrap
+                                        flex: 0 1 auto
+                                        gap: 5px
+                                        .btn
+                                            font-size: 12px
+                                            padding: 0 8px
+                                            --height: 30px
+                                            border-radius: 5px
+                                .trans_details
+                                    padding: 15px 20px
+                                    display: flex
+                                    align-content: center
+                                    gap: 15px
+                                    justify-content: space-between
+                                    p
+                                        font-size: 14px
+                                        color: $text
+                                        &.total_price
+                                            span
+                                                padding-left: 10px
+                                                font-weight: 700
+                                                color: $black
+                                                font-size: 16px
+            &.orderD-right
+                .aside-right-wrap
+                    background: none
+                    padding: 0
+                    .back2order
+                        display: flex
+                        align-items: center
+                        gap: 5px
+                        color: $black
+                    .order_details_wrapper
+                        margin-top: 30px
+                        height: 100%
+                        width: 100%
+                        background: $white
+                        .order_id
+                            padding: 10px 25px
+                            border-top-left-radius: 10px
+                            border-top-right-radius: 10px
+                            background: #F1F1F1
+                            p:not(.id)
+                                color: $text
+                                font-size: 14px
+                            .id
+                                font-weight: 700
+                                line-height: 1.2
+                                font-size: 16px
+                        .order_status
+                            height: 10vh
+                            border-bottom: 1px solid #00000021
+                        .prod_content
+                            width: 100%
+                            height: 100%
+                            .pro_item
+                                padding: 10px 15px 20px
+                                display: flex
+                                align-items: center
+                                gap: 20px
+                                border-bottom: 1px solid #00000021
+                                figure
+                                    flex: 0 1 auto
+                                    img
+                                        width: 100%
+                                .pro_details
+                                    flex: 1
+                                    padding-left: 20px
+                                    .pro_name
+                                        font-size: 14px
+                                        font-weight: 700
+                                        line-height: 1.2
+                                        padding-bottom: 5px
+                                    .size, .embrod
+                                        font-weight: 700
+                                        color: $text
+                                        font-size: 14px
+                                        span
+                                            font-weight: 500
+                                .item_total
+                                    flex: 0 1 auto
+                                    display: flex
+                                    align-items: center
+                                    gap: 40px
+                                    .pro_price, .quantity, .embrod_price, .total_price
+                                        font-size: 14px
+                                        color: $text
+                                        span
+                                            font-weight: 700
+                                    .total_price
+                                        color: $black
+                        .address_details
+                            display: flex
+                            align-items: center
+                            .colA
+                                flex: 0 1 55%
+                                padding: 40px 20px
+                                .title
+                                    font-weight: 700
+                                .user_name
+                                    padding-bottom: 10px
+                                p
+                                    &:not(.title)
+                                        padding-top: 10px
+                                        font-size: 14px
+                                        color: $text 
+                                    a
+                                        color: $black
+                                .address
+                                    font-size: 14px
+                                    color: $text
+                                    line-height: 1.2
             .aside-right-wrap
                 background: #FFFFFF
-                padding: 20px 40px 
+                padding: 30px 40px
                 .form-title
                     margin-bottom: 40px 
                     font-family: $LeJ
@@ -125,11 +285,80 @@
                     --gaptb: 30px
                     @include media(768)
                         --gaplr: 20px
+                    .profile_pic
+                        p
+                            font-size: 16px
+                            line-height: 1.2
+                            font-weight: 600
+                            color: $text
+                        .file-group
+                            padding: 15px 25px
+                            margin: 15px 0 20px
+                            border-radius: 5px
+                            position: relative
+                            width: 200px
+                            border: 1px dashed $black
+                            &::after
+                                display: none
+                            &::before
+                                content: ""
+                                position: absolute
+                                left: 0
+                                top: 0
+                                background: url(/assets/icon/add.svg) no-repeat
+                                width: 100%
+                                height: 100%
+                                background-position: 5% 50%
+                            p
+                                color: $text
+                                padding-left: 30px
+                            input
+                                width: 100%
+                                height: 100%
+                                position: absolute
+                                left: 0
+                                top: 0
+                                opacity: 0
+                                cursor: pointer 
                     .submit-grp
                         @include media(540)
                             text-align: center
                         .btn
-                            --padding: 54px
+                            padding: 0 30px
+                .delivery_add
+                    padding: 30px 0 0 0 
+                    .title
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        .form-title
+                            margin-bottom: 0
+                    .add_wrapper
+                        display: grid
+                        grid-template-columns: repeat(2, 1fr)
+                        margin-top: 20px
+                        gap: 20px
+                        .address
+                            background: #EDEDED
+                            padding: 15px
+                            display: flex
+                            border-radius: 5px
+                            .icon
+                                flex: 0 1 auto
+                            .content
+                                flex: 1
+                                padding-left: 10px
+                                .title
+                                    font-display: 14px
+                                    font-weight: 700
+                                    padding-bottom: 5px
+                                p:not(.title)
+                                    font-size: 14px
+                                    color: $text
+                                    line-height: 1.2
+                                    max-width: 250px
+                                .btn_wrap
+                                    margin-top: 15px
             .dznjn-wrap
                 .dznjn
                     .bkd-htl-crd

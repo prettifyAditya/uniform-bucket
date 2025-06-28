@@ -215,6 +215,17 @@ button
     background: none
     appearance: none
     cursor: pointer
+    &.remove, &.edit
+        font-size: 14px
+        text-transform: uppercase
+    &.remove
+        color: $text
+
+.btn_wrap
+    display: flex
+    align-items: center
+    gap: 20px
+
 .tab-nav
     cursor: default
     [data-tab]
@@ -1391,6 +1402,8 @@ img
 
 .green-color
     color: $green !important
+.light-green
+    color: var(--green)
 .red-color
     color: $red !important
 .orange-color

@@ -15,7 +15,9 @@ export default function Header(){
     const isProductListingPage = pathname.startsWith('/product-listing')
     const isProductDetailPage = pathname.startsWith('/product-detail')
     const isProfilePage = pathname.startsWith('/profile')
-    const headerFill = isProductListingPage || isProductDetailPage || isProfilePage
+    const isOrderPage = pathname.startsWith('/order')
+    const isWishlistPage = pathname.startsWith('/wishlist')
+    const headerFill = isProductListingPage || isProductDetailPage || isProfilePage || isOrderPage || isWishlistPage
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')

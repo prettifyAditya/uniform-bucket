@@ -884,6 +884,19 @@ button {
           appearance: none;
   cursor: pointer;
 }
+button.remove, button.edit {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+button.remove {
+  color: var(--text);
+}
+
+.btn_wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
 .tab-nav {
   cursor: default;
@@ -2444,6 +2457,10 @@ img {
 
 .green-color {
   color: var(--green) !important;
+}
+
+.light-green {
+  color: var(--green);
 }
 
 .red-color {

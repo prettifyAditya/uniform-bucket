@@ -71,12 +71,18 @@ export default function MySelect({
   options,
   selectedValue,
   onValueChange, 
+  styles: overrideStyles
 }) {
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
     setIsClient(true)
   }, [])
+
+  const mergedStyles = {
+    ...customStyles,
+    ...(overrideStyles || {})
+  };
 
   if (!isClient) return null
   return (
@@ -86,7 +92,7 @@ export default function MySelect({
       options={options}
       value={selectedValue}
       onChange={onValueChange}
-      styles={customStyles}
+      styles={mergedStyles}
       components={{ IndicatorSeparator: () => null }}
     />
   );
