@@ -21,7 +21,28 @@ export default function OrderDetail() {
                         <p>Deliver on 25, June 2025</p>
                     </div>
                     <div className="order_status">
-                        {/* +++++++++++++++++++++++++++ */}
+                        <ul className="order_time">
+                            <li className="active">
+                                <span>Order Confirmed</span>
+                                <div className="dot"></div>
+                                <p>Sun, 26th June</p>
+                            </li>
+                            <li className="active">
+                                <span>Shipped</span>
+                                <div className="dot"></div>
+                                <p>Mon, 27th June</p>
+                            </li>
+                            <li className="active">
+                                <span>Out for delivery</span>
+                                <div className="dot"></div>
+                                <p>Sun, 27th June</p>
+                            </li>
+                            <li>
+                                <span>Delivered</span>
+                                <div className="dot"></div>
+                                <p>Sun, 27th June</p>
+                            </li>
+                        </ul>
                     </div>
                     <div className="prod_content">
                         <div className="pro_item">
@@ -85,10 +106,49 @@ export default function OrderDetail() {
                         <div className="colA">
                             <p className="title">Delivery Address</p>
                             <p className="user_name">Deepak Chauhan</p>
-                            <Link href="" className="address">Unit No. 804, Tower -B, Unitech Business Zone, Golf Course Ext Rd, Sector 50, Gurugram, Haryana</Link>
+                            <p className="address">Unit No. 804, Tower -B, Unitech Business Zone, Golf Course Ext Rd, Sector 50, Gurugram, Haryana</p>
                             <p>Mobile: <Link href="+919953750281">+91 - 9953750281</Link></p>
                         </div>
+                        <div className="colB">
+                            <p className="title">Order Summary</p>
+                            <ul className="summary_details">
+                                <li>
+                                    <p>Subtotal</p>
+                                    <span>₹37,695</span>
+                                </li>
+                                <li>
+                                    <p>Embroidery</p>
+                                    <span>₹5000.00</span>
+                                </li>
+                                <li>
+                                    <p>Shipping</p>
+                                    <span>₹200.00</span>
+                                </li>
+                                <li>
+                                    <p>12% IGST</p>
+                                    <span>₹500.00</span>
+                                </li>
+                                <li>
+                                    <p>18% IGST</p>
+                                    <span>₹500.00</span>
+                                </li>
+                                <li>
+                                    <p>Total GST</p>
+                                    <span>₹1000.00</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    <div className="order_id_stats">
+                        <ul>
+                            <li><p>Transaction ID :</p><span>22525222</span></li>
+                            <li><p>Status : </p><span>Pending</span></li>
+                        </ul>
+                        <p>Total Price <span>₹ 80000.00</span></p>
+                    </div>
+                </div>
+                <div className="btn_wrapper">
+                    <Link href="" className="btn gray_border">Get Invoice</Link>
                 </div>
             </div>
           </div>

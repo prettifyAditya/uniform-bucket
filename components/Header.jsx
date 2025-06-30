@@ -346,10 +346,10 @@ export default function Header(){
                                     </ul>
                                 </div>
                             </li>
-                            <li><Link href=""><img src="/assets/icon/like-white.svg" alt="Wishlist Icon" /></Link>
+                            <li><Link href="/wishlist"><img src="/assets/icon/like-white.svg" alt="Wishlist Icon" /></Link>
                                 <span className="dot-noti">5</span>
                             </li>
-                            <li><Link href=""><img src="/assets/icon/cart-white.svg" alt="Cart Icon" /></Link>
+                            <li><Link href="/cart"><img src="/assets/icon/cart-white.svg" alt="Cart Icon" /></Link>
                                 <span className="dot-noti">5</span>
                             </li>
                             <li>
