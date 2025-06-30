@@ -155,3 +155,32 @@
             .btn
                 padding: 0 30px
                 border-radius: 50px
+
+.model.changePass-pop
+    height: fit-content
+    max-width: 450px 
+    top: unset
+    bottom: 0%
+    left: 50%
+    transform: translate(-50%, 100%)
+    transition: .5s ease
+    &.is-open
+        bottom: 50%
+        transform: translate(-50%, 50%)
+    .close
+        top: 20px
+        right: 20px
+        svg
+            width: 20px
+            height: 20px
+    .model-body
+        padding: 40px 25px
+        h6
+            font-size: 16px
+            font-family: $Lato
+            font-weight: 700
+        .form
+            margin-top: 30px
+            --inputsize: 36px
+            .btn_wrapper
+                margin-top: 15px

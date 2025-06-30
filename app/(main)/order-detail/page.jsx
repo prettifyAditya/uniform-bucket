@@ -1,4 +1,3 @@
-"use client"
 import "../../../styles/dashboard/dashboard.css"
 import DashBoard from "@/components/Dashboard";
 import Image from "next/image";

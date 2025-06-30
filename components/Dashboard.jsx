@@ -1,14 +1,50 @@
+"use client"
+import { useModalStore } from "@/store/modalStore"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import ChangePass from "./ChangePass"
+import { useEffect } from "react"
 
 export default function DashBoard(){
+    const openPassChange = useModalStore((state) => state.openPassChange)
     const pathname = usePathname()
     const profilePage = pathname.startsWith('/profile')
     const orderPage = pathname.startsWith('/order')
-    const wishlistPage = pathname.startsWith('/wishist')
+    const wishlistPage = pathname.startsWith('/wishlist')
+    useEffect(() => {
+        const inputBoxes = document.querySelectorAll('.form-control');
+
+        const handleFocus = function () {
+            this.closest('.form-group')?.classList.add('active');
+            this.classList.add('valid');
+        };
+
+        const handleBlur = function () {
+            const hasValue = this.value.trim() !== '';
+            
+            if (!hasValue) {
+                this.closest('.form-group')?.classList.remove('active');
+                this.classList.remove('valid');
+            }
+        };
+
+        inputBoxes.forEach(inputBox => {
+            inputBox.addEventListener('focus', handleFocus);
+            inputBox.addEventListener('blur', handleBlur);
+        });
+
+        return () => {
+            inputBoxes.forEach(inputBox => {
+                inputBox.removeEventListener('focus', handleFocus);
+                inputBox.removeEventListener('blur', handleBlur);
+            });
+        };
+    }, []);
+
     return(
-        <div className="aside-left card-body">
+        <>
+            <div className="aside-left card-body">
             <div className="aside-left-wrap">
                 <div className="profile-col">
                 <div className="ico">
@@ -36,17 +72,19 @@ export default function DashBoard(){
                     <Link className={orderPage ? "active" : ""} href="/order">Orders</Link>
                     </li>
                     <li>
-                    <Link className="" href="/wishlist">Wishlist</Link>
+                    <Link className={wishlistPage ? "active" : ""} href="/wishlist">Wishlist</Link>
                     </li>
                     <li>
-                    <Link className="" href="/change-password">Change Password</Link>
+                    <button className="" onClick={openPassChange}>Change Password</button>
                     </li>
                     <li>
-                    <Link className="" href="/logout">Logout</Link>
+                    <Link className="" href="/">Logout</Link>
                     </li>
                 </ul>
                 </div>
             </div>
         </div>
+        <ChangePass />
+        </>
     )
 }

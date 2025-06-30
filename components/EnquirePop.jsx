@@ -15,24 +15,35 @@ export default function EnquirePop() {
     const isOpen = useModalStore((state) => state.isEnquireOpen)
     const closeEnquire = useModalStore((state) => state.closeEnquire)
     const [category, setCategory] = useState(null)
-    useEffect(() =>  {
-        const inputBoxes = document.querySelectorAll('.form-control')
+    useEffect(() => {
+        const inputBoxes = document.querySelectorAll('.form-control');
+
+        const handleFocus = function () {
+            this.closest('.form-group')?.classList.add('active');
+            this.classList.add('valid');
+        };
+
+        const handleBlur = function () {
+            const hasValue = this.value.trim() !== '';
+            
+            if (!hasValue) {
+                this.closest('.form-group')?.classList.remove('active');
+                this.classList.remove('valid');
+            }
+        };
+
         inputBoxes.forEach(inputBox => {
-            inputBox.addEventListener('focus', function() {
-                this.closest('.form-group')?.classList.add('active')
-                this.classList.add('valid')
-            })
-        })
+            inputBox.addEventListener('focus', handleFocus);
+            inputBox.addEventListener('blur', handleBlur);
+        });
 
         return () => {
             inputBoxes.forEach(inputBox => {
-                inputBox.removeEventListener('focus', function() {
-                    this.closest('.form-group')?.classList.add('active')
-                    this.classList.add('valid')
-                })
-            })
-        }
-    }, [])
+                inputBox.removeEventListener('focus', handleFocus);
+                inputBox.removeEventListener('blur', handleBlur);
+            });
+        };
+    }, []);
 
     return (
         <div className={`model enquire-pop ${isOpen ? "is-open" : ""}`}>

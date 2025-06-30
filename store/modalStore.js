@@ -12,6 +12,7 @@ export const useModalStore = create((set) => {
       isEmbroideryOpen: false,
       isEmbroideryGuideOpen: false,
       isAddressOpen: false,
+      isPassChangeOpen: false,
     });
 
   return {
@@ -24,6 +25,7 @@ export const useModalStore = create((set) => {
     isEmbroideryOpen: false,
     isEmbroideryGuideOpen: false,
     isAddressOpen: false,
+    isPassChangeOpen: false,
 
     openSearch: () => {
       closeAll();
@@ -77,6 +79,12 @@ export const useModalStore = create((set) => {
       set({ isAddressOpen: true });
     },
     closeAddress: () => set({ isAddressOpen: false }),
+
+    openPassChange: () => {
+      closeAll();
+      set({ isPassChangeOpen: true });
+    },
+    closePassChange: () => set({ isPassChangeOpen: false }),
 
     closeAll,
   };
