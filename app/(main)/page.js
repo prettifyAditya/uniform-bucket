@@ -92,7 +92,19 @@ export default function Home() {
         </div>
       </div>
      </div>
-     <CounterBanner />
+     <CounterBanner 
+      videoSrc="/assets/video/counter_banner.mp4"
+      heading="Uniform Bucket"
+      subHeading="UNIFORM BUCKET, A unit of JAF Enterprises Pvt. Ltd. is a fast emerging name in the world of work wear, corporate wear, hospital wear, hotel wear, school and college wear. We are providing quality garments for a diverse range of people, industries and commercial establishments."
+      count1="10000"
+      cnt1desc="Happy Customer"
+      count2="25"
+      cnt2desc="Industries Served"
+      count3="9000"
+      cnt3desc="Pin Codes Delivered"
+      count4="15000"
+      cnt4desc="Orders Placed"
+     />
      <TestimonySlider />
      <div className="home-secB sec-pad">
       <div className="container">

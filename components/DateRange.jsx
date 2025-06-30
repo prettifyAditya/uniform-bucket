@@ -43,12 +43,15 @@ export default function DateRangeFilter() {
       <button
         onClick={() => setOpen(!open)}
         style={{
-          border: '1px solid #ccc',
+          border: '1px solid #666',
+          borderRadius: "5px",
+          width:"200px",
+          backgroundColor: "#fff",
+          color: "#666",
           padding: '4px 10px',
           fontSize: '14px',
-          height: '25px',
+          height: '30px',
           lineHeight: '17px',
-          background: '#fff',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',

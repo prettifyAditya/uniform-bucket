@@ -21,7 +21,7 @@ function animateCount(el, to) {
   
     requestAnimationFrame(update);
   }
-export default function CounterBanner(){
+export default function CounterBanner({ classname="", videoSrc="", heading, subHeading, count1, cnt1desc, count2, cnt2desc, count3, cnt3desc, count4, cnt4desc }){
     useEffect(() => {
             const elements = document.querySelectorAll('[data-count]');
             const options = {
@@ -47,10 +47,10 @@ export default function CounterBanner(){
             return () => observer.disconnect(); // Clean up on unmount
           }, []);
     return (
-      <div className="counter-sec banner">
+      <div className={`counter-sec banner ${classname}`}>
         <div className="bg">
           <video
-            src="/assets/video/counter_banner.mp4"
+            src={videoSrc}
             autoPlay
             muted
             loop
@@ -58,38 +58,34 @@ export default function CounterBanner(){
           ></video>
           <div className="banner-wrapper">
             <div className="container">
-              <h2>Uniform Bucket</h2>
+              <h2>{heading}</h2>
               <p className="subhead">
-                UNIFORM BUCKET, A unit of JAF Enterprises Pvt. Ltd. is a fast
-                emerging name in the world of work wear, corporate wear,
-                hospital wear, hotel wear, school and college wear. We are
-                providing quality garments for a diverse range of people,
-                industries and commercial establishments.
+                {subHeading}
               </p>
               <div className="counter-wrapper">
                 <div className="counter-info-wrap">
                   <h5>
-                    <span data-count="10000">0</span>+
+                    <span data-count={count1}>0</span>+
                   </h5>
-                  <p>Happy Customer</p>
+                  <p>{cnt1desc}</p>
                 </div>
                 <div className="counter-info-wrap">
                   <h5>
-                    <span data-count="25">0</span>+
+                    <span data-count={count2}>0</span>+
                   </h5>
-                  <p>Industries Served</p>
+                  <p>{cnt2desc}</p>
                 </div>
                 <div className="counter-info-wrap">
                   <h5>
-                    <span data-count="9000">0</span>+
+                    <span data-count={count3}>0</span>+
                   </h5>
-                  <p>Pin Codes Delivered</p>
+                  <p>{cnt3desc}</p>
                 </div>
                 <div className="counter-info-wrap">
                   <h5>
-                    <span data-count="15000">0</span>+
+                    <span data-count={count4}>0</span>+
                   </h5>
-                  <p>Orders Placed</p>
+                  <p>{cnt4desc}</p>
                 </div>
               </div>
               <Link href="javascript:;" className="btn">

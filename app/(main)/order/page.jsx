@@ -36,12 +36,12 @@ export default function Profile() {
                             control: (base, state) => ({
                             ...base,
                             width: "100%",
-                            height: "25px",
-                            minHeight: "25px",
+                            height: "30px",
+                            minHeight: "30px",
                             color: "#fff",
-                            backgroundColor: "none",
+                            backgroundColor: "#fff",
                             border: "none",
-                            borderRadius: "none",
+                            borderRadius: "5px",
                             border: state.isFocused ? "1px solid #666" : "1px solid #666666",
                             boxShadow: "none",
                             '&:hover': {

@@ -1221,4 +1221,12 @@
 }
 .dashboard-secA .flex .aside-right .wish-list-wrap-dashboard .mv-top-bg-wrap {
   margin-top: 37px;
+}
+
+.rdrDateDisplayItemActive {
+  border-color: #000 !important;
+}
+
+.rdrSelected, .rdrInRange, .rdrStartEdge, .rdrEndEdge {
+  background: #000 !important;
 }/*# sourceMappingURL=dashboard.css.map */
