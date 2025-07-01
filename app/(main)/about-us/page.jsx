@@ -1,6 +1,7 @@
 import CounterBanner from "@/components/CounterBanner"
 import "../../../styles/about/about.css"
 import Image from "next/image"
+import HomeGlobe from "@/components/HomeGlobe"
 
 
 export default function AboutUs(){
@@ -54,6 +55,7 @@ export default function AboutUs(){
                 count4="15000"
                 cnt4desc="Orders Placed"
             />
+            <HomeGlobe classname="aboutus_globe" />
         </main>
     )
 }

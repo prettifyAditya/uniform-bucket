@@ -184,3 +184,37 @@
             --inputsize: 36px
             .btn_wrapper
                 margin-top: 15px
+
+.home-secB
+    position: relative
+    &.aboutus_globe
+        padding: 100px 0 
+    .heading
+        max-width: 470px
+        margin: 0 auto
+    .video
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        opacity: .1
+        video
+            width: 100%
+            height: 100%
+            object-fit: contain
+    .flags_wrapper
+        grid-template-columns: repeat(6, 1fr)
+        max-width: 900px
+        margin: 60px auto 
+        figure
+            display: flex
+            align-items: center
+            gap: 10px
+            img
+                width: 35px
+            p
+                font-weight: 400
+                letter-spacing: 2px
+                text-transform: uppercase
