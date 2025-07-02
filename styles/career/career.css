@@ -196,15 +196,15 @@
   margin: 40px auto 0;
   --item: 2;
 }
+.career-secC .form-grid .form-group {
+  background-color: var(--white);
+  border-radius: 10px;
+}
 .career-secC .form-grid .form-group::before, .career-secC .form-grid .form-group::after {
   display: none;
 }
-.career-secC .form-grid .form-group label, .career-secC .form-grid .form-group .form-control {
+.career-secC .form-grid .form-group label, .career-secC .form-grid .form-group .form-control, .career-secC .form-grid .form-group .file-name {
   padding: 0 10px;
-}
-.career-secC .form-grid .form-group .form-control {
-  background-color: var(--white);
-  border-radius: 10px;
 }
 .career-secC .form-grid .btn_wrapper .btn {
   padding: 0 50px;

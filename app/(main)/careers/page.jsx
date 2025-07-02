@@ -1,7 +1,7 @@
 "use client"
 import BannerWrapper from "@/components/BannerWrapper";
 import "../../../styles/career/career.css"
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import MySelect from "@/components/MySelect";
 
 const openingData = [
@@ -66,6 +66,33 @@ const applyData = [
 export default function Careers(){
     const [activeIndex, setActiveIndex] = useState(null);
     const [selectedPosition, setSelectedPosition] = useState(null)
+    const [AttachedFile, setAttachedFile] = useState([]);
+    useEffect(() => {
+        const fileInputs = document.querySelectorAll('input[type="file"].form-control');
+        console.log(fileInputs)
+    
+        const handleChange = (event) => {
+          const input = event.target;
+          const fileName = input.value.replace(/C:\\fakepath\\/i, '');
+          console.log(fileName)
+          const sibling = input.parentElement.querySelector('.file-name'); 
+          console.log(sibling)
+          if (sibling) {
+            sibling.style.setProperty('--filenameinitial', fileName ? `"${fileName}"` : 'var(--filename)');
+          }
+        };
+    
+        fileInputs.forEach(input => {
+          input.addEventListener('change', handleChange);
+        });
+    
+        // Cleanup on unmount
+        return () => {
+          fileInputs.forEach(input => {
+            input.removeEventListener('change', handleChange);
+          });
+        };
+    }, []);
     const toggleAccordion = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
@@ -188,9 +215,9 @@ export default function Careers(){
                                     }),
                                 }}
                             />
-                            <div className="form-group">
-                                <input type="text" name="attachResume" className="form-control" />
-                                <label htmlFor="attachResume">Attach Resume</label>
+                            <div className="form-group file-input">
+                                <input type="file" accept=".pdf,.docx" className="form-control" onChange={(e)=>setAttachedFile(e.target.files[0])} />
+                                <div className="file-name"></div>
                             </div>
                             <div className="form-group full">
                                 <textarea name="message" className="form-control" />
