@@ -56,7 +56,7 @@
             height: calc(var(--inputsize) - var(--borderwidth))
             border: none
             resize: none
-            border-radius: 0px !important
+            border-radius: 0px
             width: 100%
             background: none
             color: var(--color)
@@ -75,7 +75,7 @@
             height: var(--textareaheight)
             border: none
             resize: none
-            border-radius: 0px !important
+            border-radius: 0px 
             width: 100%
             background: none
             color: var(--color)
@@ -83,7 +83,7 @@
             font-family: inherit
             line-height: 1.2
             cursor: initial
-            @include scrollbar(2px,none,$primary,15px)
+            @include scrollbar(2px,none,$black,15px)
             padding: 0 var(--paddingleftright)
             padding-right: 15px
             &:focus,&.valid
@@ -160,133 +160,6 @@
         &:not(.text-left)
             text-align: center
             margin-top: 23px
-.custom-select
-    max-width: 100%
-    cursor: pointer
-    display: block
-    font-family: inherit
-    height: var(--selectheight)
-    position: relative
-    transition: all .2s ease-in-out
-    user-select: none
-    white-space: nowrap
-    padding: 0 var(--paddingleftright)
-    --arrow: 15px
-    --arrowspace: 8px
-    --paddingleftright: 0
-    &.has-icon
-        --iconsize: 12px
-        --iconurl: url(/assets/icon/location-gradient.svg)
-        --iconspace: 8px
-        @include after
-        &::after
-            left: 0
-            width: var(--iconsize)
-            background-image: var(--iconurl)
-            background-repeat: no-repeat
-            background-size: 100% auto
-            background-position: 0 50%
-        .current
-            padding-left: calc(var(--iconsize) + var(--iconspace))
-            padding-right: calc(var(--arrow) + var(--iconsize) + var(--arrowspace) + var(--iconspace))
-    &::before
-        content: ''
-        position: absolute
-        top: 0
-        right: var(--paddingleftright)
-        bottom: 0
-        width: var(--arrow)
-        background-image: url(/assets/icon/arrow-down-gray.svg)
-        background-position: 0 50%
-        background-repeat: no-repeat
-        background-size: 100% auto
-    .current
-        display: block
-        width: 100%
-        overflow: hidden
-        text-overflow: ellipsis
-        line-height: var(--inputsize)
-        color: var(--labelbefore)
-        font-size: var(--labelfontbefore)
-        font-weight: var(--font)
-        padding-right: calc(var(--arrow) + var(--arrowspace))
-        &.selected
-            color: var(--color)
-    .list
-        text-align: left
-        background-color: #fff
-        box-shadow: rgba(0,0,0,.16) 0px 1px 4px
-        overflow: hidden
-        position: absolute
-        top: 100%
-        left: 0
-        right: 0
-        opacity: 0
-        transform-origin: 50% 0
-        z-index: 7
-        max-height: 180px
-        overflow-y: auto
-        border-bottom-left-radius: 10px
-        border-bottom-right-radius: 10px
-        @include scrollbar(4px,none,$text,5px)
-        pointer-events: none
-        li
-            display: block
-            line-height: 1.2
-            padding: 8px 16px
-            white-space: break-spaces
-            font-size: 14px
-            &.selected
-                background: $primary
-                color: $white
-                &:hover
-                    background: $primary
-                    color: $white
-            &:hover
-                background: #e2e2e2
-    &.open
-        .list
-            opacity: 1
-            pointer-events: auto
-            transform: scale(1) translateY(0)
-
-.filter-ul
-    li
-        @include checkbox-full
-        &:not(:last-child)
-            margin-bottom: 10px
-        p
-            font-size: 14px
-            color: $text
-
-// .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active
-//     border-radius: 50%
-//     background: $black
-//     border-color: $black
-//     height: 17px
-//     width: 17px
-//     border: none !important
-//     top: 50%
-//     translate: 0 -50%
-//     &:focus
-//         outline: none
-// .ui-slider-horizontal
-//     height: 2px
-//     border: none !important
-// .ui-widget-content
-//     background: #CECECE
-//     border: none !important
-// .ui-widget-header
-//     background: $black
-// .ui-slider 
-//     .ui-slider-range  
-//         position: absolute
-//         z-index: 1
-//         font-size: .7em
-//         display: block
-//         border: 0
-//         background-position: 0 0
-
 
 .checkbox-full
     @include checkbox-full

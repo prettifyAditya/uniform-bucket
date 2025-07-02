@@ -1,132 +1,119 @@
 @import '../_var'
 
 .faq-secA
-    padding: 56px 0 158px
-    @include media(991)
-        padding: 55px 0
-    @include media(768)
-        padding: 40px 0 
-    @include media(540)
-        padding: 30px 0
-    .flex
-        @include media(768)
-            flex-direction: column
-            gap: 40px
-        .colA,.colB
-            position: sticky
-            top: calc(var(--headerfixed) + 20px)
-            height: 100%
-            @include media(768)
-                position: static
+    .heading
+        max-width: 410px
+        margin: 0 auto 60px
+        p
+            color: $text
+    .faqs-section
+        align-items: center
+        justify-content: space-around
+        gap: 100px
         .colA
-            flex: 0 1 30%
-            background: #F1F1F1
-            padding: 25px
-            @include media(768)
-                padding: 20px 
-                flex: 0 1 100%
-            .faq-tab-nav
-                li
-                    color: #6666669e
-                    font-size: 18px
-                    &:not(:last-child)
-                        margin-bottom: 15px
-                        @include media(1024)
-                            margin-bottom: 12px
-                            @include media(768)
-                                margin-bottom: 5px
-                    &:hover,&.active
-                        color: $primary
+            flex: 0 1 auto
+            .ub_icon
+                mask-image: url(/assets/images/about/about_ub.svg)
+                mask-size: 100%
+                mask-repeat: no-repeat
+                height: 390px
+                width: 420px
+                line-height: 0
         .colB
             flex: 1
-            padding-left: 2rem
-            @include media(768)
-                padding-left: 0
-            .title-tab-faq
-                display: none
-                font-size: 24px
-                margin-bottom: 15px
-                color: $black
-                @include media(767)
-                    display: block
-                @include media(675)
-                    text-align: center
-            .faq-tab-nav-content
-                .tabs
-                    transition: .5s ease
-                    @include media(767)
-                        position: unset
+            .col
+                --padlr: 0
+                border-radius: 10px
+                transition: .5s ease
+                margin-bottom: 10px
+                &.active
+                    .title
+                        h6
+                            color: $black
+                        .ico
+                            &::after
+                                transform: scaleY(0)
+                    article
+                        max-height: fit-content
                         opacity: 1
-                        transform: translateY(0px)
-                    &:not(.active)
-                        transform: translateY(20px)
-                        @include media(767)
-                            transform: translateY(0px)
-                            pointer-events: all
-                            unicode-range: auto
-                    // &:not(:last-child)
-                    //     @include media(767)
-                    //         margin-bottom: 50px
-                    .faq-content
-                        .col
-                            border-bottom: 1px solid #CCCCCC
-                            // border-radius: 5px
-                            --padlr: 26px
-                            &:not(:last-child)
-                                margin-bottom: 15px
-                                @include media(768)
-                                    margin-bottom: 0
-                            &.active
-                                .title
-                                    border-color: $primary
-                                    h6
-                                        color: $primary
-                                    .ico
-                                        rotate: -90deg
-                                        background-image: url(../../icon/arrow-down-primary.svg)
-                            .title
-                                @include flex
-                                overflow: hidden
-                                align-items: center
-                                padding: 15px var(--padlr)
-                                cursor: pointer
-                                @include media(768)
-                                    padding: 10px 0 
-                                h6
-                                    font-size: 16px
-                                    line-height: 1.5
-                                    flex: 1
-                                    color: $text
-                                    padding-right: 1rem
-                                .ico
-                                    flex: 0 1 auto
-                                    width: 15px
-                                    height: 15px
-                                    background-image: url(../../icon/arrow-down-gray.svg)
-                                    background-repeat: no-repeat
-                                    background-size: 100% auto
-                                    background-position: 0 50%
-                                    transition: .5s ease
-                            article
-                                .content-desc
-                                    padding: 0 var(--padlr) 30px
-                                    @include media(768)
-                                        padding: 20px 0 10px
-                                    @include media(540) 
-                                        padding: 10px 0 
-                                    > *
-                                        color: $text
-                                    p,ul
-                                        margin-bottom: 20px
-                                        @include media(675)
-                                            margin-bottom: 15px
-                                    ul
-                                        padding-left: 30px
-                                        padding-left: 20px
-                                        li
-                                            list-style: disc
-                                            &::marker
-                                                color: $primary
-                                            &:not(:last-child)
-                                                margin-bottom: 5px
+                .title
+                    @include flex
+                    overflow: hidden
+                    align-items: center
+                    padding: 15px 20px
+                    cursor: pointer
+                    transition: .5s ease
+                    border: 1px solid #ccc
+                    background-color: #E4E4E4
+                    border-radius: 5px
+                    h6
+                        font-family: $Lato
+                        color: $text
+                        font-size: 16px
+                        line-height: 1.2
+                        @include font(700) 
+                        flex: 1 
+                        padding-right: 1rem
+                        transition: .5s ease
+                        @include media(540)
+                            font-size: 16px
+                        @include media(345)
+                            font-size: 14px
+                    .ico
+                        flex: 0 1 auto
+                        --size: 18px
+                        --border: 2px
+                        --bgcolor: var(--black)
+                        height: var(--size)
+                        width: var(--size)
+                        @include before(var(--bgcolor))
+                        @include after(var(--bgcolor))
+                        &::before,&::after
+                            transition: .5s ease
+                        &::before
+                            top: calc(var(--size) / 2 - var(--border) / 2)
+                            bottom: auto
+                            height: var(--border)
+                            width: 100%
+                        &::after
+                            left: calc(var(--size) / 2)
+                            translate: -50% 0 
+                            right: auto
+                            width: var(--border)
+                            height: 100%
+                article
+                    position: relative
+                    background: $white
+                    border: 1px solid #c1c1c1
+                    border-top: none
+                    max-height: 0
+                    opacity: 0
+                    overflow: hidden
+                    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out
+                    border-radius: 0 0 5px 5px 
+                    .content-desc
+                        padding: 15px 20px 20px
+                        p,ul,h2,h3,h4,h5,h6
+                            margin-bottom: 16px
+                        *
+                            &:not(button)
+                                color: $text
+                                font-size: 16px
+                                line-height: 1.5
+                        h1,h2,h3,h4,h5,h6,b
+                            color: $black
+                            @include font(500)
+                        ul
+                            padding-left: 20px
+                            li
+                                list-style: none
+                                &::before
+                                    background-color: var(--black)
+                                @include media(540)
+                                    font-size: 14px
+                                &:not(:last-child)
+                                    margin-bottom: 5px
+                        p
+                            @include media(540)
+                                font-size: 14px
                                             

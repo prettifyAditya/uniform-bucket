@@ -646,7 +646,7 @@
   left: 0;
   top: 0;
   opacity: 0;
-  z-index: 1;
+  z-index: 2;
 }
 .check-out-main .check-out-secA-zbyqo .bag-dobyk .ship_address .upper .chk-box input:checked ~ .in-bx::before {
   opacity: 1;

@@ -17,7 +17,10 @@ export default function Header(){
     const isProfilePage = pathname.startsWith('/profile')
     const isOrderPage = pathname.startsWith('/order')
     const isWishlistPage = pathname.startsWith('/wishlist')
-    const headerFill = isProductListingPage || isProductDetailPage || isProfilePage || isOrderPage || isWishlistPage
+    const isBlogsPage = pathname.startsWith('/blogs')
+    const isFaqPage = pathname.startsWith('/faqs')
+    const isPayOnlinePage = pathname.startsWith('/pay-online')
+    const headerFill = isProductListingPage || isProductDetailPage || isProfilePage || isOrderPage || isWishlistPage || isBlogsPage || isFaqPage || isPayOnlinePage
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')

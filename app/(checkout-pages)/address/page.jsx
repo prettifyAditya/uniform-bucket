@@ -50,7 +50,7 @@ export default function Address(){
                     </div>
                     <div className="add_details">
                         <div className="chk-box">
-                            <input type="checkbox" name="address" />
+                            <input type="checkobx" name="address" />
                             <div className="in-bx"></div>
                         </div>
                         <div className="content">

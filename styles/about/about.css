@@ -12,49 +12,13 @@
     left: 100%;
   }
 }
-.banner.about_banner .bg {
-  height: 100vh;
-}
-@media only screen and (max-width: 768px) {
-  .banner.about_banner .bg {
-    height: 80vh;
-  }
-}
-@media only screen and (max-width: 540px) {
-  .banner.about_banner .bg {
-    height: 50vh;
-  }
-}
-.banner.about_banner .bg .banner-wrapper {
-  left: 50%;
-  top: unset;
-  bottom: 10%;
-  translate: -50% 10%;
-}
-@media only screen and (max-width: 768px) {
-  .banner.about_banner .bg .banner-wrapper {
-    width: 100%;
-  }
-}
-.banner.about_banner .bg .banner-wrapper .content .icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 30px;
-}
-.banner.about_banner .bg .banner-wrapper .content p {
-  font-size: 16px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-.banner.about_banner .bg .banner-wrapper .content .scroll_down {
-  margin-top: 30px;
-}
-
 .about-secA .flex {
   align-items: center;
+  justify-content: space-around;
+  gap: 100px;
 }
 .about-secA .flex .colA {
-  flex: 1;
+  flex: 0 1 auto;
 }
 .about-secA .flex .colA .ub_icon {
   -webkit-mask-image: url(/assets/images/about/about_ub.svg);
@@ -65,23 +29,35 @@
           mask-repeat: no-repeat;
   height: 390px;
   width: 420px;
-  margin: 0 auto;
   line-height: 0;
 }
 .about-secA .flex .colB {
   flex: 1;
+  max-width: 700px;
 }
 .about-secA .flex .colB h2 {
   margin-bottom: 20px;
   letter-spacing: 7px;
+}
+.about-secA .flex .colB .content {
+  margin-bottom: 20px;
+  max-height: 225px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.about-secA .flex .colB .content.open_height {
+  max-height: 450px;
+  overflow: visible;
 }
 .about-secA .flex .colB p {
   padding-bottom: 15px;
   color: var(--text);
 }
 .about-secA .flex .colB .read_more {
-  margin-top: 10px;
   color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .counter-sec.about_counter .banner-wrapper {
