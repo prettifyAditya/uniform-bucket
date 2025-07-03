@@ -8,6 +8,8 @@
         margin: 0 auto
         h2
             font-size: 30px
+            @include media(540)
+                font-size: 24px
         p
             color: $text
 
@@ -59,37 +61,28 @@
                     transform: translateX(0%)
             .close
                 @include media(991)
-                    left: 25px
-                    right: auto
+                    top: 20px
+                    right: 20px
             .fltr-ggf
                 display: flex
                 @include media(991)
                     display: block
-                    padding: 70px 0 0
+                    padding: 70px 0
                     height: 100%
                     overflow-y: auto
                     position: relative
                 .btn-mbl-btm
                     display: flex
-                    position: absolute
+                    position: fixed
                     bottom: 0
                     left: 0
                     right: 0
                     z-index: 2
                     @include media-min(991)
                         display: none
-                    .aplly-btn,.clr-btn
+                    .btn
                         flex: 1
                         --height: 44px
-                        background: var(--primary)
-                        color: $white
-                        border-radius: 0px
-                        height: var(--height)
-                        font-size: 14px
-                    >*
-                        border: none
-                        &:not(:last-child)
-                            border-right: 1px solid rgb(256 256 256 / .6)
         .kmr-select-wrap
             --labelheight: var(--filterheight)
             padding: 0 25px
@@ -114,6 +107,7 @@
                         box-shadow: none
                         padding-top: 8px
                         padding-bottom: 8px
+                        display: block
             &.sort_by
                 .kmr-select-menu
                     &.active
@@ -125,6 +119,7 @@
     padding: 20px 25px
     @include media(991)
         padding: 20px 0 
+        display: none
     .container
         display: flex
         align-items: center

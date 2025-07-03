@@ -92,7 +92,7 @@ export const useModalStore = create((set) => {
       closeAll();
       set({ isFilterOpen: true });
     },
-    closeFilter: () => ({ isFilterOpen: false }),
+    closeFilter: () => set({ isFilterOpen: false }),
 
     closeAll,
   };

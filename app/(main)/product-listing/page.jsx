@@ -50,7 +50,8 @@ export default function ProductListing() {
     const [sortOpen, setSortOpen] = useState(false);
     const [openFilterClass, setOpenFilterClass] = useState(false);
     const isOpenFilter = useModalStore((state) => state.isFilterOpen)
-    const opennFilter = useModalStore((state) => state.openFilter)
+    const openFilter = useModalStore((state) => state.openFilter)
+    const closeFilter = useModalStore((state) => state.closeFilter)
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedSubcategories, setSelectedSubcategories] = useState([]);
     const [selectedGender, setSelectedGender] = useState([]);
@@ -61,13 +62,6 @@ export default function ProductListing() {
     const priceRef = useRef(null);
     const genderRef = useRef(null);
     const sortRef = useRef(null);
-
-
-    const handleToggle = () => {
-      if(window.innerWidth < 991) {
-        isOpenFilter()
-      }
-    }
 
     useEffect(() => {
     const handleClickOutside = (e) => {
@@ -144,14 +138,18 @@ export default function ProductListing() {
           <div className="container">
             <div className="list-filter">
               <div className="colA" data-model=".list-filter-wrap .colB">
-                <button type="button" className="filtr-btn" onClick={opennFilter}>
+                <button type="button" className="filtr-btn" onClick={openFilter}>
                   <img src="assets/icon/sort.svg" className="svg" alt="" />
                 </button> 
               </div>
               <div className={`colB ${openFilterClass ? 'model' : ""} ${isOpenFilter ? 'is-open' : ''}`}>
                 <div className="fltr-ggf">
                   <div className={`kmr-select-wrap cat_select ${selectedCategories.length > 0 ? 'active' : ''}`} ref={categoryRef}>
-                    <div className="label" onClick={(e) => { e.stopPropagation(); setCategoryOpen(prev => !prev); }}>Category</div>
+                    <div className="label" onClick={(e) => { e.stopPropagation(); 
+                      if(window.innerWidth > 991){
+                        setCategoryOpen(prev => !prev);
+                      }
+                     }}>Category</div>
                     <ul className={`kmr-select-menu ${categoryOpen ? 'active' : ''}`}>
                       {/* Loop through each brand in the group */}
                       {categoryOptions.map(option => (
@@ -168,7 +166,11 @@ export default function ProductListing() {
                     </ul>
                   </div>
                   <div className={`kmr-select-wrap subcat_select ${selectedSubcategories.length > 0 ? 'active' : ''}`} ref={subcategoryRef}>
-                    <div className="label" onClick={(e) => { e.stopPropagation(); setSubcategoryOpen(prev => !prev); }}>Corporate Blazers</div>
+                    <div className="label" onClick={(e) => { e.stopPropagation(); {
+                      if(window.innerWidth > 991){
+                        setSubcategoryOpen(prev => !prev); }
+                      }
+                    }}>Corporate Blazers</div>
                     <ul className={`kmr-select-menu ${subcategoryOpen ? 'active' : ''}`}>
                       {subcategoryOptions.map(option => (
                         <li key={option.id}>
@@ -184,7 +186,11 @@ export default function ProductListing() {
                     </ul>
                   </div>
                   <div className={`kmr-select-wrap price_select ${price.length ? 'active': ''}`} ref={priceRef}>
-                    <div className="label" onClick={(e) => { e.stopPropagation(); setPriceOpen(prev => !prev); }}>Price</div>
+                    <div className="label" onClick={(e) => { e.stopPropagation(); 
+                      if(window.innerWidth > 991){
+                        setPriceOpen(prev => !prev);
+                      }
+                     }}>Price</div>
                     <ul className={`kmr-select-menu ${priceOpen ? 'active' : ''}`}>
                       <div className="upper-sec">
                         <h6>Price Range</h6>
@@ -245,7 +251,11 @@ export default function ProductListing() {
                     </ul>
                   </div>
                   <div className={`kmr-select-wrap gender-select ${selectedGender.length > 0 ? "active" : ""}`} ref={genderRef}>
-                    <div className="label" onClick={(e) => {e.stopPropagation(); setGenderOpen(prev => !prev);}}>Gender</div>
+                    <div className="label" onClick={(e) => {e.stopPropagation(); 
+                      if(window.innerWidth > 991){
+                        setGenderOpen(prev => !prev);
+                      }
+                    }}>Gender</div>
                     <ul className={`kmr-select-menu ${genderOpen ? 'active' : ''}`}>
                         {genderOptions.map(option => (
                             <li key={option.id}>
@@ -262,17 +272,19 @@ export default function ProductListing() {
                     </ul>
                   </div>
                   <div className="btn-mbl-btm">
-                    <button
-                      className="btn close aplly-btn not-ab"
-                      type="button"
-                    >
+                    <button className="btn black_fill" type="button" onClick={closeFilter}>
                       Apply
                     </button>
-                    <button className="btn close clr-btn not-ab" type="button">
+                    <button className="btn gray_fill" type="button" onClick={closeFilter}>
                       Clear
                     </button>
                   </div>
                 </div>
+                {openFilterClass && (
+                  <button type="button" className="close" onClick={closeFilter}>
+                    <svg width="20" height="20" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                  </button>
+                )}
               </div>
               <div className="colC">
                 <div className={`kmr-select-wrap sort_by slt-rgt ${selectedSort.length > 0 ? "active" : ''}`} ref={sortRef}>
