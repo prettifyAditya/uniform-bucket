@@ -4,6 +4,7 @@ import "../../../styles/product/product.css"
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { Range } from 'react-range';
+import { useModalStore } from "@/store/modalStore";
 
 
 const MIN = 0;
@@ -47,7 +48,9 @@ export default function ProductListing() {
     const [priceOpen, setPriceOpen] = useState(false)
     const [genderOpen, setGenderOpen] = useState(false);
     const [sortOpen, setSortOpen] = useState(false);
-
+    const [openFilter, setOpenFilter] = useState(false);
+    const isOpenFilter = useModalStore((state) => state.isFilterOpen)
+    const opennFilter = useModalStore((state) => state.openFilter)
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedSubcategories, setSelectedSubcategories] = useState([]);
     const [selectedGender, setSelectedGender] = useState([]);
@@ -58,6 +61,13 @@ export default function ProductListing() {
     const priceRef = useRef(null);
     const genderRef = useRef(null);
     const sortRef = useRef(null);
+
+
+    const handleToggle = () => {
+      if(window.innerWidth < 991) {
+        isOpenFilter()
+      }
+    }
 
     useEffect(() => {
     const handleClickOutside = (e) => {
@@ -106,6 +116,17 @@ export default function ProductListing() {
         );
     };
 
+    useEffect(() => {
+      const checkViewport = () => {
+        setOpenFilter(window.innerWidth < 991);
+      };
+    // Initial check
+    checkViewport();
+    // Resize listener
+    window.addEventListener('resize', checkViewport);
+    return () => window.removeEventListener('resize', checkViewport);
+    }, [])
+
     return (
       <main>
         <div className="prolisting-secA sec-pad mt-hdrfxd">
@@ -123,11 +144,11 @@ export default function ProductListing() {
           <div className="container">
             <div className="list-filter">
               <div className="colA" data-model=".list-filter-wrap .colB">
-                <button type="button" className="filtr-btn">
+                <button type="button" className="filtr-btn" onClick={opennFilter}>
                   <img src="assets/icon/sort.svg" className="svg" alt="" />
-                </button>
+                </button> 
               </div>
-              <div className="colB">
+              <div className={`colB ${openFilter ? 'model' : ""} ${isOpenFilter ? 'is-open' : ''}`}>
                 <div className="fltr-ggf">
                   <div className={`kmr-select-wrap cat_select ${selectedCategories.length > 0 ? 'active' : ''}`} ref={categoryRef}>
                     <div className="label" onClick={(e) => { e.stopPropagation(); setCategoryOpen(prev => !prev); }}>Category</div>

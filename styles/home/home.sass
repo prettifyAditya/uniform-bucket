@@ -15,6 +15,8 @@
         --swiper-pagination-color: #fff
         @include media(1300)
             width: 90%
+        @include media(768)
+            width: 80%
         .play_btn
             --btnsize: 16px
             display: inline-block
@@ -54,9 +56,10 @@
         z-index: 1
         transform: translate(3%, 15%)
         cursor: pointer
-        @include media(540) 
-            right: 8%   
-            transform: translate(8%, 15%)
+        @include media(768)
+            ight: 5%
+            bottom: 5%
+            transform: translate(5%, 5%)
         &.active  
             .sound_on
                 display: block
@@ -107,8 +110,6 @@
                             font-size: 38px
                         @include media(768)
                             font-size: 32px
-                        @include media(540)
-                            font-size: 24px
                     p
                         text-transform: uppercase
                         letter-spacing: 2px
@@ -128,9 +129,10 @@
         @include media(991)
             margin-bottom: 3rem
         @include media(768)
-            margin-bottom: 2rem
+            max-width: 300px
+            margin: 0 auto 2rem
         @include media(540)
-            margin-bottom: 1.5rem
+            margin: 0 auto 1.5rem
     .client_slider
         .swiper-wrapper
             transition-timing-function: linear !important
@@ -189,6 +191,8 @@
     .btn_wrapper
         margin-top: 50px
         text-align: center
+        @include media(768)
+            margin-top: 30px
 
 .bestSeller_slider_wrapper
     position: relative
@@ -197,20 +201,26 @@
         .btn_wrapper
             margin-top: 50px
             text-align: center
+            @include media(768)
+                margin-top: 30px
 
 .animate_banner.banner
     &::before
         background: linear-gradient(270deg, rgba(248, 248, 248, 0) 90%, rgba(0, 0, 0, 0) 100%)
     .bg
         height: 100vh
+        @include media(768)
+            height: 80vh
     .banner-wrapper
         .container
             display: flex
             flex-wrap: wrap
             align-items: center
             @include media(768)
-                flex-direction: column-reverse
-                gap: 30px
+                flex-direction: column
+                gap: 50px
+            @include media(540)
+                gap: 20px
             .content
                 flex: 1
                 width: 30%
@@ -243,7 +253,8 @@
                     margin-top: 50px
                     z-index: 1
                     @include media(540)
-                        margin-top: 40px
+                        margin-top: 20px
+                        margin-bottom: 30px
             .animate_slider_wrapper
                 width: 45%
                 height: 100%
@@ -254,7 +265,7 @@
                     width: 55%
                     margin-right: 0
                 @include media(540)
-                    width: 90%
+                    width: 100%
                 .animate_slider
                     height: 100%
                     position: relative
@@ -309,9 +320,11 @@
                         font-weight: 400
                         @include media(768)
                             font-size: 14px
-.promo-sec
+.promo-sec.banner
     .bg
         height: 80vh
+        @include media(768)
+            height: 50vh
     .banner-wrapper
         top: unset
         bottom: 15%
@@ -335,7 +348,10 @@
                 margin-bottom: 30px
                 line-height: 1.2
 
-.counter-sec
+.counter-sec.banner
+    .bg
+        @include media(768)
+            height: 70vh
     .banner-wrapper
         color: $white
         line-height: 1.2
@@ -359,10 +375,10 @@
             gap: 30px
             margin-bottom: 30px
             flex-wrap: wrap
+            @include media(540)
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
             .counter-info-wrap
-                @include media(540)
-                    flex: 1
-                    flex-basis: max-content
                 h5
                     font-family: $Lato
                 p
@@ -376,3 +392,7 @@
                 margin: 0 auto
             @include media(991)
                 max-width: 500px
+
+.category_slider_wrapper.sec-pad, .client_slider_wrapper.sec-pad
+    @include media(540)
+        padding-bottom: 0

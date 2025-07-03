@@ -69,7 +69,8 @@ export default function Header(){
                 <div className="header-wrapper container">
                     <div className="colA">
                         <Link href="/">
-                            <Image src="/logo.svg" width="219" height="30" alt="Logo"></Image>
+                            <Image src="/logo.svg" width="219" height="30" alt="Logo" className="sm-none"></Image>
+                            <Image src="/logo_ub.svg" width="50" height="30" alt="Logo" className="sm-block"></Image>
                         </Link>
                     </div>
                     <div className="colB">

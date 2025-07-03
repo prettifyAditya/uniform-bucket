@@ -150,10 +150,8 @@ header
                 gap: 25px
                 @include media(1300)
                     gap: 15px
-                li
-                    &:not(:last-child)
-                        @include media(540)
-                            display: none
+                @include media(540)
+                    gap: 25px
                 .myAccount
                     position: relative
                     &:hover
@@ -202,12 +200,12 @@ header
                     width: 100%
                     span
                         display: block
-                        width: 25px
+                        width: 35px
                         height: 1px
                         background-color: $white
                         transition: .5s ease
                         &:not(:last-child)
-                            margin-bottom: 6px
+                            margin-bottom: 7px
                 li:has(.dot-noti)
                     position: relative
                     span
@@ -643,6 +641,17 @@ header
     transform: translateX(100%)
     transition: .5s ease
     z-index: 10
+    &::before
+        content: ""
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        background: url(/assets/icon/ub_grad.svg) no-repeat
+        background-size: 50% 30%
+        background-position: right bottom
+        opacity: 0.04
     &.is-open
         transform: translateX(0%)
     .close
@@ -678,8 +687,6 @@ header
             img,svg
                 width: 70px
                 height: auto
-                @include media(540)
-                    width: 30px
                 path 
                     fill: #000
         .nav-list
@@ -752,11 +759,12 @@ header
                     &:hover
                         color: #666
         .bottom-list
-            margin-top: 2rem
+            margin-top: 4rem
             padding-top: 1rem
             display: flex
             align-items: center 
             gap: 1rem
+            border-top: 1px solid #ccc
             .social-icons
                 a
                     display: inline-flex
@@ -1076,9 +1084,9 @@ div
             text-align: center
             margin-bottom: 1rem
             .icon
-                width: 50px
-                height: 50px
-                margin: 0 auto 10px
+                width: 70px
+                height: 70px
+                margin: 0 auto 15px
                 img
                     object-fit: contain
             h2
@@ -1107,3 +1115,5 @@ div
         .btn
             margin: 15px auto 0
             width: 100%
+            --height: 40px
+            height: 40px

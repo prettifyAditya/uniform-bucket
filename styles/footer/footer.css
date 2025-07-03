@@ -882,16 +882,31 @@ button.remove {
   overflow: hidden;
   padding: 0 20px 30px;
 }
+@media only screen and (max-width: 540px) {
+  .product_col figcaption {
+    padding: 0 10px 10px;
+  }
+}
 .product_col figcaption h6 {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 700;
   padding: 0 20px 5px;
 }
+@media only screen and (max-width: 540px) {
+  .product_col figcaption h6 {
+    padding: 0 5px 5px;
+  }
+}
 .product_col figcaption p {
   font-size: 14px;
   font-weight: 400;
   padding: 0 20px 0px;
+}
+@media only screen and (max-width: 540px) {
+  .product_col figcaption p {
+    padding: 0 5px 0;
+  }
 }
 .product_col .wislist {
   position: absolute;
@@ -918,9 +933,21 @@ button.remove {
   background: var(--black);
   color: var(--white);
 }
+@media only screen and (max-width: 540px) {
+  .product_col .hoverItem .enquireBtn {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+}
 .product_col .hoverItem .viewDetails {
   background: var(--gray);
   color: var(--black);
+}
+@media only screen and (max-width: 540px) {
+  .product_col .hoverItem .viewDetails {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
 }
 
 .category_col::before {
@@ -977,7 +1004,7 @@ button.remove {
 }
 @media only screen and (max-width: 768px) {
   .category_col figcaption h6 {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 .category_col figcaption p {
@@ -1006,7 +1033,7 @@ button.remove {
     z-index: 2;
   }
 }
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 540px) {
   .overlay {
     display: none;
   }
@@ -1115,14 +1142,8 @@ img {
 .btn::before {
   background-color: var(--white);
 }
-@media only screen and (max-width: 768px) {
-  .btn {
-    height: 30px;
-  }
-}
 @media only screen and (max-width: 540px) {
   .btn {
-    height: 26px;
     font-size: 12px;
     --padding: 14px;
   }
@@ -2645,6 +2666,11 @@ footer .container .upper-footer .colB, footer .container .lower-footer .colB {
     gap: 50px;
   }
 }
+@media only screen and (max-width: 768px) {
+  footer .container .upper-footer .colB, footer .container .lower-footer .colB {
+    justify-content: start;
+  }
+}
 footer .container .upper-footer .colB .list_item h6, footer .container .lower-footer .colB .list_item h6 {
   font-size: 16px;
   line-height: 1.5;
@@ -2682,7 +2708,7 @@ footer .container .upper-footer .colB .list_item ul li a, footer .container .low
 }
 @media only screen and (max-width: 540px) {
   footer .container .upper-footer .colB {
-    gap: 15px;
+    gap: 40px;
   }
 }
 footer .container .lower-footer {
@@ -2703,7 +2729,7 @@ footer .container .lower-footer .colC {
 @media only screen and (max-width: 540px) {
   footer .container .lower-footer .colC {
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
   }
 }
 footer .container .lower-footer .colC .social_icons {
@@ -2712,6 +2738,12 @@ footer .container .lower-footer .colC .social_icons {
   gap: 15px;
   padding-right: 15px;
   border-right: 1px solid var(--white);
+}
+@media only screen and (max-width: 540px) {
+  footer .container .lower-footer .colC .social_icons {
+    border-right: none;
+    padding-right: 0;
+  }
 }
 footer .container .lower-footer .colC .social_icons li a {
   display: block;

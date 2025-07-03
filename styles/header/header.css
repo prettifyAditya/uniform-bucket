@@ -882,16 +882,31 @@ button.remove {
   overflow: hidden;
   padding: 0 20px 30px;
 }
+@media only screen and (max-width: 540px) {
+  .product_col figcaption {
+    padding: 0 10px 10px;
+  }
+}
 .product_col figcaption h6 {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 700;
   padding: 0 20px 5px;
 }
+@media only screen and (max-width: 540px) {
+  .product_col figcaption h6 {
+    padding: 0 5px 5px;
+  }
+}
 .product_col figcaption p {
   font-size: 14px;
   font-weight: 400;
   padding: 0 20px 0px;
+}
+@media only screen and (max-width: 540px) {
+  .product_col figcaption p {
+    padding: 0 5px 0;
+  }
 }
 .product_col .wislist {
   position: absolute;
@@ -918,9 +933,21 @@ button.remove {
   background: var(--black);
   color: var(--white);
 }
+@media only screen and (max-width: 540px) {
+  .product_col .hoverItem .enquireBtn {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+}
 .product_col .hoverItem .viewDetails {
   background: var(--gray);
   color: var(--black);
+}
+@media only screen and (max-width: 540px) {
+  .product_col .hoverItem .viewDetails {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
 }
 
 .category_col::before {
@@ -977,7 +1004,7 @@ button.remove {
 }
 @media only screen and (max-width: 768px) {
   .category_col figcaption h6 {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 .category_col figcaption p {
@@ -1006,7 +1033,7 @@ button.remove {
     z-index: 2;
   }
 }
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 540px) {
   .overlay {
     display: none;
   }
@@ -1115,14 +1142,8 @@ img {
 .btn::before {
   background-color: var(--white);
 }
-@media only screen and (max-width: 768px) {
-  .btn {
-    height: 30px;
-  }
-}
 @media only screen and (max-width: 540px) {
   .btn {
-    height: 26px;
     font-size: 12px;
     --padding: 14px;
   }
@@ -2704,8 +2725,8 @@ header .header-wrapper .colC .call_action {
   }
 }
 @media only screen and (max-width: 540px) {
-  header .header-wrapper .colC .call_action li:not(:last-child) {
-    display: none;
+  header .header-wrapper .colC .call_action {
+    gap: 25px;
   }
 }
 header .header-wrapper .colC .call_action .myAccount {
@@ -2764,13 +2785,13 @@ header .header-wrapper .colC .call_action .ham_btn {
 }
 header .header-wrapper .colC .call_action .ham_btn span {
   display: block;
-  width: 25px;
+  width: 35px;
   height: 1px;
   background-color: var(--white);
   transition: 0.5s ease;
 }
 header .header-wrapper .colC .call_action .ham_btn span:not(:last-child) {
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 header .header-wrapper .colC .call_action li:has(.dot-noti) {
   position: relative;
@@ -3355,6 +3376,18 @@ header.header-shadow {
   transition: 0.5s ease;
   z-index: 10;
 }
+.model.ham-pop::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(/assets/icon/ub_grad.svg) no-repeat;
+  background-size: 50% 30%;
+  background-position: right bottom;
+  opacity: 0.04;
+}
 .model.ham-pop.is-open {
   transform: translateX(0%);
 }
@@ -3410,11 +3443,6 @@ header.header-shadow {
 .model.ham-pop .model-body .icon img, .model.ham-pop .model-body .icon svg {
   width: 70px;
   height: auto;
-}
-@media only screen and (max-width: 540px) {
-  .model.ham-pop .model-body .icon img, .model.ham-pop .model-body .icon svg {
-    width: 30px;
-  }
 }
 .model.ham-pop .model-body .icon img path, .model.ham-pop .model-body .icon svg path {
   fill: #000;
@@ -3515,11 +3543,12 @@ header.header-shadow {
   color: #666;
 }
 .model.ham-pop .model-body .bottom-list {
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding-top: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-top: 1px solid #ccc;
 }
 .model.ham-pop .model-body .bottom-list .social-icons a {
   display: inline-flex;
@@ -3960,9 +3989,9 @@ div:has(> .product-not-found) {
   margin-bottom: 1rem;
 }
 .enquire-pop .model-body .title .icon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 10px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
 }
 .enquire-pop .model-body .title .icon img {
   -o-object-fit: contain;
@@ -4000,4 +4029,6 @@ div:has(> .product-not-found) {
 .enquire-pop .model-body .btn {
   margin: 15px auto 0;
   width: 100%;
+  --height: 40px;
+  height: 40px;
 }/*# sourceMappingURL=header.css.map */

@@ -336,15 +336,21 @@ button
     figcaption
         overflow: hidden
         padding: 0 20px 30px
+        @include media(540)
+            padding: 0 10px 10px
         h6
             font-family: $Lato
             font-size: 16px
             font-weight: 700
             padding: 0 20px 5px
+            @include media(540)
+                padding: 0 5px 5px
         p
             font-size: 14px
             font-weight: 400
             padding: 0 20px 0px
+            @include media(540)
+                padding: 0 5px 0
     .wislist
         position: absolute
         top: 3%
@@ -366,9 +372,15 @@ button
         .enquireBtn
             background: $black
             color: $white
+            @include media(540)
+                padding: 8px 5px
+                font-size: 12px
         .viewDetails
             background: var(--gray)
             color: $black
+            @include media(540)
+                padding: 8px 5px
+                font-size: 12px
 
 
 .category_col
@@ -412,7 +424,7 @@ button
         h6
             font-size: 24px
             @include media(768)
-                font-size: 18px 
+                font-size: 22px
         p
             font-size: 14px
         .btn_wrapper
@@ -433,7 +445,7 @@ button
     cursor: pointer
     @include media(991)
         z-index: 2
-    @include media(675)
+    @include media(540)
         display: none
     &.is-open
         transition: opacity 1s ease
@@ -518,10 +530,7 @@ img
         z-index: -1
     &::before
         background-color: $white
-    @include media(768)
-        height: 30px
     @include media(540)
-        height: 26px
         font-size: 12px
         --padding: 14px
     &:hover

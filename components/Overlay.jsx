@@ -13,9 +13,10 @@ export default function Overlay() {
   const isEmbroideryGuideOpen = useModalStore((state) => state.isEmbroideryGuideOpen)
   const isAddressOpen = useModalStore((state) => state.isAddressOpen)
   const isPassChangeOpen = useModalStore((state) => state.isPassChangeOpen)
+  const isFilterOpen= useModalStore((state) => state.isFilterOpen)
   const closeAll = useModalStore((state) => state.closeAll);
 
-  const isAnyOpen = isSearchOpen || isHamOpen || isEnquireOpen || isVideoOpen || isLoginOpen || isSignUpOpen || isEmbroideryOpen || isEmbroideryGuideOpen || isAddressOpen || isPassChangeOpen;
+  const isAnyOpen = isSearchOpen || isHamOpen || isEnquireOpen || isVideoOpen || isLoginOpen || isSignUpOpen || isEmbroideryOpen || isEmbroideryGuideOpen || isAddressOpen || isPassChangeOpen || isFilterOpen;
 
   useEffect(() => {
     if (isAnyOpen) {

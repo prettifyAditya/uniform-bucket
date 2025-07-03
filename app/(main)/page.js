@@ -61,7 +61,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="btn_wrapper">
-              <Link href="javascript:;" className="btn black-border">Explore All Products</Link>
+              <Link href="javascript:;" className="btn black">Explore All Products</Link>
             </div>
         </div>
      </div>
