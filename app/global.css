@@ -356,8 +356,8 @@
 }
 @media only screen and (max-width: 991px) {
   :root {
-    --headerheight: 100px;
-    --headerfixed: 80px;
+    --headerheight: 90px;
+    --headerfixed: 70px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -405,6 +405,11 @@
 
 .sec-pad {
   padding: 70px 0;
+}
+@media only screen and (max-width: 991px) {
+  .sec-pad {
+    padding: 60px 0;
+  }
 }
 @media only screen and (max-width: 768px) {
   .sec-pad {
@@ -564,6 +569,21 @@ h3 {
   line-height: 1.282;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 991px) {
+  .heading h2 {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .heading h2 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .heading h2 {
+    font-size: 20px;
+  }
 }
 .heading.h-large h3, .heading.h-large h2 {
   font-size: 36px;
@@ -822,6 +842,11 @@ button.remove {
 .testimony_col figcaption .content h6 {
   font-size: 24px;
 }
+@media only screen and (max-width: 991px) {
+  .testimony_col figcaption .content h6 {
+    font-size: 22px;
+  }
+}
 .testimony_col figcaption .content p {
   font-size: 14px;
 }
@@ -932,12 +957,30 @@ button.remove {
   bottom: 5%;
   translate: 0 5%;
 }
+@media only screen and (max-width: 991px) {
+  .category_col figcaption {
+    bottom: 2%;
+    translate: 0 2%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .category_col figcaption {
+    bottom: 0;
+    translate: 0%;
+    padding: 0 10px 10px;
+  }
+}
 .category_col figcaption h6, .category_col figcaption p {
   color: var(--white);
   transition: 0.6s ease;
 }
 .category_col figcaption h6 {
   font-size: 24px;
+}
+@media only screen and (max-width: 768px) {
+  .category_col figcaption h6 {
+    font-size: 18px;
+  }
 }
 .category_col figcaption p {
   font-size: 14px;
@@ -1302,6 +1345,16 @@ img {
   line-height: 1.23;
   margin-top: 4px;
 }
+@media only screen and (max-width: 991px) {
+  .banner .banner-wrapper .content p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner .banner-wrapper .content p {
+    font-size: 16px;
+  }
+}
 
 .banner-banner .content h1 {
   font-family: "Le Jeune Deck";
@@ -1561,14 +1614,19 @@ img {
   position: relative;
   margin-bottom: 4rem;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .slider-section .upper-sec {
     margin-bottom: 3rem;
   }
 }
+@media only screen and (max-width: 768px) {
+  .slider-section .upper-sec {
+    margin-bottom: 2rem;
+  }
+}
 @media only screen and (max-width: 540px) {
   .slider-section .upper-sec {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 .slider-section .upper-sec .slider-nav {

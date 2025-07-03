@@ -7,13 +7,25 @@
     justify-content: center
     padding: 20px
     gap: 50px
+    @include media(991)
+        gap: 30px
+    @include media(768)
+        gap: 20px
+    @include media(540)
+        flex-direction: column
     .add_item
         display: flex
         align-items: center
         gap: 6px
+        @include media(768)
+            flex-direction: column
+            text-align: center
         img
             width: 40px
             height: 40px
+            @include media(768)
+                width: 35px
+                height: 35px
         .content
             h6
                 font-family: $Lato
@@ -28,6 +40,10 @@ footer
     padding: 70px 0 50px
     position: relative
     overflow: hidden
+    @include media(991)
+        padding: 60px 0 50px
+    @include media(540)
+        padding: 50px 0 40px 
     &::before
         content: ""
         position: absolute
@@ -57,15 +73,21 @@ footer
                 --labelafter: var(--white)
                 --borderafter: var(--white)
                 --color: var(--white)
+                @include media(991)
+                    flex: 0 1 25%
                 a
                     display: block
                     width: 320px
                     height: 100%
+                    @include media(991)
+                        width: 250px
                     img
                         height: 100%
                 .form-group
                     max-width: 450px
                     margin: 25px 0 30px
+                    @include media(991) 
+                        margin: 20px 0 25px
                 p
                     max-width: 450px
                     color: $white
@@ -75,6 +97,8 @@ footer
                 justify-content: center
                 gap: 70px
                 color: $white
+                @include media(991)
+                    gap: 50px
                 .list_item
                     h6
                         font-size: 16px
@@ -94,12 +118,29 @@ footer
                                 color: #FFFFFFB2
                                 display: block
                                 transition: .5s ease
+        .upper-footer
+            @include media(991)
+                gap: 50px
+            @include media(768)
+                gap: 40px
+            @include media(540)
+                flex-direction: column
+            .colB
+                @include media(540)
+                    gap: 15px
         .lower-footer
             padding: 30px 0 40px
+            @include media(991)
+                padding: 30px 0 
+                flex-direction: column-reverse
+                gap: 20px 
             .colC
                 flex: 1
                 display: flex
                 align-items: center
+                @include media(540)
+                    flex-direction: column
+                    gap: 5px
                 .social_icons
                     display: flex
                     align-items: center
@@ -122,6 +163,9 @@ footer
             .colD
                 align-items: center
                 gap: 20px
+                @include media(540)
+                    justify-content: center
+                    gap: 10px
                 a, .corp_login
                     display: flex
                     align-items: center
@@ -131,6 +175,9 @@ footer
                     color: $white
                     height: 100%
                     line-height: 1.5
+                    @include media(540)
+                        gap: 2px
+                        padding: 2px 6px
                 .corp_login
                     background-color: $white
                     color: $black
@@ -141,6 +188,9 @@ footer
         .flex
             align-items: center
             justify-content: space-between
+            @include media(768)
+                flex-direction: column
+                gap: 10px
             p
                 color: $white
                 font-size: 14px

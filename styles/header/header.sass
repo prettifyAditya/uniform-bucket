@@ -20,6 +20,8 @@ header
         transition: .5s ease
         display: flex
         align-items: center
+        @include media(991)
+            justify-content: space-between
         .colA
             flex: 0 1 auto
             a
@@ -31,12 +33,16 @@ header
         .colB
             flex: 1
             height: 100%    
+            @include media(991)
+                display: none
             .navlist
                 display: flex
                 align-items: center
                 justify-content: center
                 gap: 30px
                 height: 100%
+                @include media(1300)
+                    gap: 20px
                 a
                     font-size: 14px
                 li
@@ -142,6 +148,12 @@ header
                 display: flex
                 align-items: center
                 gap: 25px
+                @include media(1300)
+                    gap: 15px
+                li
+                    &:not(:last-child)
+                        @include media(540)
+                            display: none
                 .myAccount
                     position: relative
                     &:hover
@@ -885,7 +897,7 @@ header
                 .btn-grp
                     margin-top: 20px
 
-.video-pop
+.video-pop.model
     left: 0
     right: 0
     background: #0000007a

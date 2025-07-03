@@ -208,16 +208,27 @@
         grid-template-columns: repeat(6, 1fr)
         max-width: 900px
         margin: 60px auto 
+        @include media(991)
+            grid-template-columns: repeat(3, 1fr)
+            margin: 50px auto
+            gap: 35px     
+        @include media(540)
+            margin: 30px auto
+            gap: 20px
         figure
             display: flex
             align-items: center
             gap: 10px
+            @include media(540)
+                flex-direction: column
             img
                 width: 35px
             p
                 font-weight: 400
                 letter-spacing: 2px
                 text-transform: uppercase
+                @include media(540)
+                    font-size: 14px
 
 .banner.video-banner
     .bg 

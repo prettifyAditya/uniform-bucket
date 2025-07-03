@@ -46,7 +46,11 @@ export default function VideoPopup () {
             />
           </svg>
         </button>
-        <iframe id="iframe1" allow="autoplay;fullscreen" allowFullScreen src={videoSrc}/>
+        {
+          videoSrc && (
+            <iframe id="iframe1" allow="autoplay;fullscreen" allowFullScreen src={videoSrc}/>
+          )
+        }
       </div>
     </div>
   );
