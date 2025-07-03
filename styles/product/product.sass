@@ -123,6 +123,8 @@
 
 .total_products
     padding: 20px 25px
+    @include media(991)
+        padding: 20px 0 
     .container
         display: flex
         align-items: center
@@ -134,6 +136,8 @@
             display: flex
             align-items: center
             gap: 10px
+            width: 100%
+            overflow-x: auto
             .selected
                 padding: 2px 10px
                 color: $black
@@ -141,7 +145,7 @@
                 display: flex
                 align-items: center
                 gap: 6px
-                width: fit-content
+                min-width: fit-content
                 img
                     width: 20px
                     height: 20px
@@ -154,6 +158,10 @@
         grid-template-columns: repeat(3, 1fr)
         grid-gap: 10px
         padding-bottom: 50px
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
     .load_more
         display: flex
         flex-direction: column

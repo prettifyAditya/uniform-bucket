@@ -48,7 +48,7 @@ export default function ProductListing() {
     const [priceOpen, setPriceOpen] = useState(false)
     const [genderOpen, setGenderOpen] = useState(false);
     const [sortOpen, setSortOpen] = useState(false);
-    const [openFilter, setOpenFilter] = useState(false);
+    const [openFilterClass, setOpenFilterClass] = useState(false);
     const isOpenFilter = useModalStore((state) => state.isFilterOpen)
     const opennFilter = useModalStore((state) => state.openFilter)
     const [selectedCategories, setSelectedCategories] = useState([]);
@@ -118,7 +118,7 @@ export default function ProductListing() {
 
     useEffect(() => {
       const checkViewport = () => {
-        setOpenFilter(window.innerWidth < 991);
+        setOpenFilterClass(window.innerWidth < 991);
       };
     // Initial check
     checkViewport();
@@ -148,7 +148,7 @@ export default function ProductListing() {
                   <img src="assets/icon/sort.svg" className="svg" alt="" />
                 </button> 
               </div>
-              <div className={`colB ${openFilter ? 'model' : ""} ${isOpenFilter ? 'is-open' : ''}`}>
+              <div className={`colB ${openFilterClass ? 'model' : ""} ${isOpenFilter ? 'is-open' : ''}`}>
                 <div className="fltr-ggf">
                   <div className={`kmr-select-wrap cat_select ${selectedCategories.length > 0 ? 'active' : ''}`} ref={categoryRef}>
                     <div className="label" onClick={(e) => { e.stopPropagation(); setCategoryOpen(prev => !prev); }}>Category</div>
