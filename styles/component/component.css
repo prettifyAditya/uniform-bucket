@@ -2519,6 +2519,10 @@ em {
     transform: translateY(10px);
   }
 }
+.display-none {
+  display: none;
+}
+
 .size {
   text-align: center;
 }
@@ -2536,6 +2540,11 @@ em {
   text-transform: uppercase;
   font-weight: 600;
 }
+@media only screen and (max-width: 540px) {
+  .size p {
+    color: var(--text);
+  }
+}
 .size .size_count {
   width: 100%;
   padding: 7px 6px;
@@ -2544,6 +2553,12 @@ em {
   display: flex;
   align-items: center;
   gap: 3px;
+}
+@media only screen and (max-width: 540px) {
+  .size .size_count {
+    padding: 4px 2px;
+    gap: 1px;
+  }
 }
 .size .size_count button {
   line-height: 1;
@@ -2573,6 +2588,11 @@ em {
   transform: translate(-50%, 100%);
   transition: 0.5s ease;
 }
+@media only screen and (max-width: 540px) {
+  .model.address-pop {
+    height: 100%;
+  }
+}
 .model.address-pop.is-open {
   bottom: 50%;
   transform: translate(-50%, 50%);
@@ -2587,6 +2607,11 @@ em {
 }
 .model.address-pop .model-body {
   padding: 20px 25px;
+}
+@media only screen and (max-width: 540px) {
+  .model.address-pop .model-body {
+    padding: 60px 25px;
+  }
 }
 .model.address-pop .model-body h3 {
   font-size: 20px;
@@ -2603,6 +2628,12 @@ em {
   --borderafter: #000;
   height: 400px;
   overflow-y: auto;
+}
+@media only screen and (max-width: 540px) {
+  .model.address-pop .model-body .form {
+    height: 100%;
+    overflow-y: visible;
+  }
 }
 .model.address-pop .model-body .form .double-group {
   display: grid;

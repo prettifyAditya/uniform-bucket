@@ -2519,6 +2519,10 @@ em {
     transform: translateY(10px);
   }
 }
+.display-none {
+  display: none;
+}
+
 .upper-wrapper {
   background-color: #E5E5E5;
   display: flex;

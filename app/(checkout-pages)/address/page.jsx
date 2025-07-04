@@ -26,7 +26,10 @@ export default function Address(){
                 <div className="bag-dobyk">
                   <div className="upper-sshjm">
                     <h6>Billing Address</h6>
-                    <button type="button" className="btn gray_border" onClick={openAddress}>Add New Address</button>
+                    <button type="button" className="btn gray_border" onClick={openAddress}>
+                      <span className="sm-none">Add New Address</span>
+                      <span className="sm-block">Add Address</span>
+                    </button>
                   </div>
                   <div className="bag-product-wrsvn-wrap">
                     <div className="add_details">
@@ -80,7 +83,7 @@ export default function Address(){
                   </div>
                 </div>
               </div>
-              <div className="colB-flex-hfmcf">
+              <div className="colB-flex-hfmcf add_sum">
                 <CheckoutSummary
                   classname="address_summ"
                   summaryItems={summaryItems}

@@ -2519,6 +2519,10 @@ em {
     transform: translateY(10px);
   }
 }
+.display-none {
+  display: none;
+}
+
 header {
   position: fixed;
   top: 0;

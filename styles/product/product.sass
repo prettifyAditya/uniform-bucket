@@ -177,7 +177,7 @@
 // Product detail
 
 .product-detail-container
-    margin-top: var(--headerfixed)
+    margin-top: var(--headerheight)
     background-color: #FAFAFA
     .breadcrumps
         padding-top: 20px
@@ -209,6 +209,7 @@
         padding-bottom: 80px
         @include media(991)
             grid-template-columns: repeat(1, 1fr)
+            padding-bottom: 60px
         @include media(768)
             padding-bottom: 40px
         @include media(540)
@@ -234,8 +235,12 @@
                             transform: scale(1.1)
                     img
                         transform-origin: top left
+                        @include media(768)
+                            height: auto
         .colB
             padding-left: 40px
+            @include media(991)
+                padding-left: 0
             .pro_title
                 font-size: 28px
                 font-family: $Lato
@@ -244,14 +249,17 @@
                 text-transform: capitalize
                 font-weight: 700
                 margin-bottom: 20px
+                @include media(768)
+                    margin-bottom: 10px
                 @include media(540)
                     font-size: 22px
-                    margin-bottom: 10px
             .review_wrap
                 display: flex
                 align-items: center
                 gap: 15px
                 margin-bottom: 20px
+                @include media(768)
+                    margin-bottom: 15px
                 .review_stars
                     display: flex
                     align-items: center
@@ -277,6 +285,8 @@
                     font-size: 24px
                     line-height: 1.2
                     font-weight: 500
+                    @include media(540)
+                        font-size: 20px
                 .sku_code
                     display: flex
                     gap: 6px
@@ -288,6 +298,8 @@
                 margin-bottom: 20px
                 border-bottom: 1px solid #D7D7D7
                 padding-bottom: 35px
+                @include media(768)
+                    padding-bottom: 25px
                 >p
                     font-size: 14px
                     color: $text
@@ -296,10 +308,14 @@
                     display: flex
                     align-items: center
                     gap: 5px
+                    @include media(540)
+                        padding-top: 10px
                     .bulk_wrap
                         background: $white
                         padding: 8px 15px
                         border: 1px solid #E6E6E6
+                        @include media(540)
+                            flex: 1
                         p
                             font-size: 12px
                             line-height: 1
@@ -328,6 +344,10 @@
                     align-items: center
                     flex-wrap: wrap
                     gap: 20px 7px
+                    @include media(1150)
+                        padding: 25px 0 50px
+                    @include media(991)
+                        padding: 25px 0 70px
                     .size
                         text-align: center
                         p
@@ -344,6 +364,8 @@
                             display: flex
                             align-items: center
                             gap: 3px
+                            @include media(540)
+                                padding: 5px 4px
                             button
                                 line-height: 1
                                 svg
@@ -358,6 +380,9 @@
                                 line-height: 1
                                 height: 30px
                                 text-align: center
+                                @include media(540)
+                                    max-width: 30px
+                                    height: 25px
                 .add_to_wish
                     display: flex
                     align-items: center
@@ -365,6 +390,10 @@
                     right: 0%
                     bottom: 10%
                     transform: translate(0%, 10%)
+                    @include media(1150)
+                        bottom: 5%
+                    @include media(991)
+                        bottom: 10%
                     .wish_btn
                         display: flex
                         align-items: center
@@ -406,6 +435,13 @@
                 display: flex
                 align-items: center
                 gap: 10px
+                @include media(540)
+                    position: fixed
+                    bottom: 0
+                    left: 0
+                    width: 100%
+                    gap: 0
+                    z-index: 2
                 button
                     --height: 46px
                     flex: 1
@@ -439,6 +475,8 @@
                             color: $black
             .pro_description
                 padding: 40px 0 20px
+                @include media(768)
+                    padding: 30px 0 20px
                 .col
                     --padlr: 0
                     transition: .5s ease
@@ -515,8 +553,12 @@
                     .ico
                         line-height: 0
                         margin-bottom: 15px
+                        @include media(540)
+                            margin-bottom: 10px
                         img
                             width: 40px
+                            @include media(540)
+                                width: 35px
                     p
                         font-size: 13px
                         line-height: 15px
@@ -526,16 +568,26 @@
 .customer_reviews
     .heading
         margin-bottom: 50px
+        @include media(768)
+            margin-bottom: 40px
     .review_wrapper
+        @include media(768)
+            flex-direction: column
         .colA, .colB
             flex: 1    
         .colA
             .review-border
                 border-right: 1px solid #00000026
+                @include media(768)
+                    border-right: none
                 .review_content
                     margin-right: -4px
                     height: 500px
                     overflow-y: auto
+                    @include media(768)
+                        margin-right: 0
+                        height: 100%
+                        overflow-y: visible
                     &::-webkit-scrollbar
                         width: 8px
                         height: 4px
@@ -545,10 +597,15 @@
                         display: flex
                         gap: 15px
                         margin-bottom: 40px
+                        @include media(768)
+                            margin-bottom: 25px
                         figure
                             width: 60px
                             height: 60px
                             flex: 0 1 auto
+                            @include media(768)
+                                width: 50px
+                                height: 50px
                             img
                                 height: 100%
                                 border-radius: 50%
@@ -573,6 +630,12 @@
         .colB
             .review_form
                 padding: 30px 70px
+                @include media(991)
+                    padding: 30px 40px
+                @include media(768)
+                    padding: 30px 0 
+                @include media(540)
+                    padding: 20px 0 
                 h6
                     font-size: 24px
                     font-family: $Lato

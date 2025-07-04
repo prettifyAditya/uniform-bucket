@@ -2520,4 +2520,7 @@ em {
   100% {
     transform: translateY(10px);
   }
+}
+.display-none {
+  display: none;
 }/*# sourceMappingURL=global.css.map */

@@ -9,8 +9,16 @@ import Overlay from "./Overlay"
 import { useModalStore } from "@/store/modalStore"
 import LoginPop from "./LoginPop"
 import SignUpPop from "./SignUpPop"
+import { usePathname } from "next/navigation"
 export default function Footer(){
     const openEnquire = useModalStore((state) => state.openEnquire)
+    const pathname = usePathname()
+    const isProductPage = pathname.startsWith('/product-detail')
+    const isCartPage = pathname.startsWith('/cart')
+    const isAddressPage = pathname.startsWith('/address')
+    const isPaymentPage = pathname.startsWith('/payment')
+
+    const DisplayNonePage = isCartPage || isAddressPage || isPaymentPage || isProductPage
     return(
         <>
             <div className="upper-wrapper">
@@ -115,7 +123,7 @@ export default function Footer(){
                 </div>
             </footer>
             <Overlay />
-            <div className="sticky_action flex">
+            <div className={`sticky_action flex ${DisplayNonePage? 'display-none' : ""}`}>
                 <Link className="whatsapp" href="javascript:;">
                     <Image src="/assets/icon/whatsapp.svg" width="24" height="24" alt="Whatsapp"></Image>
                 </Link>
