@@ -68,7 +68,10 @@ export default function Profile() {
               <div className="delivery_add">
                 <div className="title">
                   <h6 className="form-title">Delivery Address</h6>
-                  <button type="button" className="btn gray_border" onClick={openAddress}>Add New Address</button>
+                  <button type="button" className="btn gray_border" onClick={openAddress}>
+                    <span className="sm-none">Add New Address</span>
+                    <span className="sm-block">Add Address</span>
+                  </button>
                 </div>
                 <div className="add_wrapper">
                   <div className="address">

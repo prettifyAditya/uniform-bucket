@@ -3,14 +3,26 @@
 .dashboard-secA
     padding: 45px 0 55px
     background: #FAFAFA
+    @include media(540)
+        padding: 25px 0 40px
+    &.order-secA
+        .flex
+            .aside-right
+                @include media(1200)
+                    margin-left: 10px
+                @include media(768)
+                    margin-left: 0
+                .aside-right-wrap
+                    @include media(768)
+                        padding: 0
     .flex
-        @include media(540)
+        @include media(768)
             flex-direction: column
         .aside-left,.aside-right
             position: sticky
             top: calc(var(--headerfixed) + 10px)
             height: 100%
-            @include media(540)
+            @include media(768)
                 position: static
         .aside-left
             flex: 0 1 30%
@@ -24,7 +36,13 @@
                 background-size: 50% auto
                 background-position: 100% 100%
                 z-index: 0
-            @include media(540)
+                @include media(540)
+                    background-size: 30% auto
+                    background-position: 90% 65%
+            @include media(991)
+                flex: 0 1 33%
+                max-width: 33%
+            @include media(768)
                 flex: 1
                 max-width: 100%
             .aside-left-wrap
@@ -35,6 +53,10 @@
                 border-bottom: 1px solid #E1E1E1
                 --ico: 78px
                 text-align: center
+                @include media(1200)
+                    padding: 25px 25px 30px
+                @include media(991)
+                    padding: 25px 5px 30px
                 @include media(768)
                     padding: 20px 15px 30px
                 .ico
@@ -101,11 +123,13 @@
         .aside-right
             flex: 1
             margin-left: 50px
+            @include media(991)
+                margin-left: 25px
             @include media(768)
-                margin-left: 30px
-            @include media(540)
                 margin-left: 0
                 margin-top: 40px
+            @include media(540)
+                margin-top: 30px
             &.order-right
                 .aside-right-wrap
                     background: none
@@ -113,14 +137,36 @@
                         display: flex
                         align-items: center
                         justify-content: space-between
+                        &.order_title
+                            @include media(991)
+                                flex-direction: column
+                                align-items: start
+                                gap: 20px
                         .form-title
                             margin-bottom: 0
                         .filter_options
                             display: flex
                             align-items: center
                             gap: 10px
+                            @include media(540)
+                                flex-direction: column
+                                width: 100%
+                            .css-b62m3t-container
+                                @include media(540)
+                                    width: 100% !important
+                            .date_select
+                                @include media(540)
+                                    width: 100% !important
+                                button
+                                    @include media(540)
+                                        width: 100% !important
+                            .date_select_dropdown
+                                @include media(540)
+                                    left: 0 !important
                             p
                                 padding-right: 5px
+                                @include media(540)
+                                    width: 100%
                     .order_list
                         padding-top: 30px
                         .order_item
@@ -133,13 +179,19 @@
                                 background-color: #F1F1F1
                                 border-top-left-radius: 10px
                                 border-top-right-radius: 10px
+                                @include media(540)
+                                    padding: 10px
                                 p:not(.id)
                                     color: $text
                                     font-size: 14px
+                                    @include media(540)
+                                        font-size: 12px
                                 .id
                                     font-weight: 700
                                     line-height: 1.2
                                     font-size: 16px
+                                    @include media(540)
+                                        font-size: 14px
                             .order_content
                                 .upper_content
                                     padding: 20px 20px 30px
@@ -147,13 +199,23 @@
                                     display: flex
                                     align-items: center
                                     gap: 30px
+                                    @include media(1200)
+                                        flex-direction: column
+                                        align-items: start
+                                        gap: 10px
+                                    @include media(540)
+                                        padding: 10px 10px 20px
                                     .order_name
                                         flex: 1
                                         display: flex
                                         align-items: center
                                         justify-content: space-between
+                                        @include media(1200)
+                                            width: 100%
                                         .name, .price
                                             font-weight: 700
+                                            @include media(540)
+                                                font-size: 14px
                                     .btn_wrap
                                         flex: 0 1 auto
                                         gap: 5px
@@ -162,12 +224,23 @@
                                             padding: 0 8px
                                             --height: 30px
                                             border-radius: 5px
+                                            @include media(540)
+                                                padding: 0 8px
+                                                height: 25px
+                                                font-size: 10px
                                 .trans_details
                                     padding: 15px 20px
                                     display: flex
                                     align-content: center
                                     gap: 15px
                                     justify-content: space-between
+                                    @include media(991)
+                                        padding: 15px 30px
+                                    @include media(540)
+                                        display: grid
+                                        grid-template-columns: repeat(2, 1fr)
+                                        padding: 15px 10px
+                                        gap: 10px 5px
                                     p
                                         font-size: 14px
                                         color: $text
@@ -177,6 +250,9 @@
                                                 font-weight: 700
                                                 color: $black
                                                 font-size: 16px
+                                                @include media(540)
+                                                    padding-left: 5px
+                                                    font-size: 14px
             &.orderD-right
                 .aside-right-wrap
                     background: none
@@ -306,6 +382,7 @@
                                         line-height: 1.2
                                         padding-bottom: 5px
                                     .size, .embrod
+                                        text-align: left
                                         font-weight: 700
                                         color: $text
                                         font-size: 14px
@@ -394,23 +471,33 @@
             .aside-right-wrap
                 background: #FFFFFF
                 padding: 30px 40px
+                @include media(1200)
+                    padding: 30px
+                @include media(540)
+                    padding: 30px 20px
                 .form-title
                     margin-bottom: 40px 
                     font-family: $LeJ
                     color: $black
                     font-size: 20px
                     line-height: 22px
+                    @include media(991)
+                        margin-bottom: 30px
                     @include media(768)
                         margin-bottom: 30px
                     @include media(540)
                         text-align: center
-                        margin-bottom: 40px
+                        margin-bottom: 20px
                 .form-grid
                     --item: 2
                     --gaplr: 53px
                     --gaptb: 30px
+                    @include media(991)
+                        --gaplr: 30px
                     @include media(768)
                         --gaplr: 20px
+                    @include media(540)
+                        --item: 1
                     .profile_pic
                         p
                             font-size: 16px
@@ -424,6 +511,8 @@
                             position: relative
                             width: 200px
                             border: 1px dashed $black
+                            @include media(540)
+                                margin: 15px 0 0 
                             &::after
                                 display: none
                             &::before
@@ -447,8 +536,6 @@
                                 opacity: 0
                                 cursor: pointer 
                     .submit-grp
-                        @include media(540)
-                            text-align: center
                         .btn
                             padding: 0 30px
                 .delivery_add
@@ -459,11 +546,19 @@
                         justify-content: space-between
                         .form-title
                             margin-bottom: 0
+                        .btn
+                            @include media(540)
+                                padding: 0 8px
+                                height: 25px
+                                font-size: 10px
                     .add_wrapper
                         display: grid
                         grid-template-columns: repeat(2, 1fr)
                         margin-top: 20px
                         gap: 20px
+                        @include media(991)
+                            grid-template-columns: repeat(1, 1fr)
+                            gap: 15px
                         .address
                             background: #EDEDED
                             padding: 15px
@@ -491,6 +586,10 @@
                     grid-gap: 25px 15px
                     background: none
                     padding: 0
+                    @include media(991)
+                        grid-template-columns: repeat(2, 1fr)
+                    @include media(540)
+                        grid-template-columns: repeat(1, 1fr)
                     .wishlist_item
                         width: 100%
                         height: 100%
@@ -516,6 +615,9 @@
                                 height: 100%
                                 transform: scale(0.9)
                                 transition: .5s ease
+                                @include media(540)
+                                    height: 300px
+                                    object-fit: contain
                         figcaption
                             padding: 10px 20px 30px
                             .pro_name

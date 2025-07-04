@@ -39,7 +39,7 @@ export default function DateRangeFilter() {
   }, [ref]);
 
   return (
-    <div style={{ position: 'relative', display: 'inline-block' }} ref={ref}>
+    <div className='date_select' style={{ position: 'relative', display: 'inline-block' }} ref={ref}>
       <button
         onClick={() => setOpen(!open)}
         style={{
@@ -66,6 +66,7 @@ export default function DateRangeFilter() {
 
       {open && (
         <div
+          className='date_select_dropdown'
           style={{
             position: 'absolute',
             zIndex: 1000,

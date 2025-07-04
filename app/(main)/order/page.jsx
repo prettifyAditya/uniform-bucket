@@ -16,13 +16,13 @@ export default function Profile() {
     const [status, setStatus] = useState(null)
   return (
     <>
-      <div className="dashboard-secA mt-hdrfxd">
+      <div className="dashboard-secA order-secA mt-hdrfxd">
       <div className="container">
         <div className="flex">
           <DashBoard />
           <div className="aside-right order-right">
             <div className="aside-right-wrap">
-              <div className="title">
+              <div className="title order_title">
                 <h3 className="form-title">My Orders</h3>
                 <div className="filter_options">
                     <p>Filter by</p>
@@ -122,12 +122,15 @@ export default function Profile() {
                                 <p className="price">₹ 2,513.00</p>
                             </div>
                             <div className="btn_wrap">
-                                <Link href="" className="btn gray_border">Download Invoice</Link>
+                                <Link href="" className="btn gray_border">
+                                    <span className="sm-none">Download Invoice</span>
+                                    <span className="sm-block">Invoice</span>
+                                </Link>
                                 <Link href="/order-detail" className="btn black_fill">View Details</Link>
                             </div>
                         </div>
                         <div className="trans_details">
-                            <p>Transaction ID : <span>22525222</span></p>
+                            <p>Txn ID : <span>22525222</span></p>
                             <p>Status : <span>Pending</span></p>
                             <p>Order Date : <span>24, June 2025</span></p>
                             <p className="total_price">Total Price : <span>₹ 8000.00</span></p>
@@ -146,12 +149,15 @@ export default function Profile() {
                                 <p className="price">₹ 2,513.00</p>
                             </div>
                             <div className="btn_wrap">
-                                <Link href="" className="btn gray_border">Download Invoice</Link>
+                                <Link href="" className="btn gray_border">
+                                    <span className="sm-none">Download Invoice</span>
+                                    <span className="sm-block">Invoice</span>
+                                </Link>
                                 <Link href="" className="btn black_fill">View Details</Link>
                             </div>
                         </div>
                         <div className="trans_details">
-                            <p>Transaction ID : <span>22525222</span></p>
+                            <p>Txn ID : <span>22525222</span></p>
                             <p>Status : <span>Pending</span></p>
                             <p>Order Date : <span>24, June 2025</span></p>
                             <p className="total_price">Total Price : <span>₹ 8000.00</span></p>
@@ -170,12 +176,15 @@ export default function Profile() {
                                 <p className="price">₹ 2,513.00</p>
                             </div>
                             <div className="btn_wrap">
-                                <Link href="" className="btn gray_border">Download Invoice</Link>
+                                 <Link href="" className="btn gray_border">
+                                    <span className="sm-none">Download Invoice</span>
+                                    <span className="sm-block">Invoice</span>
+                                </Link>
                                 <Link href="" className="btn black_fill">View Details</Link>
                             </div>
                         </div>
                         <div className="trans_details">
-                            <p>Transaction ID : <span>22525222</span></p>
+                            <p>Txn ID : <span>22525222</span></p>
                             <p>Status : <span>Pending</span></p>
                             <p>Order Date : <span>24, June 2025</span></p>
                             <p className="total_price">Total Price : <span>₹ 8000.00</span></p>
@@ -194,12 +203,15 @@ export default function Profile() {
                                 <p className="price">₹ 2,513.00</p>
                             </div>
                             <div className="btn_wrap">
-                                <Link href="" className="btn gray_border">Download Invoice</Link>
+                                 <Link href="" className="btn gray_border">
+                                    <span className="sm-none">Download Invoice</span>
+                                    <span className="sm-block">Invoice</span>
+                                </Link>
                                 <Link href="" className="btn black_fill">View Details</Link>
                             </div>
                         </div>
                         <div className="trans_details">
-                            <p>Transaction ID : <span>22525222</span></p>
+                            <p>Txn ID : <span>22525222</span></p>
                             <p>Status : <span>Pending</span></p>
                             <p>Order Date : <span>24, June 2025</span></p>
                             <p className="total_price">Total Price : <span>₹ 8000.00</span></p>
