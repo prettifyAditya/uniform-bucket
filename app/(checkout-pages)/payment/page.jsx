@@ -39,8 +39,8 @@ export default function Payment(){
                             </div>
                             <p>I have read and agree to the website <Link href=''>terms and conditions</Link> </p>
                         </div>
-                        <button type="button" className="btn black_fill">Pay Now</button>
-                    </div>
+                        <Link className="btn black_fill" href="/thank-you">Pay Now</Link>
+                    </div> 
                   </div>
                 </div>
               </div>

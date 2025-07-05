@@ -153,6 +153,11 @@
 .career-secB .current-openings .col article .content-desc p, .career-secB .current-openings .col article .content-desc ul, .career-secB .current-openings .col article .content-desc h2, .career-secB .current-openings .col article .content-desc h3, .career-secB .current-openings .col article .content-desc h4, .career-secB .current-openings .col article .content-desc h5, .career-secB .current-openings .col article .content-desc h6 {
   margin-bottom: 16px;
 }
+@media only screen and (max-width: 540px) {
+  .career-secB .current-openings .col article .content-desc p, .career-secB .current-openings .col article .content-desc ul, .career-secB .current-openings .col article .content-desc h2, .career-secB .current-openings .col article .content-desc h3, .career-secB .current-openings .col article .content-desc h4, .career-secB .current-openings .col article .content-desc h5, .career-secB .current-openings .col article .content-desc h6 {
+    margin-bottom: 10px;
+  }
+}
 .career-secB .current-openings .col article .content-desc *:not(button) {
   color: var(--text);
   font-size: 16px;
@@ -191,10 +196,25 @@
 .career-secC .heading h3 {
   text-transform: none;
 }
+@media only screen and (max-width: 768px) {
+  .career-secC .heading h3 {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .career-secC .heading h3 {
+    font-size: 28px;
+  }
+}
 .career-secC .form-grid {
   max-width: 780px;
   margin: 40px auto 0;
   --item: 2;
+}
+@media only screen and (max-width: 540px) {
+  .career-secC .form-grid {
+    --item: 1;
+  }
 }
 .career-secC .form-grid .form-group {
   background-color: var(--white);

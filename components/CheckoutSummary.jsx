@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function CheckoutSummary({ classname, summaryItems = [], totalAmount, button }) {
+export default function CheckoutSummary({ classname, summaryItems = [], totalAmount, button, buttonHref="/" }) {
   return (
       <div className={`checkout-tbl-xiuh ${classname}`}>
         <div className="ttl-tbl-bkfg">Summary</div>
@@ -16,10 +16,10 @@ export default function CheckoutSummary({ classname, summaryItems = [], totalAmo
           <p className="ttl-txt">Total Amount </p>
           <p className="ttl-prc-txt">{totalAmount}</p>
         </div>
-        <Link href="/" className="btn black_fill w-100 btn-tbl-prc">
+        <Link href={buttonHref} className="btn black_fill w-100 btn-tbl-prc">
           {button}
         </Link>
-        <Link href="/" className="btn gray_fill w-100 btn-tbl-prc">
+        <Link href="/product-listing" className="btn gray_fill w-100 btn-tbl-prc">
           Continue Shopping
         </Link>
       </div>

@@ -16,16 +16,43 @@
   max-width: 410px;
   margin: 0 auto 60px;
 }
+@media only screen and (max-width: 768px) {
+  .faq-secA .heading {
+    margin: 0 auto 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .faq-secA .heading {
+    margin: 0 auto 40px;
+  }
+}
 .faq-secA .heading p {
   color: var(--text);
 }
 .faq-secA .faqs-section {
   align-items: center;
   justify-content: space-around;
-  gap: 100px;
+  gap: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .faq-secA .faqs-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .faq-secA .faqs-section {
+    gap: 10px;
+  }
 }
 .faq-secA .faqs-section .colA {
   flex: 0 1 auto;
+  width: 30%;
+}
+@media only screen and (max-width: 768px) {
+  .faq-secA .faqs-section .colA {
+    width: 100%;
+  }
 }
 .faq-secA .faqs-section .colA .ub_icon {
   -webkit-mask-image: url(/assets/images/about/about_ub.svg);
@@ -35,8 +62,27 @@
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   height: 390px;
-  width: 420px;
+  width: 100%;
   line-height: 0;
+}
+@media only screen and (max-width: 768px) {
+  .faq-secA .faqs-section .colA .ub_icon {
+    width: 200px;
+    height: 225px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .faq-secA .faqs-section .colA .ub_icon {
+    width: 150px;
+    height: 170px;
+  }
+}
+.faq-secA .faqs-section .colA .ub_icon video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .faq-secA .faqs-section .colB {
   flex: 1;
@@ -69,6 +115,11 @@
   border: 1px solid #ccc;
   background-color: #E4E4E4;
   border-radius: 5px;
+}
+@media only screen and (max-width: 540px) {
+  .faq-secA .faqs-section .colB .col .title {
+    padding: 10px 15px;
+  }
 }
 .faq-secA .faqs-section .colB .col .title h6 {
   font-family: "Lato", sans-serif;

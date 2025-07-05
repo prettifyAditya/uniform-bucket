@@ -89,6 +89,7 @@ export default function Address(){
                   summaryItems={summaryItems}
                   totalAmount="₹37,100"
                   button="Continue"
+                  buttonHref="/payment"
                 />
                 <div className="others">
                     <p className="title">Order Includes</p>

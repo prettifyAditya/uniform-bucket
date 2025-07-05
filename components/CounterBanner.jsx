@@ -88,7 +88,7 @@ export default function CounterBanner({ classname="", videoSrc="", heading, subH
                   <p>{cnt4desc}</p>
                 </div>
               </div>
-              <Link href="javascript:;" className="btn">
+              <Link href="/about-us" className="btn">
                 Read More
               </Link>
             </div>

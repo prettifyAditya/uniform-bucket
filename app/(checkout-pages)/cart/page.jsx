@@ -286,6 +286,7 @@ export default function Cart() {
                 summaryItems={summaryItems}
                 totalAmount="₹37,100"
                 button="Place Order"
+                buttonHref="/address"
               />
             </div>
           </div>

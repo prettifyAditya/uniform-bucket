@@ -4,21 +4,44 @@
     .heading
         max-width: 410px
         margin: 0 auto 60px
+        @include media(768)
+            margin: 0 auto 50px
+        @include media(540)
+            margin: 0 auto 40px
         p
             color: $text
     .faqs-section
         align-items: center
         justify-content: space-around
-        gap: 100px
+        gap: 50px
+        @include media(768)
+            flex-direction: column
+            gap: 30px
+        @include media(540)
+            gap: 10px
         .colA
             flex: 0 1 auto
+            width: 30%
+            @include media(768)
+                width: 100%
             .ub_icon
                 mask-image: url(/assets/images/about/about_ub.svg)
                 mask-size: 100%
                 mask-repeat: no-repeat
                 height: 390px
-                width: 420px
+                width: 100%
                 line-height: 0
+                @include media(768) 
+                    width: 200px
+                    height: 225px
+                    margin: 0 auto
+                @include media(540)
+                    width: 150px
+                    height: 170px
+                video
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
         .colB
             flex: 1
             .col
@@ -46,6 +69,8 @@
                     border: 1px solid #ccc
                     background-color: #E4E4E4
                     border-radius: 5px
+                    @include media(540)
+                        padding: 10px 15px
                     h6
                         font-family: $Lato
                         color: $text

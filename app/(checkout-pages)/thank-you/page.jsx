@@ -21,7 +21,7 @@ export default function Thankyou(){
                     <span>Wednesday, June 18 - Friday, June 20</span>
                     <p>to the address :</p>
                     <span>FF, C-68, Okhla Phase 1, New Delhi - 110020</span>
-                    <Link href="/" className="btn black_fill">Continue Shopping</Link>
+                    <Link href="/product-listing" className="btn black_fill">Continue Shopping</Link>
                 </div>
             </div>
         </div>

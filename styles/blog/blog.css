@@ -48,17 +48,47 @@
   max-width: 400px;
   margin: 0 auto 70px;
 }
+@media only screen and (max-width: 768px) {
+  .blog-secA .heading {
+    margin: 0 auto 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .blog-secA .heading {
+    margin: 0 auto 30px;
+  }
+}
 .blog-secA .heading p {
   color: var(--text);
 }
 .blog-secA .heading h2 {
   font-size: 36px;
 }
+@media only screen and (max-width: 768px) {
+  .blog-secA .heading h2 {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .blog-secA .heading h2 {
+    font-size: 26px;
+  }
+}
 .blog-secA .blogs_wrapper {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px 15px;
+}
+@media only screen and (max-width: 768px) {
+  .blog-secA .blogs_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .blog-secA .blogs_wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .blog-secA .btn_wrapper {
   margin-top: 50px;
@@ -90,11 +120,6 @@
     height: 80vh;
   }
 }
-@media only screen and (max-width: 540px) {
-  .banner.blogD_banner .bg {
-    height: 50vh;
-  }
-}
 .banner.blogD_banner .banner-wrapper .content {
   text-align: left;
 }
@@ -102,6 +127,11 @@
   font-size: 16px;
   line-height: 1.2;
   padding-bottom: 7px;
+}
+@media only screen and (max-width: 540px) {
+  .banner.blogD_banner .banner-wrapper .content .date {
+    font-size: 14px;
+  }
 }
 .banner.blogD_banner .banner-wrapper .content h1 {
   font-size: 36px;
@@ -111,12 +141,27 @@
   letter-spacing: normal;
   max-width: 540px;
 }
+@media only screen and (max-width: 768px) {
+  .banner.blogD_banner .banner-wrapper .content h1 {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner.blogD_banner .banner-wrapper .content h1 {
+    font-size: 24px;
+  }
+}
 .banner.blogD_banner .share_btn {
   position: absolute;
   left: 3%;
   bottom: 20%;
   transform: translate(-3%, 20%);
   z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .banner.blogD_banner .share_btn img {
+    width: 30px;
+  }
 }
 .banner.blogD_banner .share_btn.open .social_icons {
   opacity: 1;
@@ -133,6 +178,11 @@
   transform: scale(0.75) translateY(21px);
   transform-origin: left;
   opacity: 0;
+}
+@media only screen and (max-width: 768px) {
+  .banner.blogD_banner .share_btn .social_icons li img, .banner.blogD_banner .share_btn .social_icons li svg {
+    width: 20px;
+  }
 }
 .banner.blogD_banner .scroll_down {
   position: absolute;

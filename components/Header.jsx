@@ -20,7 +20,11 @@ export default function Header(){
     const isBlogsPage = pathname.startsWith('/blogs')
     const isFaqPage = pathname.startsWith('/faqs')
     const isPayOnlinePage = pathname.startsWith('/pay-online')
-    const headerFill = isProductListingPage || isProductDetailPage || isProfilePage || isOrderPage || isWishlistPage || isBlogsPage || isFaqPage || isPayOnlinePage
+    const isPrivacyPage = pathname.startsWith('/privacy-policy')
+    const isTermsPage = pathname.startsWith('/terms-and-conditions')
+    const isShippingPage = pathname.startsWith('/shipping-and-delivery')
+    const isReturnPage = pathname.startsWith('/return-and-exchange')
+    const headerFill = isProductListingPage || isProductDetailPage || isProfilePage || isOrderPage || isWishlistPage || isBlogsPage || isFaqPage || isPayOnlinePage || isPrivacyPage || isTermsPage || isShippingPage || isReturnPage
     useEffect(() => {
         let dropdownLi = document.querySelectorAll('.hasDropdown')
         let overlay = document.querySelector('.overlay2')
@@ -66,7 +70,7 @@ export default function Header(){
     return(
         <>
             <header className={`${headerFill ? "header-fill" : ""} ${headerFixed ? "header-fixed" : ""}`}>
-                <div className="header-wrapper container">
+                <div className="header-wrapper container-fluid">
                     <div className="colA">
                         <Link href="/">
                             <Image src="/logo.svg" width="219" height="30" alt="Logo" className="sm-none"></Image>
@@ -76,34 +80,34 @@ export default function Header(){
                     <div className="colB">
                         <ul className="navlist">
                             <li className="hasDropdown">
-                                <Link href="javascript:;" className="hasHover">Corporate</Link>
+                                <Link href="/product-listing" className="hasHover">Corporate</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
                                             <ul className="subcat-ul">
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                    <Link href="/product-listing">Corporate Blazzers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                    <Link href="/product-listing">Corporate Female Dress</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                    <Link href="/product-listing">Corporate Female Kurti</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                    <Link href="/product-listing">Corporate Female Top</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                    <Link href="/product-listing">Corporate Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                    <Link href="/product-listing">Corporate T-Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                    <Link href="/product-listing">Corporate Trousers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                    <Link href="/product-listing">Corporate Vest</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -113,34 +117,34 @@ export default function Header(){
                                     </div>
                                 </div>
                             </li>
-                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Hotel</Link>
+                            <li className="hasDropdown"><Link href="/product-listing" className="hasHover">Hotel</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
                                             <ul className="subcat-ul">
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                    <Link href="/product-listing">Corporate Blazzers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                    <Link href="/product-listing">Corporate Female Dress</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                    <Link href="/product-listing">Corporate Female Kurti</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                    <Link href="/product-listing">Corporate Female Top</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                    <Link href="/product-listing">Corporate Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                    <Link href="/product-listing">Corporate T-Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                    <Link href="/product-listing">Corporate Trousers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                    <Link href="/product-listing">Corporate Vest</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -150,34 +154,34 @@ export default function Header(){
                                     </div>
                                 </div>
                             </li>
-                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">SPA & Salon</Link>
+                            <li className="hasDropdown"><Link href="/product-listing" className="hasHover">SPA & Salon</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
                                             <ul className="subcat-ul">
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                    <Link href="/product-listing">Corporate Blazzers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                    <Link href="/product-listing">Corporate Female Dress</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                    <Link href="/product-listing">Corporate Female Kurti</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                    <Link href="/product-listing">Corporate Female Top</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                    <Link href="/product-listing">Corporate Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                    <Link href="/product-listing">Corporate T-Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                    <Link href="/product-listing">Corporate Trousers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                    <Link href="/product-listing">Corporate Vest</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -187,34 +191,34 @@ export default function Header(){
                                     </div>
                                 </div>
                             </li>
-                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Industrial</Link>
+                            <li className="hasDropdown"><Link href="/product-listing" className="hasHover">Industrial</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
                                             <ul className="subcat-ul">
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                    <Link href="/product-listing">Corporate Blazzers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                    <Link href="/product-listing">Corporate Female Dress</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                    <Link href="/product-listing">Corporate Female Kurti</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                    <Link href="/product-listing">Corporate Female Top</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                    <Link href="/product-listing">Corporate Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                    <Link href="/product-listing">Corporate T-Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                    <Link href="/product-listing">Corporate Trousers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                    <Link href="/product-listing">Corporate Vest</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -224,34 +228,34 @@ export default function Header(){
                                     </div>
                                 </div>
                             </li>
-                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Security</Link>
+                            <li className="hasDropdown"><Link href="/product-listing" className="hasHover">Security</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
                                             <ul className="subcat-ul">
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                    <Link href="/product-listing">Corporate Blazzers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                    <Link href="/product-listing">Corporate Female Dress</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                    <Link href="/product-listing">Corporate Female Kurti</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                    <Link href="/product-listing">Corporate Female Top</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                    <Link href="/product-listing">Corporate Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                    <Link href="/product-listing">Corporate T-Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                    <Link href="/product-listing">Corporate Trousers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                    <Link href="/product-listing">Corporate Vest</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -261,34 +265,34 @@ export default function Header(){
                                     </div>
                                 </div>
                             </li>
-                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">Hospital</Link>
+                            <li className="hasDropdown"><Link href="/product-listing" className="hasHover">Hospital</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
                                             <ul className="subcat-ul">
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                    <Link href="/product-listing">Corporate Blazzers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                    <Link href="/product-listing">Corporate Female Dress</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                    <Link href="/product-listing">Corporate Female Kurti</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                    <Link href="/product-listing">Corporate Female Top</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                    <Link href="/product-listing">Corporate Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                    <Link href="/product-listing">Corporate T-Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                    <Link href="/product-listing">Corporate Trousers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                    <Link href="/product-listing">Corporate Vest</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -298,34 +302,34 @@ export default function Header(){
                                     </div>
                                 </div>
                             </li>
-                            <li className="hasDropdown"><Link href="javascript:;" className="hasHover">By Profession</Link>
+                            <li className="hasDropdown"><Link href="/product-listing" className="hasHover">By Profession</Link>
                                 <div className="dropdown-menu" role="menu">
                                     <div className="dropdown-menu-wrap flex">
                                         <div className="colA-md">
                                             <ul className="subcat-ul">
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Blazzers</Link>
+                                                    <Link href="/product-listing">Corporate Blazzers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Dress</Link>
+                                                    <Link href="/product-listing">Corporate Female Dress</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Kurti</Link>
+                                                    <Link href="/product-listing">Corporate Female Kurti</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Female Top</Link>
+                                                    <Link href="/product-listing">Corporate Female Top</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Shirt</Link>
+                                                    <Link href="/product-listing">Corporate Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate T-Shirt</Link>
+                                                    <Link href="/product-listing">Corporate T-Shirt</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Trousers</Link>
+                                                    <Link href="/product-listing">Corporate Trousers</Link>
                                                 </li>
                                                 <li className="subcat-li">
-                                                    <Link href="javascript:;">Corporate Vest</Link>
+                                                    <Link href="/product-listing">Corporate Vest</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -343,10 +347,10 @@ export default function Header(){
                             <li className="myAccount" onClick={openLogin}><Link href=""><img src="/assets/icon/user-white.svg" alt="User Icon" /></Link>
                                 <div className="dropdown-menu">
                                     <ul>
-                                        <li><Link href="javascript:;">My Account</Link></li>
-                                        <li><Link href="javascript:;">My Order</Link></li>
-                                        <li><Link href="javascript:;">My Wislist</Link></li>
-                                        <li><Link href="javascript:;">Log Out</Link></li>
+                                        <li><Link href="/profile">My Account</Link></li>
+                                        <li><Link href="/order">My Order</Link></li>
+                                        <li><Link href="/wishlist">My Wislist</Link></li>
+                                        <li><Link href="/">Log Out</Link></li>
                                     </ul>
                                 </div>
                             </li>

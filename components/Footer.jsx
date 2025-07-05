@@ -12,6 +12,7 @@ import SignUpPop from "./SignUpPop"
 import { usePathname } from "next/navigation"
 export default function Footer(){
     const openEnquire = useModalStore((state) => state.openEnquire)
+    const openLogin = useModalStore((state) => state.openLogin)
     const pathname = usePathname()
     const isProductPage = pathname.startsWith('/product-detail')
     const isCartPage = pathname.startsWith('/cart')
@@ -61,32 +62,32 @@ export default function Footer(){
                             <div className="list_item">
                                 <h6>Products</h6>
                                 <ul>
-                                    <li><Link href="javascript:;">Corporate</Link></li>
-                                    <li><Link href="javascript:;">Hotel</Link></li>
-                                    <li><Link href="javascript:;">SPA & Salon</Link></li>
-                                    <li><Link href="javascript:;">Industrial</Link></li>
-                                    <li><Link href="javascript:;">Security</Link></li>
-                                    <li><Link href="javascript:;">Hospital</Link></li>
+                                    <li><Link href="/product-listing">Corporate</Link></li>
+                                    <li><Link href="/product-listing">Hotel</Link></li>
+                                    <li><Link href="/product-listing">SPA & Salon</Link></li>
+                                    <li><Link href="/product-listing">Industrial</Link></li>
+                                    <li><Link href="/product-listing">Security</Link></li>
+                                    <li><Link href="/product-listing">Hospital</Link></li>
                                 </ul>
                             </div>
                             <div className="list_item">
                                 <h6>Company</h6>
                                 <ul>
-                                    <li><Link href="javascript:;">About us</Link></li>
-                                    <li><Link href="javascript:;">Contact us</Link></li>
-                                    <li><Link href="javascript:;">FAQ’s</Link></li>
-                                    <li><Link href="javascript:;">Careers</Link></li>
-                                    <li><Link href="javascript:;">Blogs</Link></li>
+                                    <li><Link href="/about-us">About us</Link></li>
+                                    <li><Link href="/contact-us">Contact us</Link></li>
+                                    <li><Link href="/faqs">FAQ’s</Link></li>
+                                    <li><Link href="/careers">Careers</Link></li>
+                                    <li><Link href="/blogs">Blogs</Link></li>
                                 </ul>
                             </div>
                             <div className="list_item">
                                 <h6>Legal</h6>
                                 <ul>
-                                    <li><Link href="javascript:;">Privacy Policy</Link></li>
-                                    <li><Link href="javascript:;">Terms and Conditions</Link></li>
-                                    <li><Link href="javascript:;">Shipping & Delivery</Link></li>
-                                    <li><Link href="javascript:;">Returns & Exchanges</Link></li>
-                                    <li><Link href="javascript:;">Size Guide</Link></li>
+                                    <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+                                    <li><Link href="/terms-and-conditions">Terms and Conditions</Link></li>
+                                    <li><Link href="/shipping-and-delivery">Shipping & Delivery</Link></li>
+                                    <li><Link href="/return-and-exchange">Returns & Exchanges</Link></li>
+                                    <li><Link href="/assets/images/Measurment_Chart.pdf" target="_blank">Size Guide</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -94,11 +95,11 @@ export default function Footer(){
                     <div className="lower-footer">
                         <div className="colC">
                             <ul className="social_icons">
-                                <li><Link href="javascript:;"><Image src="/assets/icon/twitter.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
-                                <li><Link href="javascript:;"><Image src="/assets/icon/facebook.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
-                                <li><Link href="javascript:;"><Image src="/assets/icon/instagram.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
-                                <li><Link href="javascript:;"><Image src="/assets/icon/linkedin.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
-                                <li><Link href="javascript:;"><Image src="/assets/icon/whatsapp.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
+                                <li><Link href="https://x.com/UniformBucket" target="_blank"><Image src="/assets/icon/twitter.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
+                                <li><Link href="https://www.facebook.com/UniformBucket" target="_blank"><Image src="/assets/icon/facebook.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
+                                <li><Link href="https://www.instagram.com/uniformbucket_official/?utm_source=qr&igshid=MThlNWY1MzQwNA%3D%3D" target="_blank"><Image src="/assets/icon/instagram.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
+                                <li><Link href="https://in.linkedin.com/company/uniformbucket" target="_blank"><Image src="/assets/icon/linkedin.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
+                                <li><Link href="https://api.whatsapp.com/send?phone=918285309609&text=Hello%20Team%20Uniform%20Bucket!%20I%20am%20interested%20in%20one%20of%20your%20Products.%20Please%20touch%20base%20with%20me." target="_blank"><Image src="/assets/icon/whatsapp.svg" width="25" height="25" alt="Social Icons"></Image></Link></li>
                             </ul>
                             <ul className="contact_no">
                                 <li><Link href="tel:+918860300234">+91 - 8860300234</Link></li>
@@ -106,9 +107,10 @@ export default function Footer(){
                             </ul>
                         </div>
                         <div className="colD flex">
-                            <Link href="javascript:;"><Image src="/assets/icon/whatsapp.svg" width="18" height="18" alt="Whatsapp icon"></Image> Whatsapp</Link>
-                            <Link href="javascript:;">Pay Online</Link>
-                            <button className="corp_login">Corporate Login</button>
+                            <Link href="https://api.whatsapp.com/send?phone=918285309609&text=Hello%20Team%20Uniform%20Bucket!%20I%20am%20interested%20in%20one%20of%20your%20Products.%20Please%20touch%20base%20with%20me." target="_blank">
+                            <Image src="/assets/icon/whatsapp.svg" width="18" height="18" alt="Whatsapp icon"></Image> Whatsapp</Link>
+                            <Link href="/pay-online">Pay Online</Link>
+                            <button className="corp_login" onClick={openLogin}>Corporate Login</button>
                         </div>
                     </div>
                 </div>
@@ -124,7 +126,7 @@ export default function Footer(){
             </footer>
             <Overlay />
             <div className={`sticky_action flex ${DisplayNonePage? 'display-none' : ""}`}>
-                <Link className="whatsapp" href="javascript:;">
+                <Link className="whatsapp" href="https://api.whatsapp.com/send?phone=918285309609&text=Hello%20Team%20Uniform%20Bucket!%20I%20am%20interested%20in%20one%20of%20your%20Products.%20Please%20touch%20base%20with%20me." target="_blank">
                     <Image src="/assets/icon/whatsapp.svg" width="24" height="24" alt="Whatsapp"></Image>
                 </Link>
                 <button className="call_action" onClick={openEnquire}>

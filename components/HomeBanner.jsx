@@ -75,7 +75,7 @@ export default function HomeBanner() {
                                 <div className="content heading">
                                     <h1>Corporate Uniform</h1>
                                     <p>Where Uniform Meets Professionalism</p>
-                                    <Link className="btn" href="javascript">Shop Now</Link>
+                                    <Link className="btn" href="/product-listing">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ export default function HomeBanner() {
                                 <div className="content heading">
                                     <h1>Corporate Uniform</h1>
                                     <p>Where Uniform Meets Professionalism</p>
-                                    <Link className="btn" href="javascript">Shop Now</Link>
+                                    <Link className="btn" href="/product-listing">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@ export default function HomeBanner() {
                                 <div className="content heading">
                                     <h1>Corporate Uniform</h1>
                                     <p>Where Uniform Meets Professionalism</p>
-                                    <Link className="btn" href="javascript">Shop Now</Link>
+                                    <Link className="btn" href="/product-listing">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ export default function HomeBanner() {
                                 <div className="content heading">
                                     <h1>Corporate Uniform</h1>
                                     <p>Where Uniform Meets Professionalism</p>
-                                    <Link className="btn" href="javascript">Shop Now</Link>
+                                    <Link className="btn" href="/product-listing">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +131,7 @@ export default function HomeBanner() {
                                 <div className="content heading">
                                     <h1>Corporate Uniform</h1>
                                     <p>Where Uniform Meets Professionalism</p>
-                                    <Link className="btn" href="javascript">Shop Now</Link>
+                                    <Link className="btn" href="/product-listing">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ export default function HomeBanner() {
                                 <div className="content heading">
                                     <h1>Corporate Uniform</h1>
                                     <p>Where Uniform Meets Professionalism</p>
-                                    <Link className="btn" href="javascript">Shop Now</Link>
+                                    <Link className="btn" href="/product-listing">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@ export default function HomeBanner() {
                                 <div className="content heading">
                                     <h1>Corporate Uniform</h1>
                                     <p>Where Uniform Meets Professionalism</p>
-                                    <Link className="btn" href="javascript">Shop Now</Link>
+                                    <Link className="btn" href="/product-listing">Shop Now</Link>
                                 </div>
                             </div>
                         </div>

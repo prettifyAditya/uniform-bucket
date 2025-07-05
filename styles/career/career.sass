@@ -88,6 +88,8 @@
                     padding: 15px 20px 20px
                     p,ul,h2,h3,h4,h5,h6
                         margin-bottom: 16px
+                        @include media(540)
+                            margin-bottom: 10px
                     *
                         &:not(button)
                             color: $text
@@ -115,10 +117,16 @@
     .heading
         h3
             text-transform: none
+            @include media(768)
+                font-size: 32px
+            @include media(540)
+                font-size: 28px
     .form-grid
         max-width: 780px
         margin: 40px auto 0
         --item: 2
+        @include media(540)
+            --item: 1
         .form-group
             background-color: $white
             border-radius: 10px

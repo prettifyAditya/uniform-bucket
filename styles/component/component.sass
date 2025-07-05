@@ -263,6 +263,7 @@
         @include media(540)
             height: 50vh
         .banner-wrapper
+            width: 100%
             left: 50%
             top: unset
             bottom: 15%
@@ -274,10 +275,24 @@
                     width: 70px
                     height: 70px
                     margin: 0 auto 30px
+                    @include media(1024)
+                        margin: 0 auto 25px
+                    @include media(540)
+                        width: 50px
+                        height: 50px
+                h1
+                    @include media(991)
+                        font-size: 42px
+                    @include media(768)
+                        font-size: 36px
+                    @include media(540)
+                        font-size: 30px
                 p
                     font-size: 16px
                     max-width: 400px
                     margin: 0 auto
+                    @include media(540)
+                        font-size: 14px
                 .scroll_down
                     margin-top: 30px
                     animation: scroll 1.5s ease-in-out infinite forwards
@@ -286,11 +301,15 @@
     position: relative
     width: 100%
     height: 100%
+    @include media(991)
+        flex-direction: column
     .colA, .colB
         flex: 1
     .colA
         .bg
             height: 100vh
+            @include media(991)
+                height: 70vh
             .banner-wrapper
                 width: 100%
                 text-align: center
@@ -301,14 +320,21 @@
                     font-size: 36px
                     letter-spacing: 2px
                     line-height: 1.5
+                    @include media(540)
+                        font-size: 30px
+                        padding-bottom: 5px
                 p
                     color: $white
     .colB
         padding: 40px 20px 40px 60px
+        @include media(991)
+            padding: 40px 20px
         .form
             --item: 2
             --gaptb: 20px
             --inputsize: 38px
+            @include media(540)
+                --item: 1
             .btn_wrapper
                 text-align: center
                 margin-top: 20px
@@ -329,6 +355,8 @@
         align-items: center
         justify-content: center
         box-shadow: 0 3px 8px 0px #0000003D
+        @include media(991)
+            display: none
         img
             width: 40px
             height: 40px

@@ -529,6 +529,7 @@
   gap: 6px;
   min-width: -moz-fit-content;
   min-width: fit-content;
+  font-size: 12px;
 }
 .total_products .container .selected_pro_wraper .selected img {
   width: 20px;

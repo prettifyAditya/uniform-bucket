@@ -145,7 +145,7 @@ export default function Hamburger() {
                     <ul>
                     {item.subitems.map((sub, i) => (
                         <li key={i}>
-                        <Link href="javascript:;" className="subcat-li-anchr">
+                        <Link href="/product-listing" className="subcat-li-anchr" onClick={closeHam}>
                             {sub}
                         </Link>
                         </li>
@@ -157,19 +157,19 @@ export default function Hamburger() {
         </ul>
         <div className="bottom-list">
           <div className="social-icons">
-            <Link href="javascript:void(0)" target="_blank" title="Twitter">
+            <Link href="https://x.com/UniformBucket" target="_blank" title="Twitter">
                 <Image src="/assets/icon/twitter.svg" width="25" height="25" alt="Social Icons"></Image>
             </Link>
-            <Link href="javascript:void(0)" target="_blank" title="Facebook">
+            <Link href="https://www.facebook.com/UniformBucket" target="_blank" title="Facebook">
                 <Image src="/assets/icon/facebook.svg" width="25" height="25" alt="Social Icons"></Image>
             </Link>
-            <Link href="javascript:void(0)" target="_blank" title="Instagram">
+            <Link href="https://www.instagram.com/uniformbucket_official/?utm_source=qr&igshid=MThlNWY1MzQwNA%3D%3D" target="_blank" title="Instagram">
                 <Image src="/assets/icon/instagram.svg" width="25" height="25" alt="Social Icons"></Image>
             </Link>
-            <Link href="javascript:void(0)" target="_blank" title="Linkedin">
+            <Link href="https://in.linkedin.com/company/uniformbucket" target="_blank" title="Linkedin">
                 <Image src="/assets/icon/linkedin.svg" width="25" height="25" alt="Social Icons"></Image>
             </Link>
-            <Link href="javascript:void(0)" target="_blank" title="Whatsapp">
+            <Link href="https://api.whatsapp.com/send?phone=918285309609&text=Hello%20Team%20Uniform%20Bucket!%20I%20am%20interested%20in%20one%20of%20your%20Products.%20Please%20touch%20base%20with%20me." target="_blank" title="Whatsapp">
                 <Image src="/assets/icon/whatsapp.svg" width="25" height="25" alt="Social Icons"></Image>
             </Link>
           </div>

@@ -23,7 +23,7 @@ export default function Home() {
                 <h2>Shop By Profession</h2>
             </div>
             <div className="profession_grid grid">
-              <Link href="" className="item-md profession_col">
+              <Link href="/product-listing" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession1.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -32,7 +32,7 @@ export default function Home() {
                   <p>Where Uniform Meets Professionalism</p>
                 </figcaption>
               </Link>
-              <Link href="" className="item-md profession_col">
+              <Link href="/product-listing" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession2.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -41,7 +41,7 @@ export default function Home() {
                   <p>Where Uniform Meets Professionalism</p>
                 </figcaption>
               </Link>
-              <Link href="" className="item-md profession_col">
+              <Link href="/product-listing" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession3.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -50,7 +50,7 @@ export default function Home() {
                   <p>Where Uniform Meets Professionalism</p>
                 </figcaption>
               </Link>
-              <Link href="" className="item-md profession_col">
+              <Link href="/product-listing" className="item-md profession_col">
                 <figure>
                   <Image src="/assets/images/product/profession4.jpg" width="634" height="568" alt="Profession Image"></Image>
                 </figure>
@@ -61,7 +61,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="btn_wrapper">
-              <Link href="javascript:;" className="btn black">Explore All Products</Link>
+              <Link href="/product-listing" className="btn black">Explore All Products</Link>
             </div>
         </div>
      </div>
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="container">
             <h2>Logo Embroidery</h2>
             <p>Have your business logo embroidered onto your uniform. </p>
-            <Link href="javascript:;" className="btn">Shop Now </Link>
+            <Link href="/product-listing" className="btn">Shop Now </Link>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="content">
               <h2>Chefwear</h2>
               <h6>Chosen by top chefs</h6>
-              <Link className="btn black" href="">Explore All Projects</Link>
+              <Link className="btn black" href="/product-listing">Explore All Projects</Link>
             </div>
             <AnimateSlider />
           </div>
