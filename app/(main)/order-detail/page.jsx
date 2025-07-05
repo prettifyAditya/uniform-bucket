@@ -140,7 +140,7 @@ export default function OrderDetail() {
                     </div>
                     <div className="order_id_stats">
                         <ul>
-                            <li><p>Transaction ID :</p><span>22525222</span></li>
+                            <li><p>Txn ID :</p><span>22525222</span></li>
                             <li><p>Status : </p><span>Pending</span></li>
                         </ul>
                         <p>Total Price <span>₹ 80000.00</span></p>

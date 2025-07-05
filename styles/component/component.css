@@ -2695,6 +2695,11 @@ em {
 .thankyou_box {
   --container: 800px;
 }
+@media only screen and (max-width: 768px) {
+  .thankyou_box {
+    --container: 520px;
+  }
+}
 .thankyou_box .container {
   display: flex;
   align-items: center;
@@ -2703,6 +2708,15 @@ em {
   background: url(/assets/images/checkout/checkout_bg.svg) no-repeat;
   background-size: 140px;
   background-position: left bottom;
+}
+@media only screen and (max-width: 768px) {
+  .thankyou_box .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
 }
 .thankyou_box .container .colA {
   text-align: center;
@@ -2723,6 +2737,12 @@ em {
   padding-left: 40px;
   border-left: 1px solid rgba(0, 0, 0, 0.2784313725);
 }
+@media only screen and (max-width: 768px) {
+  .thankyou_box .container .colB {
+    padding-left: 0;
+    border-left: none;
+  }
+}
 .thankyou_box .container .colB p, .thankyou_box .container .colB span, .thankyou_box .container .colB a:not(.btn) {
   color: var(--text);
 }
@@ -2730,6 +2750,11 @@ em {
   display: block;
   font-weight: 700;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 540px) {
+  .thankyou_box .container .colB span, .thankyou_box .container .colB a:not(.btn) {
+    margin-bottom: 15px;
+  }
 }
 .thankyou_box .container .colB .btn {
   padding: 0 30px;

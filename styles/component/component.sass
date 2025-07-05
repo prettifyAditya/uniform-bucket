@@ -134,6 +134,8 @@
 
 .thankyou_box
     --container: 800px
+    @include media(768)
+        --container: 520px
     .container
         display: flex
         align-items: center
@@ -142,6 +144,12 @@
         background: url(/assets/images/checkout/checkout_bg.svg) no-repeat
         background-size: 140px
         background-position: left bottom
+        @include media(768)
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            text-align: center
+            gap: 30px
         .colA
             text-align: center
             flex:  0 1 40%
@@ -158,12 +166,17 @@
             flex: 1
             padding-left: 40px
             border-left: 1px solid #00000047
+            @include media(768)
+                padding-left: 0
+                border-left: none
             p, span, a:not(.btn)
                 color: $text
             span, a:not(.btn)
                 display: block
                 font-weight: 700
                 margin-bottom: 20px
+                @include media(540)
+                    margin-bottom: 15px
             .btn
                 padding: 0 30px
                 border-radius: 50px
