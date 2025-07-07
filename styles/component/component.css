@@ -3035,4 +3035,51 @@ em {
 .pay_online_wrapper .ub_logo img {
   width: 40px;
   height: 40px;
+}
+
+.landing-banner.banner .bg {
+  height: 100vh;
+}
+.landing-banner.banner .bg .banner-wrapper {
+  z-index: 2;
+}
+.landing-banner.banner .bg .banner-wrapper .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.landing-banner.banner .bg .banner-wrapper .content h1 {
+  flex: 0 1 auto;
+  text-align: left;
+  max-width: 680px;
+  font-size: 40px;
+}
+.landing-banner.banner .bg .banner-wrapper .content .form_wrapper {
+  flex: 1;
+  max-width: 500px;
+  padding: 40px 30px;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+.landing-banner.banner .bg .banner-wrapper .content .form_wrapper .title {
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+.landing-banner.banner .bg .banner-wrapper .content .form_wrapper .title .icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+}
+.landing-banner.banner .bg .banner-wrapper .content .form_wrapper .title p {
+  color: var(--black);
+}
+.landing-banner.banner .bg .banner-wrapper .content .form_wrapper .landing-form {
+  --item: 2;
+  --gaptb: 20px;
+  --gaplr: 20px;
+}
+
+.landing-secA {
+  --container: 800px;
 }/*# sourceMappingURL=component.css.map */

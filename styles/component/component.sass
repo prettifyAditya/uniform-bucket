@@ -360,3 +360,41 @@
         img
             width: 40px
             height: 40px
+
+.landing-banner.banner
+    .bg
+        height: 100vh
+        .banner-wrapper
+            z-index: 2
+            .content 
+                display: flex
+                align-items: center
+                justify-content: center
+                gap: 40px
+                h1
+                    flex: 0 1 auto
+                    text-align: left
+                    max-width: 680px
+                    font-size: 40px
+                .form_wrapper
+                    flex: 1
+                    max-width: 500px
+                    padding: 40px 30px
+                    background-color: $white
+                    border-radius: 5px
+                    .title
+                        max-width: 300px
+                        margin: 0 auto 30px
+                        .icon
+                            width: 60px 
+                            height: 60px 
+                            margin: 0 auto 10px
+                        p
+                            color: $black
+                    .landing-form
+                        --item: 2
+                        --gaptb: 20px
+                        --gaplr: 20px
+
+.landing-secA
+    --container: 800px
