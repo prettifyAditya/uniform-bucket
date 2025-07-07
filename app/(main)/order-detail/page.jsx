@@ -31,7 +31,7 @@ export default function OrderDetail() {
                                 <div className="dot"></div>
                                 <p>Mon, 27th June</p>
                             </li>
-                            <li className="active">
+                            <li className="">
                                 <span>Out for delivery</span>
                                 <div className="dot"></div>
                                 <p>Sun, 27th June</p>

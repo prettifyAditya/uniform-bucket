@@ -3079,6 +3079,9 @@ em {
   --gaptb: 20px;
   --gaplr: 20px;
 }
+.landing-banner.banner .bg .banner-wrapper .content .form_wrapper .landing-form .btn {
+  margin-top: 10px;
+}
 
 .landing-secA {
   --container: 800px;

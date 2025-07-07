@@ -5,7 +5,7 @@ export default function Landing(){
         <main>
             <div className="banner landing-banner">
                 <div className="bg">
-                    <video src="/assets/video/about_banner.mp4" poster="/assets/video/about_banner_poster.jpg" autoPlay muted loop playsInline></video>
+                    <Image src="/assets/video/about-secB-poster.jpg" width="1146" height="578" alt="Banner Image"></Image>
                     <div className="banner-wrapper">
                         <div className="content container heading">
                             <h1>Honda Two Wheeler Dealership Uniform</h1>
@@ -36,7 +36,8 @@ export default function Landing(){
                                 <div className="form-group full">
                                     <textarea className="form-control" />
                                     <label>Your Message</label>
-                                </div>                              
+                                </div> 
+                                <button type="submit" className="btn black_round black_fill full">Submit</button>                             
                             </div>
                             </div>
                         </div>
@@ -49,7 +50,7 @@ export default function Landing(){
                     <p>Uniform Bucket is an independent manufacturer and supplier of general uniforms and workwear. We are not affiliated with, endorsed by, or an authorized uniform vendor. Any purchase of uniforms from us is made solely at the discretion of the buyer.</p>
                     <p>We manufacture uniforms based on customer specifications, operating under the presumption that the customer is an authorized dealer or channel partner and has obtained the necessary permissions from the company to purchase such uniforms.</p>
                     <p>If you are an authorized dealer and the company has permitted you to procure uniforms generally, you may contact us for an order. Otherwise, we kindly request that you refrain from placing an order to ensure compliance with your company’s policies.</p>
-                    <h4>Why Choose Us?</h4>
+                    <h3>Why Choose Us?</h3>
                     <ul>
                         <li>Customization as per your dealership's needs.</li>
                         <li>Bulk and small order options.</li>
